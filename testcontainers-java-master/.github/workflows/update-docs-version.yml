@@ -1,0 +1,27 @@
+name: Update docs version
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    if: github.repository == 'testcontainers/testcontainers-java'
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Update latest_version property in mkdocs.yml
+        run: |
+          sed -i "s/latest_version: .*/latest_version: ${GITHUB_REF##*/}/g" mkdocs.yml
+          git diff
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@dcd5fd746d53dd8de555c0f10bca6c35628be47a # v3.10.1
+        with:
+          title: Update docs version to ${GITHUB_REF##*/}
+          body: |
+            Update docs version to ${GITHUB_REF##*/}
+            skip-checks: true
+          branch: update-docs-version
+          delete-branch: true
