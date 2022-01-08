@@ -1,3 +1,0 @@
-redis:
-    image: redis
-    container_name: redis
