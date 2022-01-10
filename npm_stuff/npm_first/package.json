@@ -1,0 +1,19 @@
+{
+  "name": "npm_first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/.bin/webpack serve --config ./webpack.config.js --mode development",
+    "build:w": "node_modules/.bin/webpack -d --watch",
+    "build": "node_modules/.bin/webpack",
+    "lint": "node_modules/.bin/eslint src/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/generators": "^2.4.1",
+    "eslint": "^8.6.0",
+    "eslint-plugin-react": "^7.28.0"
+  }
+}
