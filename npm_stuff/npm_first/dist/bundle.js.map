@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAR,CAAY,oBAAZ,E","sources":["webpack://npm_first/./src/js/index.js"],"sourcesContent":["console.log(\"this is javascript\")\n\n"],"names":["console","log"],"sourceRoot":""}
