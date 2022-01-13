@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const config = {
+module.exports = {
   devtool: 'hidden-source-map',
   mode: 'development',
-  entry: './src/js/index.js',
+  entry: './src/index.js',
   module: {
     rules: [
       {
@@ -16,10 +16,10 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   
 };
 
-module.exports = config;
 
