@@ -42,7 +42,7 @@ class Div extends Element{
  notify(event){
      console.log("div.notify event:",event)
      console.log("notify this:",this)
-     console.log("eventIsInElement:",eventIsInElement(event))
+     console.log("eventIsInElement:",super.eventIsInElement(event))
      //can set color here
      for (const l of this.listeners){
         console.log("listener l:",l)
@@ -76,12 +76,12 @@ class TextBox extends Element{
         for (const l of this.listeners){
            console.log("listener l:",l)
            if (event.name==='click'){
+               console.log("found click")
+               //added to textBox; 
                this.text="some new text"
            }
-        }
-       
+        }  
     }
-   
 }
 
 class Event{
@@ -94,7 +94,7 @@ class Event{
 }
 
 const e = new Event("div_event",[0,0],[40,40])
-const e_textbox = new Event("textbox_event",[5,5],[15,15])
+const e_textbox = new Event("click",[5,5],[15,15])
 
 const listener1={
     update:message=>{
