@@ -8,8 +8,10 @@ class Element{
         console.log("Event x:",e.x," y:",e.y)
         console.log("this.x",this.x," this.y:",this.y)
         if (e.x >= this.x[0] && e.x<=this.x[1] && e.y>=this.y[0] && e.y<=this.y[1]) {
+            console.log("eventInElement true")
             return true
         }
+        console.log("eventInElement false")
         return false
     }
 }
@@ -29,15 +31,13 @@ class Div extends Element{
    this.listeners.push(l)
  }
  removeListener(l){
-     const findMe=this.listeners.indexOf(l)
-     this.listeners.splice(findMe,1)
+     this.listeners.splice(this.listeners.indexOf(l),1)
  }
  addChild(c){
     this.childElements.push(c)
  }
  removeChild(c){
-    const findMe=this.childElements.indexOf(c)
-    this.listeners.splice(findMe,1)
+    this.listeners.splice(this.childElements.indexOf(c),1)
  }
  notify(event){
      console.log("div.notify event:",event)
@@ -93,7 +93,7 @@ class Event{
   }
 }
 
-const e = new Event("div_event",[0,0],[40,40])
+const e = new Event("div_click",[0,0],[40,40])
 const e_textbox = new Event("click",[5,5],[15,15])
 
 const listener1={
