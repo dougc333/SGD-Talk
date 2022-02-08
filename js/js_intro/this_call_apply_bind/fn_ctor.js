@@ -32,4 +32,4 @@ d.get_data(callback)
 
 //this isnt bound is it global or still local after code?
 console.log("not bound this:",this)
-
+console.log("d function object:",d)

@@ -8,16 +8,11 @@ class Element{
         console.log("Event x:",e.x," y:",e.y)
         console.log("this.x",this.x," this.y:",this.y)
         if (e.x >= this.x[0] && e.x<=this.x[1] && e.y>=this.y[0] && e.y<=this.y[1]) {
-            console.log("eventInElement true")
             return true
         }
-        console.log("eventInElement false")
         return false
     }
 }
-
-
-
 
 class Div extends Element{
  constructor(id,x,y){
@@ -71,30 +66,34 @@ class TextBox extends Element{
     }
     notify(event){
         console.log("textbox.notify event:",event)
-        console.log("textbox notify this:",this)
+        //console.log("textbox notify this:",this)
+        if (this===textBox){
+            console.log("this===textBox")
+        }else{
+            console.log("this!==textBox")
+        }
         //can set color here
         for (const l of this.listeners){
            console.log("listener l:",l)
-           if (event.name==='click'){
+           if (event.name==='text_click'){
                console.log("found click")
                //added to textBox; 
                this.text="some new text"
+               this.background_color="red"
            }
         }  
     }
 }
 
 class Event{
-  constructor(name,x,y){
+  constructor(name,xy){
     this.name=name
-    this.x=x
-    this.y=y
+    this.x=xy[0]
+    this.y=xy[1]
     this.type="click"
   }
 }
 
-const e = new Event("div_click",[0,0],[40,40])
-const e_textbox = new Event("click",[5,5],[15,15])
 
 const listener1={
     update:message=>{
@@ -109,8 +108,9 @@ const listener2={
         console.log("listener2 this:",this)
     }
 }
-
+console.log("creating div")
 const div=new Div(id="div",[0,0],[40,40])
+console.log("creating textbox")
 const textBox = new TextBox(id="textBox",[5,5],[15,15])
 //should we attach div and textbox to window? or globalThis? 
 //or put it into a weakmap? 
@@ -118,7 +118,12 @@ textBox.addListener(listener2)
 div.addChild(textBox)
 
 div.addListener(listener1)
+//this event is wrong. 
+const e = new Event("div_click",[2,2])
+const e_textbox = new Event("text_click",[10,10])
 
+console.log("event fired in div")
 div.notify(e)
+console.log("event fired in textbox")
 textBox.notify(e_textbox)
-console.log("div after:",div)
+console.log("verify textBox red and new text appended:",textBox)
