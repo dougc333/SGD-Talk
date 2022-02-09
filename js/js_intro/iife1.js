@@ -1,3 +1,5 @@
+const { toNamespacedPath } = require("path");
+
 var animal = (function () {
   //this is funny var is hoisted but iife prevents visibility
   var name = "bob";
@@ -9,7 +11,7 @@ var animal = (function () {
   return {
     hi: function () {
       //node no this pointer. global object, not a class instance
-      console.log(name);
+      console.log("name in function hi:",name);
     },
     speak: function () {
       console.log("bark bark bark");
@@ -18,8 +20,11 @@ var animal = (function () {
 })();
 
 //animal hi
-console.log(typeof animal);
+console.log("typeof(animal):",typeof animal);
+console.log("name:",name)
+console.log("animal.hi below:")
 animal.hi();
+console.log("animal.speak below")
 animal.speak();
 
 var fnObj = function (color) {
