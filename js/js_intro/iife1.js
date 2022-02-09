@@ -1,5 +1,4 @@
-const { toNamespacedPath } = require("path");
-
+//iifes are used for namespaces. vars are in iife scope and not in globlal scope
 var animal = (function () {
   //this is funny var is hoisted but iife prevents visibility
   var name = "bob";
@@ -12,28 +11,13 @@ var animal = (function () {
     hi: function () {
       //node no this pointer. global object, not a class instance
       console.log("name in function hi:",name);
-    },
-    speak: function () {
-      console.log("bark bark bark");
-    },
+    }
   };
 })();
 
 //animal hi
 console.log("typeof(animal):",typeof animal);
-console.log("name:",name)
+//console.log("name:",name) error name is not defined
 console.log("animal.hi below:")
 animal.hi();
-console.log("animal.speak below")
-animal.speak();
 
-var fnObj = function (color) {
-  this.color = color;
-};
-fnObj.prototype.getColor = function () {
-  return this.color;
-};
-
-console.log(typeof fnObj);
-f = new fnObj("blue");
-console.log(f.getColor());
