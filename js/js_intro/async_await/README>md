@@ -1,0 +1,4 @@
+async and await implemented with promises/then
+
+is not a separate implementation. makes reading easier than nested callbacks
+

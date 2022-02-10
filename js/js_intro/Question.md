@@ -1,3 +1,6 @@
+
+QUESTION 1: 
+
 How to fix this? Want to print out 1 second delay done 
 
 function *gen1(){
@@ -31,3 +34,40 @@ TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefine
   code: 'ERR_INVALID_CALLBACK'
 }
 dougchang@Dougs-MacBook-Pro:~/test_stuff/js/js_intro$ 
+
+QUESTION 2: 
+
+What is wrong with this code: 
+var database=function(){
+    var _counter=0
+    function change_counter(x){
+        _counter+=x
+    }
+
+    return {
+        increment:function(){
+            change_counter(1)
+        },
+        decrement:function(){
+            change_counter(-1)
+        },
+        get_counter(){
+            return this._counter
+        },
+        set_counter(x){
+            this._counter=x
+        },
+        print_counter(){
+            console.log(this._counter)
+        }
+    }
+};
+
+let db1=database()
+db1.print_counter()
+undefined
+
+how to fix this? 
+
+A) remove this from all the methods
+

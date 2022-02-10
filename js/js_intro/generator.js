@@ -26,7 +26,7 @@ console.log(typeof(foo),foo)
 
 //generator is ok, async, promise easier to use
 
-async function test_fn(){
+function test_fn(){
     return new Promise(function(resolve,reject){
         console.log("before 2s timeout")
         setTimeout(function(){
@@ -36,10 +36,21 @@ async function test_fn(){
     })
 }
 
+//we can use await to wait 
 let res = test_fn()
 console.log("res:",res) //this prints before res is available; have to use callback to get this result
+//we need to add async to allow the await to work
 async function getResult(){
   res1 = await test_fn()
   console.log("res1:",res1)
 }
 getResult()
+
+//this blocks
+test_fn().then(
+    function(result){
+        console.log("using then:",result)
+    }
+)
+
+
