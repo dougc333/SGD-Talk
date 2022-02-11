@@ -1,7 +1,7 @@
 //private funcitons wiht closuers and iife
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 
-var database=(function(){
+var database=function(){
     var _counter=0
     function change_counter(x){
         _counter+=x
@@ -24,7 +24,7 @@ var database=(function(){
             console.log(this._counter)
         }
     }
-})();
+};
 
 var db_no_iife=function(){
     var _counter=0
