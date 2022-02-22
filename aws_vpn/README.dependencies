@@ -15,3 +15,7 @@ aws ec2 describe-vpn-connections --filters 'Name=vpc-id,Values='$vpc | grep VpnC
 aws ec2 describe-vpn-gateways --filters 'Name=attachment.vpc-id,Values='$vpc | grep VpnGatewayId
 aws ec2 describe-network-interfaces --filters 'Name=vpc-id,Values='$vpc | grep NetworkInterfaceId
 
+above is sloppy work. it doesnt respect the order which things must be identified then deleted. 
+instances have to be terminated first. 
+sigh.. their webpost is not accurate
+
