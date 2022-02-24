@@ -1,0 +1,13 @@
+
+try:
+ foo()
+except:
+ print('error foo()')
+try:
+ foo1()
+except:
+ print('error foo1()')
+try:
+ foo2()
+except:
+ print('error foo2()')
