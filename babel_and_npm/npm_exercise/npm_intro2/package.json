@@ -1,0 +1,17 @@
+{
+  "name": "npm_intro2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/foo.js",
+  "scripts": {
+    "build" : "webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.26.3",
+    "webpack-cli": "^4.5.0"
+  }
+}

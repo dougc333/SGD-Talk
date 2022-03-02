@@ -1,0 +1,19 @@
+{
+  "name": "babel_intro",
+  "version": "1.0.0",
+  "description": "babel intro",
+  "main": "a.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bb": "babel src -d  build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13"
+  }
+}

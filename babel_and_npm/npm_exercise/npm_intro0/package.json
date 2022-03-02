@@ -1,0 +1,17 @@
+{
+  "name": "npm_intro0",
+  "version": "1.0.0",
+  "description": "npm init -y npm install npm npm-cli --save-dev \"build\":\"webpack --mode development\"",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.26.3",
+    "webpack-cli": "^4.5.0"
+  }
+}
