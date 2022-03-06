@@ -2,11 +2,12 @@
 from dataclasses import dataclass
 from datetime import date
 from typing import Optional
-
+import itertools
 #not frozen
 class Batch:
-    def __init__(self, bName:str, iName:str, qty:int, eta:Optional[date]):
-        self.batchName=bName
+    def __init__(self, batch_id:str, iName:str, qty:int, eta:Optional[date]):
+        id:batch_id
+        self.batchName=batch_id
         self.sku =iName
         self.available_quantity=qty
         eta = eta
@@ -17,8 +18,16 @@ class Batch:
         if orderLine.qty>self.available_quantity or orderLine.sku!=self.sku:
             return False
         return True
-        
 
+class Product:
+    sku:str
+
+class Customer:
+    cust_name:str
+    def place_order(sku, quantity):
+        #how to generate an orderref? 
+        return Order(str(quantity)+" units of "+sku,sku, quantity)
+        
 
 @dataclass(frozen=True)
 class OrderLine:
@@ -26,6 +35,15 @@ class OrderLine:
     sku : str
     qty : int
     
+
+@dataclass(frozen=True)
+class Order:
+    def __init__(self):   
+        self.order_ref:str
+        self.order_reference:int
+        self.orderLines:list[OrderLine]
+
+ 
 
 
 def make_batch_and_line(sku, batch_qty, line_qty):
