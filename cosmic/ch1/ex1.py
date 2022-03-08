@@ -1,9 +1,11 @@
 
-from dataclasses import dataclass
+from dataclasses import dataclass,field
 from datetime import date
 from typing import Optional
 import itertools
 import pytest
+from typing import List
+
 
 
 # some design problems:
@@ -16,9 +18,10 @@ import pytest
 # 
 
 #not frozen
+#Batch is the database put/get
 class Batch:
     def __init__(self, batch_id:str, sku:str, qty:int, eta:Optional[date]):
-        reference_id:batch_id
+        self.reference:batch_id
         self.batchName=batch_id
         self.sku =sku;
         self.available_quantity=qty
@@ -34,18 +37,19 @@ class Batch:
         if orderLine.qty>self.available_quantity or orderLine.sku!=self.sku or self.search(orderLine)==True:
             return False
         return True
-    
-    def deallocate(orderLine):
-        #search for allocated orderLines and deallocate it
-        #this isnt the correct method we need a search orderLine to return True or False
-        print("deallocate orderLine")
+    #to unwind an orderline transaction
+    #why do we need the search statement to be true? to guard vs exception if item not in list
+    def deallocate(self,orderLine):
+        if self.search(orderLine):
+            self.allocated_orderlines.remove(orderLine)
+
         
     def search(self,orderLine):
         for x in self.allocated_orderlines:
             if x==orderLine:
                 return True
         return False
-        
+       
         
 class Product:
     sku:str
@@ -57,19 +61,40 @@ class Customer:
         return Order(str(quantity)+" units of "+sku,sku, quantity)
         
 
+# be careful with immutable objects. Assumption is it is magically good. only good for somethings
+# good for copy in python, good for thread safety which implies safe for microservice
+# bad in there is no equivalent pattern in db schema/storage. This is persistent safe. Not fault tolerant 
+#
 @dataclass(frozen=True)
 class OrderLine:
     orderName : str
     sku : str
     qty : int
     
-
-@dataclass(frozen=True)
+#this is mutable
+@dataclass(unsafe_hash=True)
 class Order:
-    def __init__(self):   
-        self.order_ref:str
-        self.order_reference:int
-        self.orderLines:list[OrderLine]
+    order_reference:str
+    orderLines:List['Order'] = field(default_factory=list, init=False, compare=False, hash=False)
+
+def test_value_class_order():
+    o1= Order("o1_ref")
+    o2= Order("o1_ref")
+    o3= Order("ssss")
+    o2.orderLines.append(OrderLine("ol","sku",100))
+    print("o1:",o1)
+    print("o2:",o2)
+    print("o1==o2:",o1==o2)
+    assert o1==o1,"o1 not equal to itself"
+    assert o1==o2,"o1 should not be equal to o2 because of list"
+    assert o1!=o3,"o1 not equal to o3"
+    
+    
+    
+
+def test_value_class_OrderLine():
+    pass
+    
 
 def make_batch_and_line(sku, batch_qty, line_qty):
     return (
@@ -107,6 +132,16 @@ def test_search_orderline():
     ol1 = OrderLine("order_test1","UNCOMFORTABLE-CHAIR", 1)
     batch.allocate(ol1)
     assert batch.search(ol1) is True
+
+def test_deallocate():
+    batch = Batch("batch-001", "UNCOMFORTABLE-CHAIR", 100, eta=None)
+    ol1 = OrderLine("order_test1","UNCOMFORTABLE-CHAIR", 1)
+    batch.allocate(ol1)
+    batch.deallocate(ol1)
+    assert(len(batch.allocated_orderlines)==0)
+    #we should test if something not there
+    batch.deallocate(ol1)
+
 #this is kind of a funny interface. Batch is created by someone which orders inventory. 
 #
 #it is really a set? all of these are unique? Doesnt make sense
@@ -165,11 +200,13 @@ def test_prefers_earlier_batches():
     print("dont know thwa this iss")
 
 
-
+test_value_class_order()
 test_allocating_to_a_batch_reduces_the_available_quantity()
 test_can_allocate_if_available_greater_than_required()
 test_cannot_allocate_if_available_smaller_than_required()
 test_can_allocate_if_available_equal_to_required()
 test_cannot_allocate_if_skus_do_not_match()
+test_deallocate()
 test_search_orderline()
 test_allocation_is_idempotent()
+
