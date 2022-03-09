@@ -21,20 +21,30 @@ from typing import List
 #Batch is the database put/get
 class Batch:
     def __init__(self, batch_id:str, sku:str, qty:int, eta:Optional[date]):
-        self.reference:batch_id
-        self.batchName=batch_id
+        self.reference=batch_id
         self.sku =sku;
         self.available_quantity=qty
         self.eta = eta
         self.allocated_orderlines=[]
-        
+    def __hash__(self):
+        return hash(self.reference)
+    def __gt__(self,other):
+        if self.eta is None:
+            return False
+        if other.eta is None:
+            return True
+        return self.eta > other.eta
+    
     def allocate(self,orderLine):
+        print("calling batch allocate orderLine:",orderLine)
         if self.can_allocate(orderLine)==True:
             self.available_quantity -=orderLine.qty
             self.allocated_orderlines.append(orderLine)
         
     def can_allocate(self,orderLine):
+        print("calling batch can_allocate orderLine:",orderLine,self.reference)
         if orderLine.qty>self.available_quantity or orderLine.sku!=self.sku or self.search(orderLine)==True:
+            print("false")
             return False
         return True
     #to unwind an orderline transaction
@@ -49,17 +59,12 @@ class Batch:
             if x==orderLine:
                 return True
         return False
-       
-        
-class Product:
-    sku:str
 
-class Customer:
-    cust_name:str
-    def place_order(sku, quantity):
-        #how to generate an orderref? 
-        return Order(str(quantity)+" units of "+sku,sku, quantity)
-        
+def test_batch_methods():
+    # test equal
+    b1 = Batch("batch-001", sku, batch_qty, eta=date.today())
+    b_old = Batch("batch-001", sku, batch_qty, eta=date.yesterday())
+    print(b1==b_old)
 
 # be careful with immutable objects. Assumption is it is magically good. only good for somethings
 # good for copy in python, good for thread safety which implies safe for microservice
@@ -70,7 +75,41 @@ class OrderLine:
     orderName : str
     sku : str
     qty : int
-    
+
+def allocate(line: OrderLine, batches: List[Batch]) -> str:
+    try:
+        batch = next(b for b in sorted(batches) if b.can_allocate(line))
+        print("batch in allocate:",batch.reference)
+        batch.allocate(line)
+        return batch.reference
+    except StopIteration:
+        raise OutOfStock(f"Out of stock for sku {line.sku}")
+
+
+#sort and take teh first one that can allocate, how to test out of stock? 
+def allocate_test(line:OrderLine, batches:List[Batch]):
+    try:
+       for x in sorted(batches):
+           if x.can_allocate(line):
+               x.allocate(line)
+               print("allocate_test batch:",x.reference, "OrderLine:",line.orderName,line.sku,line.qty)        
+               return x.reference
+    except StopIteration:
+        raise OutOfStock("out of stock")
+        
+
+class Product:
+    sku:str
+
+class OutOfStock(Exception):
+    pass
+
+class Customer:
+    cust_name:str
+    def place_order(sku, quantity):
+        #how to generate an orderref? 
+        return Order(str(quantity)+" units of "+sku,sku, quantity)
+        
 #this is mutable
 @dataclass(unsafe_hash=True)
 class Order:
@@ -156,8 +195,9 @@ def test_prefers_current_stock_batches_to_shipments():
     shipment_batch = Batch("shipment-batch", "RETRO-CLOCK", 100, eta=tomorrow)
     line = OrderLine("oref", "RETRO-CLOCK", 10)
 
-    allocate(line, [in_stock_batch, shipment_batch])
-
+    allocate_test(line, [in_stock_batch, shipment_batch])
+    print("in_stock_batch:",in_stock_batch.available_quantity)
+    print("shipment_batch:",shipment_batch.available_quantity)
     assert in_stock_batch.available_quantity == 90
     assert shipment_batch.available_quantity == 100
 
@@ -193,11 +233,11 @@ later = tomorrow + timedelta(days=10)
 
 
 def test_prefers_warehouse_batches_to_shipments():
-    print("I dont know whwat this is")
+    print("allocate warehouse batch first before shipment batch")
 
 
 def test_prefers_earlier_batches():
-    print("dont know thwa this iss")
+    print("allocate by time.eta if everything else equal?")
 
 
 test_value_class_order()
@@ -209,4 +249,7 @@ test_cannot_allocate_if_skus_do_not_match()
 test_deallocate()
 test_search_orderline()
 test_allocation_is_idempotent()
+test_prefers_current_stock_batches_to_shipments()
+#unit tests for batch
 
+#test_batch_methods()
