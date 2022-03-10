@@ -5,9 +5,10 @@ from typing import Optional
 import itertools
 import pytest
 from typing import List
-from guppy import hpy
-from memory_profiler import profile
-h=hpy()
+from datetime import timedelta
+today = date.today()
+tomorrow = today + timedelta(days=1)
+later = tomorrow + timedelta(days=10)
 
 # some design problems:
 # 1) autoincrement the id, if you autoincrement, save last known for startup
@@ -27,6 +28,10 @@ class Batch:
         self.available_quantity=qty
         self.eta = eta
         self.allocated_orderlines=[]
+    def __eq__(self, other):
+        if not isinstance(other, Batch):
+            return False
+        return other.reference == self.reference
     def __hash__(self):
         return hash(self.reference)
     def __gt__(self,other):
@@ -37,15 +42,14 @@ class Batch:
         return self.eta > other.eta
     
     def allocate(self,orderLine):
-        print("calling batch allocate orderLine:",orderLine)
+        #print("calling batch allocate orderLine:",orderLine)
         if self.can_allocate(orderLine)==True:
             self.available_quantity -=orderLine.qty
             self.allocated_orderlines.append(orderLine)
         
     def can_allocate(self,orderLine):
-        print("calling batch can_allocate orderLine:",orderLine,self.reference)
+        #print("calling batch can_allocate orderLine:",orderLine,self.reference)
         if orderLine.qty>self.available_quantity or orderLine.sku!=self.sku or self.search(orderLine)==True:
-            print("false")
             return False
         return True
     #to unwind an orderline transaction
@@ -63,6 +67,8 @@ class Batch:
 
 def test_batch_methods():
     # test equal
+    sku="random_sku"
+    batch_qty=10
     b1 = Batch("batch-001", sku, batch_qty, eta=date.today())
     b_old = Batch("batch-001", sku, batch_qty, eta=date.yesterday())
     print(b1==b_old)
@@ -80,24 +86,10 @@ class OrderLine:
 def allocate(line: OrderLine, batches: List[Batch]) -> str:
     try:
         batch = next(b for b in sorted(batches) if b.can_allocate(line))
-        print("batch in allocate:",batch.reference)
         batch.allocate(line)
         return batch.reference
     except StopIteration:
         raise OutOfStock(f"Out of stock for sku {line.sku}")
-
-
-#sort and take teh first one that can allocate, how to test out of stock? 
-def allocate_test(line:OrderLine, batches:List[Batch]):
-    try:
-       for x in sorted(batches):
-           if x.can_allocate(line):
-               x.allocate(line)
-               print("allocate_test batch:",x.reference, "OrderLine:",line.orderName,line.sku,line.qty)        
-               return x.reference
-    except StopIteration:
-        raise OutOfStock("out of stock")
-        
 
 class Product:
     sku:str
@@ -122,9 +114,9 @@ def test_value_class_order():
     o2= Order("o1_ref")
     o3= Order("ssss")
     o2.orderLines.append(OrderLine("ol","sku",100))
-    print("o1:",o1)
-    print("o2:",o2)
-    print("o1==o2:",o1==o2)
+    #print("o1:",o1)
+    #print("o2:",o2)
+    #print("o1==o2:",o1==o2)
     assert o1==o1,"o1 not equal to itself"
     assert o1==o2,"o1 should not be equal to o2 because of list"
     assert o1!=o3,"o1 not equal to o3"
@@ -196,9 +188,7 @@ def test_prefers_current_stock_batches_to_shipments():
     shipment_batch = Batch("shipment-batch", "RETRO-CLOCK", 100, eta=tomorrow)
     line = OrderLine("oref", "RETRO-CLOCK", 10)
 
-    allocate_test(line, [in_stock_batch, shipment_batch])
-    print("in_stock_batch:",in_stock_batch.available_quantity)
-    print("shipment_batch:",shipment_batch.available_quantity)
+    allocate(line, [in_stock_batch, shipment_batch])
     assert in_stock_batch.available_quantity == 90
     assert shipment_batch.available_quantity == 100
 
@@ -210,6 +200,7 @@ def test_prefers_earlier_batches():
     line = OrderLine("order1", "MINIMALIST-SPOON", 10)
 
     allocate(line, [medium, earliest, latest])
+    #print("test_prefers_earlier_batches:",earliest.available_quantity,medium.available_quantity,latest.available_quantity)
 
     assert earliest.available_quantity == 90
     assert medium.available_quantity == 100
@@ -221,26 +212,30 @@ def test_returns_allocated_batch_ref():
     shipment_batch = Batch("shipment-batch-ref", "HIGHBROW-POSTER", 100, eta=tomorrow)
     line = OrderLine("oref", "HIGHBROW-POSTER", 10)
     allocation = allocate(line, [in_stock_batch, shipment_batch])
+    #print("test_returns_allocated_batch_ref:",allocation,in_stock_batch.reference)
     assert allocation == in_stock_batch.reference
-
-    
-from datetime import timedelta
-today = date.today()
-tomorrow = today + timedelta(days=1)
-later = tomorrow + timedelta(days=10)
-
-
 
 
 
 def test_prefers_warehouse_batches_to_shipments():
-    print("allocate warehouse batch first before shipment batch")
+  print("allocate warehouse batch first before shipment batch")
+  
 
 
-def test_prefers_earlier_batches():
-    print("allocate by time.eta if everything else equal?")
-
-
+def test_Batch_hash():
+  earliest = Batch("speedy-batch", "MINIMALIST-SPOON", 100, eta=today)
+  medium = Batch("normal-batch", "MINIMALIST-SPOON", 100, eta=tomorrow)
+  latest = Batch("slow-batch", "MINIMALIST-SPOON", 100, eta=later)
+  dict_batch={}
+  dict_batch[earliest] = 1
+  dict_batch[medium] = 2
+  dict_batch[latest] = 3
+  print("earliest value:",dict_batch[earliest],dict_batch[medium],dict_batch[latest])
+  list_batch=[earliest, latest,medium]
+  print(list_batch)
+  print(sorted(list_batch))
+  print(hash(earliest),hash(medium),hash(latest))
+  
 test_value_class_order()
 test_allocating_to_a_batch_reduces_the_available_quantity()
 test_can_allocate_if_available_greater_than_required()
@@ -251,40 +246,6 @@ test_deallocate()
 test_search_orderline()
 test_allocation_is_idempotent()
 test_prefers_current_stock_batches_to_shipments()
-#unit tests for batch
-#print(h.heap())
-##test_batch_methods()
-#@profile(precision=4)
-#def my_func():
-#    a = [1] * (10 ** 6)
-#    b = [2] * (2 * 10 ** 7)
-#    del b
-#    return a
-#
-#my_func()
-#
-#
-#def make_large_file():
-#    fh = open("large.txt","w")
-#    for x in range(0,10000000):
-#        fh.write("this is a text line: "+str(x)+"\n")
-#    fh.close()
-##276M     
-#make_large_file()
-#@profile
-#def read_file():
-#    with open("large.txt") as fh:
-#        stuff = fh.readlines()
-#    print(len(stuff))
-#
-#read_file()
-#
-#@profile
-#def read_file1():
-#    num_line=0
-#    with open("large1.txt") as fh:
-#        single_line = fh.readline()
-#        num_line+=1
-#    print("num_line:",num_line)
-#
-#read_file1()
+#test_Batch_hash()
+test_prefers_earlier_batches()
+test_returns_allocated_batch_ref()
