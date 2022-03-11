@@ -4,7 +4,6 @@ class SomeObject:
     def __init__(self,name):
         self.name=name
         
-        
 s = SomeObject("asfd")
 stuff_dir_fn = dir(s)
 stuff_underscore = SomeObject.__dir__(s)

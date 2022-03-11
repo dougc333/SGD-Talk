@@ -1,3 +1,5 @@
+#POINT: objects need hash and eq if you want to equaity comparison and sets. Need .gt. if you want sorted to work
+
 #mutable objects cant be in sets because hash values can change
 #all immutable objects ate hashable so they can be in sets
 #use default or implement __hash__ to make it look immutabe
@@ -13,6 +15,7 @@ class Mutable:
   def __init__(self,l:list[int]):
     self.a=l
   def __hash__(self):
+      print("hash fn")
       return len(self.a)
   def __eq__(self,other):
       if not isinstance(other,Mutable):
