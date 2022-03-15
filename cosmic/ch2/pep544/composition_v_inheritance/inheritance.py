@@ -1,10 +1,19 @@
 from dataclasses import dataclass
-#no inheritance or composition. 
+from abc import ABC, abstractmethod
 
-@dataclass 
-class HourlyEmployee:
+#adding ABC here has no effect. Works without this declaration
+class BaseClass(ABC):
     name:str
     id:int
+    
+    @abstractmethod
+    def compute_pay() -> float:
+        pass
+    
+
+
+@dataclass 
+class HourlyEmployee(BaseClass):
     commission:float = 100.
     contracts_lanced:float = 0.
     pay_rate:float = 0.
@@ -15,9 +24,7 @@ class HourlyEmployee:
         return self.hours_worked * self.pay_rate + self.employer_cost + self.commission*self.contracts_lanced
 
 @dataclass
-class SalariedEmployee:
-    name:str
-    id:int
+class SalariedEmployee(BaseClass):
     commission:float = 100.
     contracts_lanced:float = 0.
     monthly_salary:float = 0.
@@ -27,14 +34,12 @@ class SalariedEmployee:
         return self.monthly_salary * self.percentage + self.commission * self.contracts_lanced
     
 @dataclass
-class FreeLancer:
-    name:str
-    id:int
+class FreeLancer(BaseClass):
     commission:float = 100.
     contracts_lanced:float = 0.
     pay_rate:float = 0.
     hours_worked:int = 0
-    vat_number:str = Optional(str)
+    vat_number:str = ""
     
     def compute_pay(self) -> float:
         return (self.pay_rate * self.hours_worked + self.commission * self.contracts_lanced)
