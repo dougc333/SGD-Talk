@@ -29,12 +29,10 @@ class CustomerSupport:
     
     def process_tickets(self, processing_strategy:TicketOrderingStrategy):
         ticket_list = processing_strategy.create_ordering(self.tickets)
-        return ticket_list
         
-        if len(ticket_list)==0:
-            return 
-        for ticket in ticket_list:
-            ticket.process()
-        
-        self.tickets = []
+        #is this better than the for loop? The 1 line generator exexuting the iterator? 
+        list(ticket.process() for ticket in ticket_list)
+        #for ticket in ticket_list:
+        #    ticket.process()
+        #removed the emptying of the list so I can see the ordering change
         

@@ -1,5 +1,28 @@
+from abc import abstractmethod,ABC
 from support.ticket import SupportTicket
 import random
+from typing import Protocol
+
+class TicketProcessing(Protocol):
+    @abstractmethod
+    def process_ticket(self, tickets:list[SupportTicket])-> list[SupportTicket]:
+        print("PT ABSTRACT")
+        raise NotImplementedError
+
+#saves code, duck typing system figures out FIFOProcessing part of TicketProcessing
+class FIFOProcessing:
+    def process_ticket(self,tickets:list[SupportTicket])-> list[SupportTicket]:
+        print("PT FIFO")
+        return tickets.copy()
+        
+class FILOProcessing:
+    def process_ticket(self,tickets:list[SupportTicket])-> list[SupportTicket]:
+        return reversed(tickets)
+
+class RandomProcessing:
+    def process_ticket(self, tickets:list[SupportTicket])-> list[SupportTicket]:
+        return random.sample(tickets, len(tickets))
+
 
 class CustomerSupport:
     def __init__(self):
@@ -8,18 +31,11 @@ class CustomerSupport:
     def add_ticket(self,ticket: SupportTicket):
         self.tickets.append(ticket)
     
-    def process_tickets(self, processing_strategy:str = "fifo"):
-        if len(self.tickets)==0:
-            return 
-        if processing_strategy=="fifo":
-            for ticket in self.tickets:
-                ticket.process()
-        elif processing_strategy=="filo":
-            for ticket in reversed(self.tickets):
-                ticket.process()
-        elif processing_strategy=="random":
-            random_list = random.sample(self.tickets, len(self.tickets))
-            for ticket in random_list:
-                ticket.process()
-        self.tickets = []
+    def process_tickets(self, processing_strategy:TicketProcessing):
+        
+        ticket_ordering_list = processing_strategy.process_ticket(self.tickets)
+        
+        for ticket in ticket_ordering_list:
+            ticket.process()
+            
         
