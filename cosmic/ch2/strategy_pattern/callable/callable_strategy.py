@@ -16,7 +16,8 @@ def main():
     print("FILO")
     app.process_tickets(FILOProcessing())
     print("FIFO")
-    app.process_tickets(FIFOProcessing())
+    # no () for fn.
+    app.process_tickets(FIFOProcessing)
     print("Random")
     app.process_tickets(RandomProcessing())
 
