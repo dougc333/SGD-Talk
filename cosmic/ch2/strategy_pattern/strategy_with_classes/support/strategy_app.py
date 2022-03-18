@@ -1,6 +1,6 @@
 #
 from abc import ABC, abstractmethod
-from support.ticket import SupportTicket
+from support.strategy_ticket import SupportTicket
 import random
 
 class TicketOrderingStrategy(ABC):
