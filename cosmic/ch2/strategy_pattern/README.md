@@ -1,3 +1,6 @@
+Interfaces 
+this is first in OO programming
+then factories
 progression from strategy with ABC to protocols to functions
 1) without_strategy: if statements in app.py. this looks like spaghetti code. 
 2) strategy_with_classes:  strategy_app.py, strategy_ticket.py, strategy.py. Implementation using abstract base classes. 
