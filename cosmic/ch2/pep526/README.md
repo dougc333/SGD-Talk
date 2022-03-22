@@ -1,4 +1,6 @@
-new style of writing python code
+pep526=variable annotations,
+
+
 this is optional; does not affect runtime
 might be part of style guides
 
