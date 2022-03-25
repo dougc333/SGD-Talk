@@ -1,16 +1,17 @@
 
 from hashlib import blake2b
-from dataclasses import dataclass
 from re import U
 
+#why the hell isnt this in a class? make it a class variable? 
 users = []
 
 class User:
-    name:str
-    password:str=blake2b(password.encode('UTF-8')).hexdigest()
-    email:str
-    plan:str = "basic"
-    reset_code:str = ""
+    def __init__(self,name:str, password:str, email:str):
+        self.name = name
+        self.password:str=blake2b(password.encode('UTF-8')).hexdigest()
+        self.email: str = email
+        self.plan:str = "basic"
+        self.reset_code:str = ""
 
     def __repr__(self)-> str:
         return f"Name:{self.name}, EMAIL:{self.email}, PASSWORD:{self.password}"
@@ -22,12 +23,12 @@ class User:
     
 def create_user(name:str, password:str, email:str)-> User:
     print(f"DB:creating user database entry for {name} and email:{email}")
-    new_user = User(name,email)
+    new_user = User(name,password,email)
     users.append(new_user)
     return new_user
 
 def find_user(email:str)-> User:
     for u in users:
-        if users.email == email:
+        if u.email == email:
             return u
     raise Exception("user not found")

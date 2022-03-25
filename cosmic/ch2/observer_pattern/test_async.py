@@ -17,3 +17,5 @@ def main():
     for work in [15,10,5,2]:
         work_queue.put(work)
     tasks = Task(task("One",work_queue), task("Two",work_queue))
+    done = False
+    
