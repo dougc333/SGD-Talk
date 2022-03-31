@@ -1,5 +1,10 @@
 
 
+to install psycopg2 for psql on mac. We dont need native install of posgresql because we are using docker
+but we need the command line tool psql. To install psql we need psycopg2. When homebrew installs psycopg2 it
+installs and runs as a service postgresql. You have to manually find the pid and shut this off using brew service stop. 
+
+
 brew install libpq --build-from-source
 brew install openssl
 

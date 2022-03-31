@@ -16,3 +16,9 @@ pytest --setup-only
 pytest --setup-show
 
 https://github.com/obestwalter/pytest-fixtures-introduction/tree/master/tests
+
+pytest
+1) pytest.fixtures annotation is a shortcut for DI. 
+put the annotation on a function then pytest.fixtures will intantiate this for you
+put the pytest.fixtures function name as an argument into fns which you want the code in pytest.fixtures to be executed
+advantage: can put the pytest.fixture in cache. 
