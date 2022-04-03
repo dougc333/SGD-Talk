@@ -1,1 +1,0 @@
-https://github.com/cosmicpython/book/blob/master/chapter_08_events_and_message_bus.asciidoc
