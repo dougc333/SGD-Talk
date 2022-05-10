@@ -4,8 +4,8 @@
 #
 #################################################
 version
-install.packages("jags")
-library("jags")
+install.packages("rjags")
+library("rjags")
 # Dataset 1
 x1 <- c( 125.2, 131.1, 121.5, 122.3, 119.3,
          123.5, 130.2, 122.9, 129.2, 127.1 )
