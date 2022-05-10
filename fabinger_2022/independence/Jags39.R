@@ -43,11 +43,6 @@ mod1 <- "model{
 # Write the model out to a file for later
 writeLines( mod1, "mod1.jags" )
 
-# Set up the data for Jags
-data1 <- list( "x1", "n1", "x2", "n2" )
-
-# List the parameters we want to save
-parm1 <- c( "mu1", "sig1", "mu2", "sig2", "mudiff1" )
 
 # Create a set of initial values to start at
 inits1 <- function(){
