@@ -1,1 +1,0 @@
-https://sethmlarson.dev/blog/api-design-for-an-async-open

@@ -1,0 +1,4 @@
+In this function contained in the corresponding .wmf file, the system is 
+monitoring the delivery process, particularly for the pick up.  If within five
+minutes of the committed pick up time a pick up confirmation has not been
+reported, then the system reports a Pick Up Alert.
