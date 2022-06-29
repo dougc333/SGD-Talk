@@ -1,3 +1,0 @@
-In this function contained in the corresponding .wmf file, the system is 
-sorting and selecting the five highest ranking bids and sending them to the
-store, which prefers manual assignment.

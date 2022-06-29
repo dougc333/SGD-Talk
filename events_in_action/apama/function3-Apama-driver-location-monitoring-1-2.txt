@@ -1,6 +1,0 @@
-In this function contained in the two corresponding .wmf files, the system is 
-monitoring drivers' GPS location changes.  With each driver's location change,
-the system dynamically changes the filtering criteria of selecting the matching
-drivers on the delivery requests.  This is easily achieved by terminating the 
-old listener for the old set of criteria, and re-establish a new listener for 
-the new set of criteria at run-time.

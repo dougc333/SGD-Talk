@@ -1,9 +1,0 @@
-In this function contained in the corresponding .wmf file, there are two cases.
-
-In the auto case, the system waits for the first DeliveryBid, then sends out
-the Assignment when receiving the first bid (and then continues monitoring the
-delivery process.)  
-
-In the manual case, the systems listens for all delivery bids from drivers who
-would respond, then groups these bids by ranking (so that after two minutes, it
-can select the five highest ranking bids and send them to the store.)

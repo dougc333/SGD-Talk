@@ -1,4 +1,0 @@
-The corresponding .wmf files contain the outline view of the event definitions
-used in the sample.  These include all events defined in EPDL and the spec, as
-well as the other internal events used in the sample that are not defined in
-EPDL and the spec.
