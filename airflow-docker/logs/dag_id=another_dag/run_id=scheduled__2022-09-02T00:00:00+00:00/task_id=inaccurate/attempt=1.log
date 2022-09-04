@@ -1,0 +1,28 @@
+[2022-09-03T17:28:57.497+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: another_dag.inaccurate scheduled__2022-09-02T00:00:00+00:00 [queued]>
+[2022-09-03T17:28:57.505+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: another_dag.inaccurate scheduled__2022-09-02T00:00:00+00:00 [queued]>
+[2022-09-03T17:28:57.506+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-03T17:28:57.507+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2022-09-03T17:28:57.508+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2022-09-03T17:28:57.515+0000] {taskinstance.py:1389} INFO - Executing <Task(BashOperator): inaccurate> on 2022-09-02 00:00:00+00:00
+[2022-09-03T17:28:57.520+0000] {standard_task_runner.py:52} INFO - Started process 74 to run task
+[2022-09-03T17:28:57.522+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'another_dag', 'inaccurate', 'scheduled__2022-09-02T00:00:00+00:00', '--job-id', '679', '--raw', '--subdir', 'DAGS_FOLDER/another_dag.py', '--cfg-path', '/tmp/tmpdydt47cr', '--error-file', '/tmp/tmpk__9kh_1']
+[2022-09-03T17:28:57.524+0000] {standard_task_runner.py:80} INFO - Job 679: Subtask inaccurate
+[2022-09-03T17:28:57.570+0000] {task_command.py:371} INFO - Running <TaskInstance: another_dag.inaccurate scheduled__2022-09-02T00:00:00+00:00 [running]> on host 071ffc5e88f8
+[2022-09-03T17:28:57.613+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=another_dag
+AIRFLOW_CTX_TASK_ID=inaccurate
+AIRFLOW_CTX_EXECUTION_DATE=2022-09-02T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-09-02T00:00:00+00:00
+[2022-09-03T17:28:57.615+0000] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-09-03T17:28:57.617+0000] {subprocess.py:74} INFO - Running command: ['/bin/bash', '-c', "echo 'inaccurate'"]
+[2022-09-03T17:28:57.628+0000] {subprocess.py:85} INFO - Output:
+[2022-09-03T17:28:57.629+0000] {subprocess.py:92} INFO - inaccurate
+[2022-09-03T17:28:57.631+0000] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-09-03T17:28:57.652+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=another_dag, task_id=inaccurate, execution_date=20220902T000000, start_date=20220903T172857, end_date=20220903T172857
+[2022-09-03T17:28:57.696+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-09-03T17:28:57.718+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check
