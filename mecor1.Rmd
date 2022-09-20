@@ -1,0 +1,50 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+X <- rep(c(0,1), 500)
+Y <- 2 * X + rnorm(1000, 0, 1) # estimand: 2
+# introduce measurement error
+Y_star <- 1.1 * Y + rnorm(1000, 0, 1)
+trial <- cbind.data.frame(X = X, Y_star = Y_star)
+# simulate an external validation data set
+Y <- rnorm(100, 2, 1)
+Y_star <- 1.1 * Y + rnorm(500, 0, 1)
+trial_ext <- cbind.data.frame(Y = Y, Y_star = Y_star)
+uncor_fit <- lm(Y_star ~ X, data = trial)
+uncor_fit$coefficients
+```
+
+```{r}
+memod_fit <- lm(Y_star ~ Y, data = trial_ext)
+memod_fit$coefficients
+cor_fit <- mecor(MeasErrorExt(substitute = Y_star, model = memod_fit) ~ X,
+                 data = trial,
+                 method = "standard",
+                 B = 0 # for bootstrap intervals, set to e.g. 999
+                 )
+summary(cor_fit, fieller = TRUE, zerovar = TRUE)
+```
+```{r}
+sens_fit <- mecor(MeasErrorExt(substitute = Y_star, 
+                               model = list(coef = c(0, 1.1))) ~ X, 
+                  data = trial,
+                  method = "standard"
+                  )
+sens_fit
+```
+
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
