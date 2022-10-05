@@ -1,0 +1,120 @@
+[2022-10-05T00:00:17.614+0000] {processor.py:153} INFO - Started process (PID=244) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:00:17.615+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:00:17.616+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:00:17.616+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:00:17.628+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:00:17.630+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:00:17.831+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:00:17.830+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:00:17.842+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:00:17.842+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:00:17.848+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.236 seconds
+[2022-10-05T00:00:48.539+0000] {processor.py:153} INFO - Started process (PID=305) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:00:48.541+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:00:48.542+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:00:48.542+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:00:48.553+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:00:48.554+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:00:48.748+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:00:48.748+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:00:48.760+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:00:48.760+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:00:48.768+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.230 seconds
+[2022-10-05T00:01:19.469+0000] {processor.py:153} INFO - Started process (PID=373) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:01:19.471+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:01:19.472+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:01:19.472+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:01:19.483+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:01:19.485+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:01:19.674+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:01:19.674+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:01:19.686+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:01:19.686+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:01:19.694+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.226 seconds
+[2022-10-05T00:01:50.484+0000] {processor.py:153} INFO - Started process (PID=442) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:01:50.485+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:01:50.486+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:01:50.486+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:01:50.499+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:01:50.501+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:01:50.703+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:01:50.703+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:01:50.716+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:01:50.716+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:01:50.722+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.241 seconds
+[2022-10-05T00:02:21.222+0000] {processor.py:153} INFO - Started process (PID=517) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:02:21.223+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:02:21.225+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:02:21.225+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:02:21.236+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:02:21.238+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:02:21.425+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:02:21.425+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:02:21.437+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:02:21.436+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:02:21.444+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.224 seconds
+[2022-10-05T00:02:51.974+0000] {processor.py:153} INFO - Started process (PID=589) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:02:51.976+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:02:51.977+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:02:51.977+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:02:51.987+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:02:51.989+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:02:52.177+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:02:52.177+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:02:52.189+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:02:52.189+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:02:52.196+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.224 seconds
+[2022-10-05T00:03:22.784+0000] {processor.py:153} INFO - Started process (PID=661) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:03:22.785+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:03:22.787+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:03:22.786+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:03:22.797+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:03:22.800+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:03:22.988+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:03:22.988+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:03:23.000+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:03:22.999+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:03:23.006+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.224 seconds
+[2022-10-05T00:03:53.588+0000] {processor.py:153} INFO - Started process (PID=728) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:03:53.590+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:03:53.591+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:03:53.591+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:03:53.602+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:03:53.604+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:03:53.816+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:03:53.816+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:03:53.828+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:03:53.828+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:03:53.836+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.250 seconds
+[2022-10-05T00:04:24.557+0000] {processor.py:153} INFO - Started process (PID=791) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:04:24.559+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:04:24.560+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:04:24.560+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:04:24.573+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:04:24.575+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:04:24.770+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:04:24.770+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:04:24.782+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:04:24.782+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:04:24.789+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.234 seconds
+[2022-10-05T00:04:55.612+0000] {processor.py:153} INFO - Started process (PID=864) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:04:55.613+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:04:55.614+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:04:55.614+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:04:55.627+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:04:55.628+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:04:55.817+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:04:55.817+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:04:55.829+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:04:55.829+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:04:55.836+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.226 seconds
+[2022-10-05T00:05:26.544+0000] {processor.py:153} INFO - Started process (PID=934) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:05:26.545+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:05:26.547+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:05:26.546+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:05:26.561+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:05:26.562+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:05:26.745+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:05:26.745+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:05:26.757+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:05:26.757+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:05:26.763+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.222 seconds
+[2022-10-05T00:05:57.548+0000] {processor.py:153} INFO - Started process (PID=999) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:05:57.550+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:05:57.551+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:05:57.551+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:05:57.562+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:05:57.564+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:05:57.757+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:05:57.757+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:05:57.770+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:05:57.770+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:05:57.776+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.229 seconds
+[2022-10-05T00:06:28.630+0000] {processor.py:153} INFO - Started process (PID=1065) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:06:28.631+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:06:28.632+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:06:28.632+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:06:28.643+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:06:28.645+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:06:28.840+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:06:28.840+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:06:28.852+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:06:28.852+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:06:28.858+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.231 seconds
+[2022-10-05T00:06:59.547+0000] {processor.py:153} INFO - Started process (PID=1134) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:06:59.550+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:06:59.551+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:06:59.551+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:06:59.563+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:06:59.565+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:06:59.753+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:06:59.752+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:06:59.764+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:06:59.764+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:06:59.771+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.225 seconds
+[2022-10-05T00:07:30.433+0000] {processor.py:153} INFO - Started process (PID=1205) to work on /opt/airflow/dags/sensor.py
+[2022-10-05T00:07:30.434+0000] {processor.py:640} INFO - Processing file /opt/airflow/dags/sensor.py for tasks to queue
+[2022-10-05T00:07:30.436+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:07:30.436+0000] {dagbag.py:508} INFO - Filling up the DagBag from /opt/airflow/dags/sensor.py
+[2022-10-05T00:07:30.448+0000] {logging_mixin.py:115} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py:156 DeprecationWarning: none_failed_or_skipped Trigger Rule is deprecated. Please use `none_failed_min_one_success`.
+[2022-10-05T00:07:30.450+0000] {processor.py:650} INFO - DAG(s) dict_keys(['dag_sensor']) retrieved from /opt/airflow/dags/sensor.py
+[2022-10-05T00:07:30.648+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:07:30.648+0000] {dag.py:2429} INFO - Sync 1 DAGs
+[2022-10-05T00:07:30.660+0000] {logging_mixin.py:115} INFO - [2022-10-05T00:07:30.660+0000] {dag.py:2981} INFO - Setting next_dagrun for dag_sensor to 2022-10-04T00:00:00+00:00, run_after=2022-10-05T00:00:00+00:00
+[2022-10-05T00:07:30.668+0000] {processor.py:161} INFO - Processing /opt/airflow/dags/sensor.py took 0.237 seconds
