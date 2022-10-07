@@ -12,20 +12,31 @@
     <form method="POST" action="/">
         {{ form.csrf_token }}
         <p>additional text here</p>
-        {{form.username.label}}
-        {{form.username}}
+        {{form.username.label  }}
+        {{form.username(class_='style-label')}}
         <ul>
             {% for error in form.username.errors %}
             <li>{{ error }}</li>
             {% endfor %}
         </ul>
-        {{form.password.label}}
-        {{ form.password }}
+        {{form.password1.label}}
+        {{ form.password1 }}
+        {{form.password2.label}}
+        {{ form.password2 }}
+
         <ul>
             {% for error in form.password.errors %}
             <li>{{ error }}</li>
             {% endfor %}
         </ul>
+        {{form.age.label}}
+        {{ form.age }}
+        <ul>
+            {% for error in form.age.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        
               
         <button >Login</button>
 
