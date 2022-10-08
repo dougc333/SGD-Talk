@@ -5,10 +5,12 @@ from .extensions import db, migrate
 from .routes.api import api
 from .routes.main import main
 
+db = SQLAlchemy()
 #export FLASK_APP=sqlalchemy_blueprint
 def create_app():
     app=Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"   
+    app.config["SECRET_KEY"]="asdfasdf"
     
     db.init_app(app)
     migrate.init_app(app,db)
