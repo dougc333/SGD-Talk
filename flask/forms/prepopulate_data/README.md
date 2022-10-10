@@ -7,4 +7,4 @@ teh problem is it looks funny puttiing routes inside the create_app function. Th
 do the validation in JS before reaching the server. The problem with reaching the server is you can get an exception in 
 the server causing the server process to stop for ALL clients. 
 
-1) adding default values in the server LoginForm
+1) adding default values in the server LoginForm. LoginForm is 

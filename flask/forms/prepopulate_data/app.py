@@ -2,7 +2,6 @@ from ast import Pass
 from tokenize import String
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
-from numpy import character
 from pytest import PytestAssertRewriteWarning
 from wtforms import StringField, IntegerField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Length, AnyOf, Email
@@ -22,16 +21,25 @@ class LoginForm(FlaskForm):
     yesno = BooleanField("yesno")
     email = StringField('email')
 
+class DataClassForm(FlaskForm):
+    user = StringField('UserName',validators=[
+        InputRequired()
+    ])
+    gender = BooleanField('M/F', validators=[
+        InputRequired()
+    ])
+
 class User:
     def __init__(self, username, age, email):
         self.username=username
         self.age = age
         self.email = email
+
 #try replacing with dataclass
 @dataclass
 class UserDataClass:
-    name: str
-    gender: str
+    name: str = "default username"
+    gender: str = "M"
 
     
 
@@ -52,5 +60,10 @@ def create_app():
         
         return render_template('index.html', form=form)
 
-
+    @app.route("/dataclass", methods=['GET','POST'])
+    def test():
+        form_dataclass = DataClassForm(obj=UserDataClass())
+        if form_dataclass.validate_on_submit():
+            return "/dataclass route login form with user dataclass object not valid "
+        return render_template("index_dataclass.html",form=form_dataclass)
     return app
