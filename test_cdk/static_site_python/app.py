@@ -1,41 +1,15 @@
+#!/usr/bin/env python3
 import os
-from aws_cdk import App, Environment
-from site_stack import StaticSiteStack
+
+import aws_cdk as cdk
+
+from static_site_python.static_site_python_stack import StaticSitePythonStack
 
 
-app = App()
-props = {
-    "namespace": app.node.try_get_context("namespace"),
-    "domain_name": app.node.try_get_context("domain_name"),
-    "sub_domain_name": app.node.try_get_context("sub_domain_name"),
-    "domain_certificate_arn": app.node.try_get_context(
-        "domain_certificate_arn"
-    ),
-    "enable_s3_website_endpoint": app.node.try_get_context(
-        "enable_s3_website_endpoint"
-    ),
-    "origin_custom_header_parameter_name": app.node.try_get_context(
-        "origin_custom_header_parameter_name"
-    ),
-    "hosted_zone_id": app.node.try_get_context("hosted_zone_id"),
-    "hosted_zone_name": app.node.try_get_context("hosted_zone_name"),
-}
-
-env = Environment(
-    account=os.environ.get(
-        "CDK_DEPLOY_ACCOUNT", os.environ.get("669059827483")
-    ),
-    region=os.environ.get(
-        "CDK_DEPLOY_REGION", os.environ.get("us-west2")
-    ),
-)
-
-StaticSite = StaticSiteStack(
-    scope=app,
-    construct_id=f"{props['namespace']}-stack",
-    props=props,
-    env=env,
-    description="Static Site using S3, CloudFront and Route53",
-)
+app = cdk.App()
+StaticSitePythonStack(app, "StaticSitePythonStack",
+    #env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
+    env=cdk.Environment(account='669059827483', region='us-west-2'),
+    )
 
 app.synth()
