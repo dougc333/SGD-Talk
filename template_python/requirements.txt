@@ -1,9 +1,0 @@
-pylint
-pytest
-pytest-cov
-flask
-uvicorn
-SQLAlchemy
-Flask-WTF
-
-

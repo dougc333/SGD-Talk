@@ -1,0 +1,16 @@
+{
+  "name": "test_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-cdk/aws-s3": "^1.178.0",
+    "aws-cdk": "^2.47.0",
+    "aws-cdk-lib": "^2.47.0"
+  }
+}
