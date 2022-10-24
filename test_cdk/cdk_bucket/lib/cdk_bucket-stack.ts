@@ -16,10 +16,10 @@ export class CdkBucketStack extends cdk.Stack {
     //autoDeleteObjects requires removalPolisy.DESTROY
     //s3Bucket.grantPublicAccess() same as publicReadAccess from docs(not tested)
     //s3Bucket.grantRead(new iam.AccountPrincipal())
-    new s3deploy.BucketDeployment(this, 'DeployFiles', {
-      sources: [s3deploy.Source.asset('./deploy_data')], 
-      destinationBucket: s3Bucket,
-    });
+    //new s3deploy.BucketDeployment(this, 'DeployFiles', {
+    //  sources: [s3deploy.Source.asset('./deploy_data')], 
+    //  destinationBucket: s3Bucket,
+    //});
 
   }
 }
