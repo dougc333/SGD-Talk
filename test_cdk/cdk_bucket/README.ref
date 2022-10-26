@@ -54,6 +54,7 @@ May need delete bucket. can not rename bucket.
 2) xxxx
 
 
-Very difficult to understand if the tech writer doesnt understand something they leave it off. They dont test the api. docs full of underspecified terms without examples
+Very difficult to understand if the tech writer doesnt understand something they leave it off. 
+They dont test the api. docs full of underspecified terms without examples
 
-
+How to add a temp url to s3? 
