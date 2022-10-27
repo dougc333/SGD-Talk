@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script >
+        "use strict"
+        //x=10 test if strict mode working
+        var first=function(){
+            var stuff = document.querySelectorAll("button")
+            var printIndex = (index)=>{
+                console.log("first printIndex this:",this)
+                console.log("index:",index)
+            }
+            //arrow function doesnt have a this pointer. does the this=that fix? 
+            for (var i=0;i<stuff.length; i++){
+                stuff[i].addEventListener('click',()=>{
+                    console.log("adding listener to:",i,typeof(stuff[i]))
+                    printIndex(i)
+                });
+            }
+        };
+        //https://stackoverflow.com/questions/36946159/adding-addeventlistener-in-loop-only-works-for-last-button?noredirect=1&lq=1
+        var bind_loop = function(){
+            var stuff = document.querySelectorAll("button")
+            var printIndex = (index)=>{
+                console.log("bind_loop printIndex this:",this)
+                console.log("index:",index)
+            }
+
+            for (var i=0;i<stuff.length; i++){
+                console.log("stuff[i]:",stuff[i])
+                console.log("typeof stuff[i]:",typeof(stuff[i]))
+                console.log("stuff[i].id:",stuff[i].id)
+                
+                var element = document.getElementById(stuff[i].id)
+                //tricky need i in function to make local scope to get thiw to work
+                element.addEventListener('click',function(i){
+                    console.log("in addEventListener i:",i)
+                    printIndex(i)
+                }.bind(null,i));
+            }
+        };
+
+        //bind reference
+        // If the function is not in strict mode, null and undefined will be replaced with the global object, 
+        //and primitive values will be converted to objects. 
+        //The value is ignored if the bound function is constructed using the new operator.
+        //bind seems dangerous but it exists in legacy code
+        // so we have to document it...
+
+
+
+
+        var in_loop=function(){
+            var stuff = document.querySelectorAll("button")
+            var printIndex = (index)=>{
+                console.log("in_loop printIndex this:",this)
+                console.log("index:",index)
+            }
+
+            for (const i in stuff){
+                console.log(stuff[i], typeof(stuff[i]))
+                //stuff[i].addEventListener('click',()=>{
+                //    console.log("adding listener to:",i)
+                //    printIndex(i)
+            }
+        };
+        //type first() in browser debug tools and click button
+        var second=function(){
+            var stuff = document.querySelectorAll("button")
+            var printIndex = (index)=>{
+                console.log("second printIndex this:",this)
+                console.log("index:",index)
+            }
+
+            for (let i=0;i<stuff.length; i++){
+                stuff[i].addEventListener('click',()=>{
+                    console.log("adding listener to:",i)
+                    printIndex(i)
+                });
+            }
+        };
+
+        var third=function(){
+            var stuff = document.querySelectorAll("button")
+            var printIndex = (index)=>{
+                console.log("third printIndex this:",this)
+                console.log("index:",index)
+            }
+
+            stuff.forEach(function(element, index){
+                element.addEventListener('click',()=>{
+                    console.log("adding listener to:",index)
+                    printIndex(index)
+                });
+            })
+
+        };
+        //use strict makes first() an error
+        //let doesnt work for async inner loop. 
+        //why? 
+
+    </script>
+    <title>Document</title>
+
+</head>
+<body>
+    <div>
+        <button id="one">one</button>
+        <button id="two">two</button>
+        <button id="three">three</button>
+        <button id="four">four</button>
+        <button id="five">five</button>
+    </div>
+</body>
+</html>
