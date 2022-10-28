@@ -1,0 +1,9 @@
+amplify is an abstraction for APIGW+lambda
+
+https://docs.amplify.aws/start/q/integration/react/
+when following the instructions in the amplfiy tutorial.. 
+the amplify aws cli command is only entered into $PATH in a global install.In a a local install you have to do 
+./node_modules/@aws-amplify/cli/lib/run.js
+
+which is the alias for the amplify command
+

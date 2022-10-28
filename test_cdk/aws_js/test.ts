@@ -10,3 +10,4 @@ const { DynamoDBClient, ListTablesCommand } = require("@aws-sdk/client-dynamodb"
     console.error(err);
   }
 })();
+
