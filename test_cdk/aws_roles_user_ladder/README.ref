@@ -1,0 +1,5 @@
+one admin
+
+1) create admin to create other users but need boundary permissions to prevent the subadmin from going beyond subdomain, ie. ML only
+
+2) how to use access analyzer with integration test

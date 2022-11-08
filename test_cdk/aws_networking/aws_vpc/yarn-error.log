@@ -1,0 +1,63 @@
+Arguments: 
+  /Users/dougchang/.nvm/versions/node/v18.0.0/bin/node /Users/dougchang/.nvm/versions/node/v18.0.0/bin/yarn add @aws-cdk-lib
+
+PATH: 
+  /Users/dougchang/.nvm/versions/node/v18.0.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Users/dougchang/.local/bin:/opt/homebrew/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.0.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@aws-cdk-lib: Request "https://registry.yarnpkg.com/@aws-cdk-lib" returned a 405
+      at params.callback [as _callback] (/Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/yarn/lib/cli.js:66154:18)
+      at self.callback (/Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (/Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:527:28)
+      at IncomingMessage.<anonymous> (/Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:641:28)
+      at IncomingMessage.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1344:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "aws_vpc",
+    "version": "0.1.0",
+    "bin": {
+      "aws_vpc": "bin/aws_vpc.js"
+    },
+    "scripts": {
+      "build": "tsc",
+      "watch": "tsc -w",
+      "test": "jest",
+      "cdk": "cdk"
+    },
+    "devDependencies": {
+      "@types/jest": "^27.5.2",
+      "@types/node": "10.17.27",
+      "@types/prettier": "2.6.0",
+      "jest": "^27.5.1",
+      "ts-jest": "^27.1.4",
+      "aws-cdk": "2.50.0",
+      "ts-node": "^10.9.1",
+      "typescript": "~3.9.7"
+    },
+    "dependencies": {
+      "aws-cdk-lib": "2.50.0",
+      "constructs": "^10.0.0",
+      "source-map-support": "^0.5.21"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
