@@ -13,6 +13,7 @@
             ],
             "runtimeVersion": "18.0.0",
             "runtimeExecutable": "node",
+            "runtimeArgs": ["--preserve-symlinks"],
             "program": "./node_modules/.bin/cdk",
             "args": ["deploy","--verbose","--debug"],
             "console": "internalConsole", 

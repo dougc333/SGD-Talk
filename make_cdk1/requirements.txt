@@ -1,0 +1,8 @@
+tsc
+typescript
+yargs
+@types/node
+os
+path
+@types/yargs
+fs-extra
