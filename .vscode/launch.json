@@ -8,8 +8,10 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "/Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/aws-cdk/bin/cdk",
-            "args":["ls"],
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
