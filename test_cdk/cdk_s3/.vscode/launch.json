@@ -16,6 +16,12 @@
             "runtimeArgs": ["--preserve-symlinks"],
             "program": "./node_modules/.bin/cdk",
             "args": ["deploy","--verbose","--debug"],
+            "env":{
+                "CDK_DEFAULT_REGION":"us-west-2",
+                "CDK_DEFAULT_ACCOUNT":"669059827483",
+                "CDK_DEPLOY_ACCOUNT":"669059827483",
+                "CDK_DEPLOY_REGION":"us-west-2",
+            },
             "console": "internalConsole", 
             "outputCapture": "std",
         }
