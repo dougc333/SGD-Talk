@@ -1,0 +1,62 @@
+Arguments: 
+  /Users/dougchang/.nvm/versions/node/v18.0.0/bin/node /Users/dougchang/.nvm/versions/node/v18.0.0/bin/yarn install
+
+PATH: 
+  /Users/dougchang/.nvm/versions/node/v18.0.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Users/dougchang/.local/bin:/opt/homebrew/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.0.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/dougchang/Documents/GitHub/test_stuff/test_lerna1/packages/api/auth0/package.json: Unexpected string in JSON at position 548
+      at JSON.parse (<anonymous>)
+      at /Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/dougchang/.nvm/versions/node/v18.0.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "auth0",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "files": [
+      "lib"
+    ],
+    "scripts": {
+      "build": "run -s clean build:tsc",
+      "build:tsc": "tsc -b",
+      "clean": "rimraf lib coverage tsconfig.tsbuildinfo",
+      "start": "node lib/index.js",
+      "start:dev": "nodemon"
+    },
+    "repository":{
+      "type":"git",
+      "url":"https://github.com/auth0-samples/auth0-express-api-samples.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "nodemon": "^2.0.20"
+    },
+    "dependencies": {
+      "@zoomify/api-common":"^1.0.0"
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "express-jwt": "^7.7.7",
+      "express-jwt-authz": "^2.4.1",
+      "jwks-rsa": "^3.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

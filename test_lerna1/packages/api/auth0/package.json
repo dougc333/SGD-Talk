@@ -1,0 +1,32 @@
+{
+  "name": "auth0",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "run -s clean build:tsc",
+    "build:tsc": "tsc -b",
+    "clean": "rimraf lib coverage tsconfig.tsbuildinfo",
+    "start": "node lib/index.js",
+    "start:dev": "nodemon"
+  },
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/auth0-samples/auth0-express-api-samples.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "@zoomify/api-common":"^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-jwt": "^7.7.7",
+    "express-jwt-authz": "^2.4.1",
+    "jwks-rsa": "^3.0.0"
+  }
+}

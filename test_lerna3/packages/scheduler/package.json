@@ -1,0 +1,31 @@
+{
+  "name": "scheduler",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "doug chang <dougc@stanfordalumni.org>",
+  "homepage": "https://github.com/dougc333/test_stuff#readme",
+  "license": "ISC",
+  "main": "lib/scheduler.js",
+  "typings":"lib/scheduler.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig":{
+     "access":"public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougc333/test_stuff.git"
+  },
+  "scripts": {
+    "tsc":"tsc",
+    "test": "node ./__tests__/scheduler.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dougc333/test_stuff/issues"
+  }
+}
