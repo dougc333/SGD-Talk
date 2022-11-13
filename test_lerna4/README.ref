@@ -1,0 +1,10 @@
+yarn init
+answer true to private
+lerna init on high level, parent need to set private true
+
+
+
+configure tsconfig.json, package.json for packages under packages
+under packages the modules use yarn init -y. dont need to set private true
+
+
