@@ -1,0 +1,9 @@
+{
+  "name": "read_file",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "/Users/dougchang/.nvm/versions/node/v18.0.0/bin/tsc *.ts"
+  }
+}
