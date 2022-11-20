@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ExpressionApp",
+            "request": "launch",
+            "mainClass": "ExpressionApp",
+            "projectName": "test_stuff_2f5a5721"
+        },
+        {
+            "type": "java",
             "name": "Launch Java Program",
             "request": "launch",
             "mainClass": ""
