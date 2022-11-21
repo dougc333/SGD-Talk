@@ -9,7 +9,8 @@
             "name": "Launch ExpressionApp",
             "request": "launch",
             "mainClass": "ExpressionApp",
-            "projectName": "test_stuff_2f5a5721"
+            "projectName": "test_stuff_2f5a5721",
+            "args":["./test_java/tests/test2.txt"]
         },
         {
             "type": "java",

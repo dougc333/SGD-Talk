@@ -11,7 +11,7 @@ public class AntlrToProgram extends ExprBaseVisitor<Program>{
     public Program visitProgram(ExprParser.ProgramContext ctx) {
         // TODO Auto-generated method stub
         Program prog = new Program();
-        List<String> semanticErrors = new ArrayList<String>();
+        this.semanticErrors = new ArrayList<String>();
         AntlrToExpression exprVisitor = new AntlrToExpression(semanticErrors);
         for (int i = 0; i < ctx.getChildCount() -1; i++ ){
             if(i == ctx.getChildCount()-1){

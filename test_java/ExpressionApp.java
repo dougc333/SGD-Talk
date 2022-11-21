@@ -14,18 +14,23 @@ public class ExpressionApp {
             String fileName = args[0];
             ExprParser parser = getParser(fileName);
             ParseTree antlrAST = parser.prog();
-            AntlrToProgram progVisitor = new AntlrToProgram();
-            Program prog = progVisitor.visit(antlrAST);
-            
-            if(progVisitor.semanticErrors.isEmpty()){
-                ExpressionProcessor ep = new ExpressionProcessor(prog.expressions);
-                for(String evaluation:ep.getEvaluationResults()){
-                    System.out.println(evaluation);
-                }
+            if(MyErrorListener.hasError){
+                /*syntax errorr */
             }else{
-                for(String err:progVisitor.semanticErrors){
-                    System.out.println(err);
+                AntlrToProgram progVisitor = new AntlrToProgram();
+                Program prog = progVisitor.visit(antlrAST);
+                
+                if(progVisitor.semanticErrors.isEmpty()){
+                    ExpressionProcessor ep = new ExpressionProcessor(prog.expressions);
+                    for(String evaluation:ep.getEvaluationResults()){
+                        System.out.println(evaluation);
+                    }
+                }else{
+                    for(String err:progVisitor.semanticErrors){
+                        System.out.println(err);
+                    }
                 }
+    
             }
         }
 
@@ -36,10 +41,13 @@ public class ExpressionApp {
     private static ExprParser getParser(String fileName){
         ExprParser parser = null;
         try{
+            System.out.println("fileName:"+fileName);
             CharStream input = CharStreams.fromFileName(fileName);
             ExprLexer lexer = new ExprLexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             parser = new ExprParser(tokens);
+            parser.removeErrorListeners();
+            parser.addErrorListener(new MyErrorListener());
         }catch(IOException e){
             e.printStackTrace();
         }

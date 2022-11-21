@@ -13,7 +13,7 @@ public class AntlrToExpression extends ExprBaseVisitor<Expression> {
     private List<String> semanticErrors; /*DUPLICATE DECL    OR REFERENCE TO UNDECLARED IDENTIFIER, ADD MISSING DEFAULT PROPERRT PULL IT OFF A CRAWLER */
 
     public AntlrToExpression(List<String> semanticErrors){
-        List<String> vars = new ArrayList<String>();
+        this.vars = new ArrayList<String>();
         this.semanticErrors = semanticErrors;
     }
 
@@ -33,7 +33,7 @@ public class AntlrToExpression extends ExprBaseVisitor<Expression> {
         
         String id = ctx.getChild(0).getText();
         if (vars.contains(id)){
-            semanticErrors.add("Error variable"+id+"alreadu del;cared");
+            semanticErrors.add("Error variable "+id+" alreadu declared line:"+line+" pos:"+column);
         }else{
             vars.add(id);
         }
