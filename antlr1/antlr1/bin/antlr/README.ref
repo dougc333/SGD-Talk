@@ -1,0 +1,4 @@
+1) write expr.g4
+2) ./call_antlr.sh
+3) ./compile.sh
+

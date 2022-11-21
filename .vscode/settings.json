@@ -1,6 +1,8 @@
 {
     "java.project.sourcePaths": [
-        "test_java"
+        "test_java",
+        "test_antlr_book1/src/antlr_ex",
+        "test_antlr_book1/src/foo"
     ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
