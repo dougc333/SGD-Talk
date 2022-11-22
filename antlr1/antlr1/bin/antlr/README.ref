@@ -1,4 +1,6 @@
 1) write expr.g4
 2) ./call_antlr.sh
+javac *.java
 3) ./compile.sh
-
+4) ./visitor.sh
+javac *.java
