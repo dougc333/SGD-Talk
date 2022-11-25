@@ -1,6 +1,12 @@
 // Generated from java-escape by ANTLR 4.11.1
 
     package antlr;
+    import org.antlr.v4.runtime.*;
+    import java.io.*;
+    import java.util.*;
+    //import model classes
+    import expression.*;
+
 
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -79,6 +85,12 @@ public class ExprLexer extends Lexer {
 	public Vocabulary getVocabulary() {
 		return VOCABULARY;
 	}
+
+
+	  public List<String> vars = new ArrayList<>();
+	  public List<String> semanticErrors = new ArrayList<>();
+	  public Program program;
+
 
 
 	public ExprLexer(CharStream input) {

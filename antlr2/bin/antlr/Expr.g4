@@ -5,8 +5,8 @@ grammar Expr;
 @header{
     package antlr;
     import org.antlr.v4.runtime.*;
-    import java.io.;
-    import java.util.*:
+    import java.io.*;
+    import java.util.*;
     //import model classes
     import expression.*;
 
@@ -24,7 +24,6 @@ prog returns [Program p]
 @init{ //executed before production takes effect 
     $p = new Program();
     program = $p;
-    program.left
 }
     : (
         d = decl{
@@ -45,12 +44,12 @@ decl returns [Expression d]
     int column = $name.getCharPositionInLine()+1;
     String id = $name.text;
     if (vars.contains(id)){
-        semanticErrors.add("Error variable:"+id+" already declared "+line+" pos:"+pos);
+        semanticErrors.add("Error variable:"+id+" already declared "+line+" column:"+column);
     }else{
         vars.add(id);
     }
     String type = $type.getText();
-    String val = $val.int;
+    int val = $val.int;
     $d = new VariableDeclaration(id,type,val );
 }
     ;
@@ -66,7 +65,7 @@ expr returns [Expression e]
         int line = $id.getLine();
         int column = $id.getCharPositionInLine() + 1;
         if (!vars.contains($id.text)){
-            semanticErrors.add("Error variable:"+$id.text+" not declared at line:"+line+ " pos:"+pos);
+            semanticErrors.add("Error variable:"+$id.text+" not declared at line:"+line+ " column:"+column);
         }
         $e = new Variable($id.text);
     }            
