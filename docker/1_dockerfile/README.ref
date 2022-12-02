@@ -8,3 +8,4 @@ works in FF, chrome denied
 
 
 
+1) app.py needs index.html /templates for render_template to find it. 
