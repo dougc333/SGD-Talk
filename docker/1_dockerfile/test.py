@@ -1,14 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.common.by import By
+import time
 
 chrome_options = Options()
 driver = webdriver.Chrome(chrome_options=chrome_options, executable_path="/usr/bin/local/chromedriver")
 # go to Indeed.com
 
-driver.get("https://www.indeed.com")
+driver.get("http://localhost:8000/testform")
 driver.maximize_window()
-
-
-driver.find_element_by_xpath("//*[@id='text-input-what']").send_keys("Selenium")
+elem = driver.find_element(By.ID,"input_me")
+elem.send_keys("input me text from selenium aa !!")
+elem.send_keys(Keys.RETURN)
+time.sleep(2)
+driver.close()
