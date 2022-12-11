@@ -1,0 +1,8 @@
+chart libraries, make own API. 
+make own graphing library
+
+
+1) parse a grammar
+2) build AST, how to perform syntax transformation between graph languages? 
+3) matplotlib -> JS library
+

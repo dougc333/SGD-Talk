@@ -1,0 +1,4 @@
+
+
+
+npx create-next-app . --use-npm --example "https://https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
