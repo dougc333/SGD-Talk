@@ -1,0 +1,9 @@
+npx tsc --init need to run npm init -y before this to 
+create package.json. THen run npx tsc --init which creates 
+default tsconfig.json based on ES2016 default. 
+add a run command to package.json 
+not good convention npm run run. We called the command run to run the index.js f file
+
+this is misleading because there is no bundler. When you 
+import a module or code it wont be included in a single executable bundle
+
