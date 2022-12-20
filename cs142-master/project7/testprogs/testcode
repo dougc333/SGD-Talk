@@ -1,0 +1,4 @@
+ <Button color="primary" onClick={this.handleClick}>Add Comment</Button> 
+        <div>
+          {this.state.popUp ? <PopUP toggle={this.togglePop} handleComment={this.handleComment} /> : null}
+        </div>

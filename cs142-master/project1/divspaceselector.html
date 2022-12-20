@@ -1,0 +1,29 @@
+<html>
+  <style>
+  .container{
+      border:1px solid black;
+      background-color: greenyellow;
+  }
+  .container > div{
+      border:1px solid black;
+      background-color: dodgerblue;
+      height:100px;
+      width:100px;
+  }
+  .container + div{
+    height:100px; 
+    width:100px;
+    border:1px solid black;
+    background-color: firebrick;
+  }
+  </style>
+  <body>
+    <div class='container'>A
+        <div>inside</div>
+    </div>
+    <div >shouldnt see this dodgerblue</div>
+
+
+  </body>
+
+</html>

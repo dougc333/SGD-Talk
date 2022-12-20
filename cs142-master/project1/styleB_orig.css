@@ -1,0 +1,23 @@
+.box{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    background-color: green;
+    font-family: Tahoma;
+    font-size:40px;
+    align-content: space-between
+}
+
+.box div{
+    width:100px;
+    height:150px;
+    background-color: #eeeff2;
+    text-align:left;
+    margin-left:10px;
+    border-left:10px dotted #D0D0FF;
+    align-items:top;
+}
+.box div p{
+    margin-left:10px;
+}

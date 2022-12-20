@@ -1,0 +1,35 @@
+.img-style{
+    border-radius: 8px;
+    border: 2px solid black;
+}
+.user-color{
+    color:blue;
+}
+.closeicon-style{
+  border:2px solid red;
+  
+}
+
+.img-container-style {
+    display:flex;
+    flex-direction: row;
+    border:2px solid orange;
+}
+
+.parent {
+    display: flex;
+    align-items: center; /* Align Items Vertically */
+    justify-content: space-between; /* Align Items Horizontally (with equal space in between each of them */
+  }
+  
+  .children {
+    display: flex;
+  }
+  
+  .child {
+    margin: 0 5px;
+    padding: 0 5px;
+    font-size: 30px;
+    background: #ccc;
+    color: #000;
+  }

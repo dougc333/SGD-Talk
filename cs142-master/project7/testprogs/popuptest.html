@@ -1,0 +1,26 @@
+<html>
+<script >
+  function handleClick(){
+    console.log("handleClick e:")
+    document.getElementById("foo").innerHTML="hi there";
+  }
+  
+  function handleSubmit(e){
+    //e.preventDefault()
+    console.log('handleSubmit:e',e)
+    console.log(document.getElementById("stuff").innerText)
+  }
+</script>
+<body>
+    <button onClick="handleClick()">ClickMe
+    </button>
+    <p id="foo">this is foo</p>
+    <input type="text" id="stuff" />
+    <button onClick="handleSubmit()">submit</button>
+    <input type="file" accept="image/*" ref={(domFileRef) => { this.uploadInput = domFileRef; }} />
+    <script>
+      document.getElementById("stuff").addEventListener("click",handleSubmit)
+
+    </script>
+</body>
+</html>

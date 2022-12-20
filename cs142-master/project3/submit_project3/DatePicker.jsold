@@ -1,0 +1,121 @@
+
+
+'use strict'
+
+class DatePicker{
+  constructor(id, fn){
+    this.id = id;
+    this.callback = fn;
+    this.months=["January", "February","March", "April","May", "June", "July", "August", "September",
+    "October","November","December"];
+    this.daysOfWeek = ["Su", "Mo","Tu","We","Th","Fr","Sa"];
+    this.daysOfWeekLong = ["Sun", "Mon","Tue","Wed","Thu","Fri","Sat"];
+    this.month3 = ["Jan", "Feb","Mar", "Apr","May", "Jun", "Jul", "Aug", "Sep",
+    "Oct","Nov","Dec"];
+  }
+  render(date){
+
+    this.prevMonthDate = new Date(date.getTime());
+    this.prevMonth_NumDays = (this.prevMonthDate.setDate(0)).getDate();
+    console.log(prevMonthDate.setDate(0).getDate());
+
+    let parent = document.getElementById(this.id);
+    let table = document.createElement("table");
+    parent.appendChild(table);
+    //
+    //let yearRow = table.insertRow()
+    //yearRow.textContent=date.getFullYear();
+    //yearRow.colSpan='7';
+    //let dayRow = table.insertRow();
+    //dayRow.textContent = this.daysOfWeekLong[date.getDay()]+', '+this.month3[date.getMonth()]+' '+date.getDay();
+    let arrowRow = table.insertRow();
+    let leftArrowCell = arrowRow.insertCell(0);
+    leftArrowCell.textContent="<"
+    leftArrowCell.setAttribute("id","leftArrow");
+    
+    let spaces = arrowRow.insertCell();
+    //console.log(date.getMonth(), date.getFullYear());
+    spaces.textContent= this.months[date.getMonth()] +" " + date.getFullYear();
+    spaces.colSpan="5"; //not work
+   
+    let rightArrowCell = arrowRow.insertCell(-1);
+    rightArrowCell.textContent=">"
+    rightArrowCell.setAttribute("id","rightArrow");
+    
+    let weekRow = table.insertRow();
+    for (let i=0;i<this.daysOfWeek.length;i++){
+      let dayCell = weekRow.insertCell(i);
+      dayCell.textContent=this.daysOfWeek[i];
+    }
+    
+    //set days. 
+
+    let current_row_index=2; //should read and get num rows. 
+    let num_days=1;
+    console.log("!!!!!num_days_month:",this.num_days_month(date),date);
+    console.log("num_days:",num_days);
+    while(num_days <= this.num_days_month(date)){
+      console.log("num_days:",num_days,date);
+      let add_row = table.insertRow(current_row_index);
+      //add rows 
+      if (current_row_index===2){
+          //first week weird
+          let day_of_week = date.getDay();
+          //console.log("day_of_week:",day_of_week);
+          //go backwards w/pevious month
+          //this changes the date!!!!!!!!
+          let ldpm = new Date(date.setDate(0)).getDate(); 
+          console.log("lpdm:",ldpm,this.prevMonth_NumDays);
+          //let start_last_month = day_of_week
+          for (let i=0;i<day_of_week;i++){
+            //console.log("iterating back first week",i);
+            //console.log("index:",ldpm-(day_of_week)+i);
+            //let index = ldpm-(day_of_week)+i
+            let back_cell = add_row.insertCell(i);
+            back_cell.setAttribute('class',"back_cell");
+            back_cell.textContent=(ldpm-(day_of_week)+i).toString();
+          }
+          console.log("------num_days_month:",this.num_days_month(date),date);
+          console.log("num_days:",num_days);
+          //go forward w/current month
+          for(let i=day_of_week;i<this.daysOfWeek.length;i++){
+            //console.log("iterting forwards first week:",i);
+            let forward_cell = add_row.insertCell(i);
+            forward_cell.textContent=num_days;
+            this.isCurrentDay(forward_cell,date);
+            num_days++;
+          }          
+      }//end current_row_index==2
+      console.log("+++++++num_days_month:",this.num_days_month(date),date);
+      console.log("num_days:",num_days);
+
+      if(current_row_index > 2){
+        for (let i=0;i<this.daysOfWeek.length;i++){
+          let cell_day = add_row.insertCell(i);
+          console.log("num_days:",num_days," num_days_month:",this.num_days_month(date), date)
+          if(num_days <= this.num_days_month(date)){
+            cell_day.textContent=num_days;
+          }
+          this.isCurrentDay(cell_day,date);
+          num_days++;
+        }
+      }
+      current_row_index++;
+    }//end while
+  }//end render
+
+  //returns numerical date, ie 31 for 1/1/2009
+  num_days_month(date){
+    return new Date(date.getFullYear(), date.getMonth(),0).getDate();
+  }
+  isCurrentDay(cell,date){
+  //are we setting current{
+    //console.log('isCurrentDay cell:',cell.textContent);
+    //console.log('isCurrentDay date:',this.num_days_month(date));
+    if ( cell.textContent===this.num_days_month(date).toString() ){
+        cell.setAttribute("class","current");
+    }
+  }
+
+}//end class
+

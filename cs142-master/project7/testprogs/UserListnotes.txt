@@ -1,0 +1,39 @@
+UserList notes:
+
+Originally a for loop to loop through an array
+
+//console.log('************')
+    //let e=[]
+    //for(let i=0;i<this.state.userId.length;i++){
+    //  e.push(
+    //      <div key={this.state.userId[i]._id}>
+    //      <ListItem >
+    //        <ListItemText onClick = {this.handleClick} value={this.state.userId[i]._id} primary={this.state.userId[i].first_name+" "+this.state.userId[i].last_name}>{i}</ListItemText>
+    //      </ListItem>
+    //      <Divider />
+    //      </div>
+    //  )
+    //}
+
+OK we good. Functional programming version:
+
+
+//console.log("************UserList append this.state.userId:",this.state.userId)
+    if(this.state.userId.length>1){
+      //this.state.userId.map(x=>{console.log(x)})
+      this.state.userId.map(x=>{
+        e.push(
+          <div key={x._id}>
+          <ListItem >
+            <ListItemText onClick = {this.handleClick} value={x._id} primary={x.first_name+" "+x.last_name}></ListItemText>
+          </ListItem>
+          <Divider />
+          </div>
+      )  
+      })
+    }
+
+ Problem is it isnt less code!!
+ And you need a separate if statement to test if array is 0 length which is called before everything setup. 
+ Either way there is an extra test for the functional version. Or move into another component when there is guaranteed to be nonzero length. 
+
