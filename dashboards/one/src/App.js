@@ -7,7 +7,6 @@ import ToolBar from '@mui/material/Toolbar'
 export default function App() {
   return (
     <div className="App">
-          
           <AppBar >
             <Button variant="contained">One</Button>
             <Button variant="contained">Two</Button>
