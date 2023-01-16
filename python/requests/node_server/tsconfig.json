@@ -1,0 +1,10 @@
+{
+  "compilerOptions":{
+     "target":"es6",
+     "module":"commonjs",
+     "rootDir":"/Users/dc/test_stuff/python/requests/node_server",
+     "outDir":"./build",
+     "esModuleInterop":true,
+     "strict":true
+  }
+}
