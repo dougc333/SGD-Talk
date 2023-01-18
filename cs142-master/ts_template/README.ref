@@ -1,0 +1,5 @@
+npx create-react-app --template typescript
+
+react components with typescript
+the function return types 
+component types syntax
