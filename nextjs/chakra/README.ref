@@ -1,6 +1,0 @@
-nextjs forms
-the advantage of nextjs over SPA is the server and client are integrated in one framework vs. the 
-server and client being independent in SPA
-
-DS are usually low volume; this makes morse sense for production and adding features quickly
-

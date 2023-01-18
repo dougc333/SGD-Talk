@@ -1,5 +1,0 @@
-npx lerna run build --include-dependencies --scope @aws-cdk/cdk-release
-
-
-
-
