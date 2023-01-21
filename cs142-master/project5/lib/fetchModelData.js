@@ -23,7 +23,6 @@ function fetchModel(url) {
       // resolve({data: getResponseObject});
       let xhr = new XMLHttpRequest();
       xhr.open("GET",url);
-      //console.log('a');
       xhr.onload=()=>{
         //console.log('onload',xhr.status);
         if (xhr.status>=200 && xhr.status<300){
