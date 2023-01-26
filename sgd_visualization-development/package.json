@@ -1,0 +1,40 @@
+{
+  "name": "sgd_visualization",
+  "version": "1.0.11",
+  "main": "src/index.js",
+  "repository": "https://github.com/yeastgenome/sgd_visualization",
+  "homepage": "http://www.yeastgenome.org",
+  "browserify": {
+    "transform": [["reactify", { "es6": true }]]
+  },
+  "dependencies": {
+    "react": "^0.13.3",
+    "d3": "^3.5.6",
+    "underscore": "^1.8.3",
+    "radium": "^0.14.1",
+    "reactify": "~1.1.0"
+  },
+  "devDependencies": {
+    "node-jsx": "~0.12.4",
+    "mkdirp": "^0.5.0",
+    "sniper": "0.x",
+    "browserify": "6.x",
+    "watchify": "^1.0.6"
+  },
+  "scripts": {
+    "test": "mocha",
+    "build": "mkdirp build && browserify -r ./:sgd_visualization -o build/sgd_visualization.js",
+    "build-browser": "npm run build",
+    "watch": "watchify -r ./:sgd_visualization -v -o build/sgd_visualization.js",
+    "w": "prunner \"npm run sniper\" \"npm run watch\"",
+    "sniper": "sniper ."
+  },
+  "sniper": {
+    "js": ["/build/sgd_visualization.js"],
+    "buildJS": ["https://s3-us-west-2.amazonaws.com/viz-assets/sgd_visualization.js"],
+    "css": ["http://fonts.googleapis.com/css?family=Lato"],
+    "snippets": ["examples"],
+    "first": "variant_viewer_dna"
+  },
+  "keywords": ["biojs","react","d3", "genetic", "biology", "variation"]
+}
