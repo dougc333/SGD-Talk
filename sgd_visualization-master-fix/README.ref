@@ -1,0 +1,37 @@
+install nvm and use lts/fermium -> v14.21.2
+if using an MX mac then this will take 10-100x longer than expected. The install will compile code using gcc
+which is emulated for ARM64. It will look like the install is stuck in an infinite loop. 
+
+npm install. The install process wont install sniper which is now too old to be included in the npm registery
+install using the github repo. You can verify the problem by looking under ./node_modules/.bin directory. There
+is no installed sniper executable. 
+
+npm i https://github.com/biojs/sniper --save 
+
+npm run build builds src/indes under lib/index.js using the commonjs format. This has to be converted from 
+a node.js runtime to a browser compatible runtime using browserify. These instructions aren't included included the 
+current package.json script section. 
+
+verify after installation sniper exists under ./node_modules/.bin
+
+run browserify to create the browser compatible js file
+./node_modules/.bin/browserify lib/index.js -o build/index.js
+
+you will see 
+ 
+add 
+import ReactDOM from 'react-dom'
+import React from 'react'
+
+to src/index.js
+
+npm run build
+./node_modules/.bin/browserify lib/index.js -o build/index.js
+
+npm run watch
+
+npm run sniper
+
+Make sure you dont use google chrome since it caches the last result. Use a new browser window. 
+
+

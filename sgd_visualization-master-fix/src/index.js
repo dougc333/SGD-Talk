@@ -1,4 +1,6 @@
 "use strict";
+import ReactDOM from 'react-dom'
+import React from 'react'
 
 import _ProteinViewerComponent from './viz/protein_viewer.jsx';
 import _VariantViewerComponent from './viz/variant_viewer/variant_viewer.jsx';
