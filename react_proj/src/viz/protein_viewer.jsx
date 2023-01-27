@@ -20,7 +20,6 @@ var LOCUS_FILL = "#696599";
 
 class ProteinViewer extends Component{
 	constructor(props){
-		console.log("props",props)
 		super(props);
 		this.state={DOMWidth: 400,mouseOverDomainId: null};
 		this._onDomainMouseLeave = this._onDomainMouseLeave.bind(this);
@@ -59,11 +58,9 @@ class ProteinViewer extends Component{
 		var node, sourceDomains, lowestTrackNum, _top;
 		var labelNodes = sources.map( (d, i) => {
 			// find domain with lowest track num corresponding to this label
-			console.log("d:",d," i:",i)
 			sourceDomains = _.filter(trackedDomains, _d => { return _d.source.id === d.id; });
 			lowestTrackNum = d3.min(sourceDomains, _d => { return _d._track; });
 			_top = startY + lowestTrackNum * PX_PER_DOMAIN;
-			console.log("_top:",_top)
 			node = (
 				<div key={"proteinViewerLabel" + i} style={{ position: "absolute", top: _top, right: "1rem" }}>
 					<label>{d.name}</label>
@@ -71,7 +68,6 @@ class ProteinViewer extends Component{
 			);
 			return node;
 		});
-		console.log("labelNodes:",labelNodes)
 		return (
 			<div className="protein-viewer-label-container" style={{ position: "relative", width: "20%" }}>
 				{labelNodes}

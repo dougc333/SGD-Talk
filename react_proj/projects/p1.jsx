@@ -1,16 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
-
-class P1 extends React.Component{
-    super()
-    
-    render(){
-        <div>"react component here</div>
-    }
-}
+import P from './P'
 
 
 ReactDOM.render(
-    <P1></P1>,
+    <P></P>,
     document.getElementById("root")
 )
