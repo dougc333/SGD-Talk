@@ -14,12 +14,15 @@ var AssignTracksToDomains = function (domains) {
 	var groupedDomains = _.groupBy(domains, function (d) {
 		return d.sourceId;
 	});
+	console.log("AssignTracksToDomais groupedDomains:",groupedDomains)
 
 	// in each group, assign tracks, push to merged
 	var merged = [];
 	var gDomains, trackedGDomains, groupOverlaps;
 	var maxTrack = 0;
+	console.log("AssignTracksToDomais not sure how groupedDomains is being processed")
 	for (var key in groupedDomains) {
+		console.log("AssignTracksToDomais processing key:",key)
 		gDomains = _.sortBy(groupedDomains[key], function (d) { return d.start; });
 		trackedGDomains = gDomains.map( function (d, i) {
 			groupOverlaps = _.filter(gDomains, function (_d) {
@@ -34,6 +37,7 @@ var AssignTracksToDomains = function (domains) {
 		// concat tracked domains in this group with merged
 		merged = merged.concat(trackedGDomains);
 	}
+	console.log("AssignTracksToDomais merged:",merged)
 	return merged;
 };
 

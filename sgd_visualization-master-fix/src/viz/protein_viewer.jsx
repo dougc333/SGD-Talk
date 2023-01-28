@@ -55,15 +55,16 @@ class ProteinViewer extends Component{
 		var sources = this._getSources();
 
 		var trackedDomains = this._getTrackedDomains();
+
 		var startY = this.props.locusData ? LOCUS_HEIGHT : 0;
 		var node, sourceDomains, lowestTrackNum, _top;
 		var labelNodes = sources.map( (d, i) => {
 			// find domain with lowest track num corresponding to this label
-			console.log("d:",d," i:",i)
+			console.log("_renderLabels d:",d," i:",i)
 			sourceDomains = _.filter(trackedDomains, _d => { return _d.source.id === d.id; });
 			lowestTrackNum = d3.min(sourceDomains, _d => { return _d._track; });
 			_top = startY + lowestTrackNum * PX_PER_DOMAIN;
-			console.log("_top:",_top)
+			console.log("_renderLabels  _top:",_top)
 			node = (
 				<div key={"proteinViewerLabel" + i} style={{ position: "absolute", top: _top, right: "1rem" }}>
 					<label>{d.name}</label>
@@ -71,7 +72,7 @@ class ProteinViewer extends Component{
 			);
 			return node;
 		});
-		console.log("labelNodes:",labelNodes)
+		console.log("_renderLabels  labelNodes:",labelNodes)
 		return (
 			<div className="protein-viewer-label-container" style={{ position: "relative", width: "20%" }}>
 				{labelNodes}
@@ -103,11 +104,19 @@ class ProteinViewer extends Component{
 
 		var transform, length, strokeColor, text, textCanFit, textNode, y;
 		var trackedDomains = this._getTrackedDomains();
+		console.log("getSVGNode trackedDomains we are going to iterate through all these:",trackedDomains)
+
 		var startY = this.props.locusData ? LOCUS_HEIGHT : 0;
+		console.log("getSVGNode startY:",startY)
 		var domainNodes = trackedDomains.map( (d, i) => {
+			console.log("getSVGNode map d:",d, "i:",i)
 			y = startY + d._track * PX_PER_DOMAIN;
+			console.log("getSVGNode y:",y)
+			//what is this translation? A swapping of positions tracks?
 			transform = `translate(${xScale(d.start)}, ${y})`;
+			console.log("getSVGNOde transform:",transform)
 			length = Math.round(Math.abs(xScale(d.start) - xScale(d.end)));
+			console.log("grtSVGNode length:",length)
 			strokeColor = colorScale(d.source.name);
 			var _onMouseOver = e => { this._onDomainMouseOver(e, d); };
 			text = d.domain.name;
@@ -195,21 +204,28 @@ class ProteinViewer extends Component{
 		var _groupedData = _.groupBy(this.props.data, d => {
 			return d.source.name;
 		});
+		console.log("getSources _groupedData:",_groupedData)
 		var _keys = _.keys(_groupedData);
+		console.log("getSources _keys:",_keys)
 		var _dataAsArray = _keys.map( d => {
 			var _baseData = _groupedData[d][0].source;
+			console.log("getSources _baseData:",_baseData)
 			// add data length
 			var _length =  _groupedData[d].length;
+			console.log("getSources _length:",_length)
 			return _.extend(_baseData, { numberDomains: _length });
 		});
+		console.log("getSources _dataAsArray:",_dataAsArray)
 		return _dataAsArray;
 	}
 
 	_getTrackedDomains() {
 		// cache to this._trackedDomains
+		console.log("starting function _getTrackedDomains")
 		if (!this._trackedDomains) {
 			this._trackedDomains = AssignTracksToDomains(this.props.data);
 		}
+		console.log("function _getTrackedDomains this._trackedDomains:",this._trackedDomains)
 		return this._trackedDomains;
 	}
 
