@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./projects/p1.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./p2.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -28601,31 +28601,31 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./projects/p1.jsx":
-/*!*************************!*\
-  !*** ./projects/p1.jsx ***!
-  \*************************/
+/***/ "./p2.jsx":
+/*!****************!*\
+  !*** ./p2.jsx ***!
+  \****************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _src_components_TestComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/components/TestComponent */ "./src/components/TestComponent.jsx");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_components_StatesComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/components/StatesComponent */ "./src/components/StatesComponent.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "this is div before test component", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_TestComponent__WEBPACK_IMPORTED_MODULE_2__["default"], null)), document.getElementById("root"));
+react_dom__WEBPACK_IMPORTED_MODULE_0___default.a.render(react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_src_components_StatesComponent__WEBPACK_IMPORTED_MODULE_1__["default"], null), document.getElementById("root"));
 
 /***/ }),
 
-/***/ "./src/components/TestComponent.jsx":
-/*!******************************************!*\
-  !*** ./src/components/TestComponent.jsx ***!
-  \******************************************/
+/***/ "./src/components/StatesComponent.jsx":
+/*!********************************************!*\
+  !*** ./src/components/StatesComponent.jsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28653,34 +28653,38 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var TestComponent =
+var StatesComponent =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(TestComponent, _React$Component);
+  _inherits(StatesComponent, _React$Component);
 
-  function TestComponent(props) {
+  function StatesComponent(props) {
     var _this;
 
-    _classCallCheck(this, TestComponent);
+    _classCallCheck(this, StatesComponent);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TestComponent).call(this, props));
-    console.log("props P1:", props);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(StatesComponent).call(this, props));
+    console.log("StatesComponent ctor");
+    console.log(props); //how does the window component get here??
+
+    _this.arr = window.models.statesModel();
+    console.log("this.arr:", _this.arr);
     return _this;
   }
 
-  _createClass(TestComponent, [{
+  _createClass(StatesComponent, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "TestComponent react component div");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "States Component");
     }
   }]);
 
-  return TestComponent;
+  return StatesComponent;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (TestComponent);
+/* harmony default export */ __webpack_exports__["default"] = (StatesComponent);
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=p1.bundle.js.map
+//# sourceMappingURL=p2.bundle.js.map
