@@ -2,6 +2,15 @@ install nvm and use lts/fermium -> v14.21.2
 if using an MX mac then this will take 10-100x longer than expected. The install will compile code using gcc
 which is emulated for ARM64. It will look like the install is stuck in an infinite loop. 
 
+remove everything under /lib and /build if /build exists. 
+Add /build directory
+npm run build creates lib/index.js from src/index.js
+./node_modules/.bin/browserify lib/index.js -o build/index.js makes lib/index.js compatabile from node.js to browsers
+npm run watch adds sgd_visualization.js under /build
+
+
+
+
 npm install. The install process wont install sniper which is now too old to be included in the npm registery
 install using the github repo. You can verify the problem by looking under ./node_modules/.bin directory. There
 is no installed sniper executable. 
