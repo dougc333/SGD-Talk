@@ -1,0 +1,19 @@
+.App{
+    height:300px;
+    width:500px;
+    display:flex;
+    justify-content: center;
+    border:2px solid black;
+    background-color: aliceblue;
+}
+
+.login-container{
+    background-color: antiquewhite;
+    border:2 px solid black;
+}
+
+.form{
+    background-color: aqua;
+    border:2px solid black;
+    
+}
