@@ -7,10 +7,14 @@ const PostCreate = ()=>{
     const [title, setTitle] = useState('')
 
     const onSubmit = async(e)=>{
+        console.log("PostCreate onSubmit",e)
+        console.log("title:",title)
         e.preventDefault()
+        //where is the e.target.value?
         await axios.post("http://localhost:4000/posts",{
             title
         }) 
+
         setTitle("")
     }
 
