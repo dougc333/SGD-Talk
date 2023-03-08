@@ -1,5 +1,7 @@
 js
 ==
+Add lecture and verify
+
 REDO: replace cs142/project 2 w JS/async JS exercises. 
 cs142 outline:
 1) css w/flexbox
