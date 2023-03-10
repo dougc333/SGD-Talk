@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./dygraph.js"></script>
+    <link rel="stylesheet" type="text/css" href="./dygraph.css" />
+    <script type="text/javascript">
+        function add_div(){
+            const dygraph_div = document.createElement("div")
+            dygraph_div.setAttribute("id","graphdiv")
+            document.body.appendChild(dygraph_div)
+        }
+        function setup_digraph(){
+            const g = new Dygraph("graphdiv", "test.csv") 
+        }
+        function button_handler(e){
+            console.log(e)
+            console.log("buttonhandler")
+            add_div()
+            setup_digraph()
+        }
+    </script>
+</head>
+<body>
+    <button onClick="button_handler()">button</button>
+</body>
+</html>
