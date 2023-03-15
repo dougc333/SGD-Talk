@@ -8,5 +8,21 @@
 </head>
 <body>
     test worker
+    <script>
+       if("serviceWorker" in navigator){
+        console.log("found serviceWorker")
+        navigator.serviceWorker.register("test.js").then(
+            (regisration)
+        )
+
+
+       }else{
+        console.log('no find serviceWorker')
+       }
+
+
+
+
+    </script>
 </body>
 </html>
