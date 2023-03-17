@@ -28,4 +28,5 @@ const CommentCreate = ({postId})=>{
   )
 }
 
+
 export default CommentCreate
