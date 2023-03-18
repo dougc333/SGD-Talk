@@ -8,6 +8,6 @@ export class Cow{
     }
 
     eat(){
-        console.log(`${this.name} is eating`);
+        console.log(`${this.name} is eating a lot`);
     }
 }

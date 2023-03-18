@@ -6,7 +6,7 @@ class Cow {
         this.name = name;
     }
     eat() {
-        console.log(`${this.name} is eating`);
+        console.log(`${this.name} is eating a lot`);
     }
 }
 exports.Cow = Cow;
