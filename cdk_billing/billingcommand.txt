@@ -1,2 +1,0 @@
-
-aws ce get-cost-and-usage --time-period Start=2022-09-01,End=2022-11-29 --granularity=MONTHLY --metrics "BlendedCost" "UnblendedCost" "UsageQuantity" --group-by Type=DIMENSION,Key=SERVICE Type=TAG,Key=Environment

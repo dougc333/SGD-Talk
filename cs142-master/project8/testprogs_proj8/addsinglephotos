@@ -1,8 +1,0 @@
-userPhotos.push(
-            <div key={Math.random()}>
-              <div>
-                <Link color="primary" href={`/users/${this.props.match.params.userId}/${this.state.photos[0]._id}`}> Left</Link>
-              </div>
-                <Link color="primary" href={`/users/${this.props.match.params.userId}/${this.state.photos[1]._id}`}>Right</Link>
-            </div>
-        ) 

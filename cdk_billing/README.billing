@@ -1,6 +1,0 @@
-billing command is the aws-cli version of billing interface
-do we need to default this to IAM root access or does administrator work? 
-or is this only for setting alarms?
-
-does this only work for us-east-1?
-
