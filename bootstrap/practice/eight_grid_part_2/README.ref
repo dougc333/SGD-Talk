@@ -1,0 +1,1 @@
+if container is the only component in a ui and is the only visible element then container-sm makes sense because it shrinks with the screen size
