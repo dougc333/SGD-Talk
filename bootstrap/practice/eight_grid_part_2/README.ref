@@ -1,1 +1,16 @@
-if container is the only component in a ui and is the only visible element then container-sm makes sense because it shrinks with the screen size
+grid part 2 is navbar
+
+
+this example shows placing emphasis using display2 and text-muted. 
+dont use only bold in the text to be highlighted, increase the contrast
+with bold and text-muted
+
+row is justify-content-center
+columns is text-center. 
+
+
+the example uses 2 columns text and image.
+is the navbar API consistent w/column? 
+
+what dies thsi imply for grphing API?
+
