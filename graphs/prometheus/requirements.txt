@@ -1,0 +1,13 @@
+
+prometheus-fastapi-intrumenter
+requests
+wikipedia
+pylint
+pytest
+pytest-cov
+black
+fire
+fastapi
+uvicorn
+textblob
+httpx
