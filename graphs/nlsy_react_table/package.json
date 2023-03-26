@@ -1,5 +1,5 @@
 {
-  "name": "tables",
+  "name": "nlsy_react_table",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

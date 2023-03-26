@@ -20,6 +20,10 @@
   "dependencies": {
     "colon-names": "^1.0.0",
     "cypress": "^12.8.1",
-    "print-env": "^0.1.2"
+    "print-env": "^0.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
   }
 }
