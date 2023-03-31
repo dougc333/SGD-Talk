@@ -22,6 +22,7 @@ const data = [
     {"MCS2000": 1543.0, "PCS2000": 3006.0}
 ]
 
+
 export function Chart() {
     return <Scatter options={options} data={data} />;
   }
