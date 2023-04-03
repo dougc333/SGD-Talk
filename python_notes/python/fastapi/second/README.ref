@@ -1,0 +1,5 @@
+database
+run python main.py and should see create sql_app.db file. Nothing tested
+add jinja2
+
+userRoutes better than hard coding in main.py. 
