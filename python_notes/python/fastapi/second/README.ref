@@ -1,5 +1,8 @@
 database
 run python main.py and should see create sql_app.db file. Nothing tested
 add jinja2
+this is for oauth password flow which was deprecated for JWT. the problem oauth is trying 
+to solve is to NOT require password but oauth password flow requires password. This example
+is years old and is not relevant today. 
 
 userRoutes better than hard coding in main.py. 
