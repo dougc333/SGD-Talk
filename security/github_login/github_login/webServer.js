@@ -34,7 +34,7 @@ app.get('/getAccessToken', async function(req, res){
 
 app.get('/getUserData', async (req, res) => {
     console.log("getUserData")
-    req.get("Authorization")
+    req.get("Authorization") //getting header different than url parameter Bearer authorization header
     await fetch('https://api.github.com/user',{
         method:"GET",
         headers:{
