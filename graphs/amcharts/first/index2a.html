@@ -10,6 +10,25 @@
     <script src="./script/themes/Animated.js"></script>
 </head>
 <body>
+    <div id="chartdiv"></div>
+    <script>
+    am5.ready(function() {  
+      var root = am5.Root.new("chartdiv");
+
+      var chart = root.container.children.push(am5xy.XYChart.new(root, {
+        panX: true,
+        panY: true,
+        wheelY: "zoomXY",
+        pinchZoomX: true,
+      }))//end chart
+
+      
     
+          
+
+    }) //end am5 ready
+      
+          
+    </script>
 </body>
 </html>
