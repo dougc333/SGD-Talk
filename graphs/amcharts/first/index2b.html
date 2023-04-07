@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/index.js"></script>
+    <script src="./script/xy.js"></script>
+    <script src="./script/themes/Animated.js"></script>
+</head>
+<body>
+    <div id="chartdiv"></div>
+    <script>
+    am5.ready(function() {  
+      var root = am5.Root.new("chartdiv");
+
+      var chart = root.container.children.push(am5xy.XYChart.new(root, {
+        panX: true,
+        panY: true,
+        wheelY: "zoomXY",
+        pinchZoomX: true,
+      }))//end chart
+
+      // Create x and y value axes
+      var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+        renderer: am5xy.AxisRendererX.new(root, { minGridDistance: 50 }),
+        tooltip: am5.Tooltip.new(root, {})
+      }));
+            
+      var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+        renderer: am5xy.AxisRendererY.new(root, {}),
+        tooltip: am5.Tooltip.new(root, {})
+      }));
+
+      var data = [{  
+      x1: 1000, 
+      y1: 588,
+      value: 3, 
+      }, { 
+      x1: 1200, 
+      y1: 1800,
+      value: 3, 
+      }, {  
+      x1: 850, 
+      y1: 1230, 
+      value: 3,
+      }];
+    
+      var series = chart.series.push(am5xy.LineSeries.new(root, {
+        xAxis: xAxis,
+        yAxis: yAxis,
+        valueYField: "y1",
+        valueXField: "x1",
+        valueField: "value",
+        tooltip: am5.Tooltip.new(root, {}),
+      }));
+          
+      series.strokes.template.set("visible", false);
+      chart.set("cursor", am5xy.XYCursor.new(root, {
+        xAxis: xAxis,
+        yAxis: yAxis,
+        snapToSeries: [series]
+      }));
+
+
+      series.data.setAll(data);  
+      //series.appear(3);
+      //chart.appear(1000, 100);
+          
+
+    }) //end am5 ready          
+    </script>
+</body>
+</html>
