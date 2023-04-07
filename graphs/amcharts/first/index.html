@@ -12,10 +12,14 @@
           max-width:100%;
         }
     </style>
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <!--script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-</head>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script-->
+      <script src="./script/index.js"></script>
+      <script src="./script/xy.js"></script>
+      <script src="./script/themes/Animated.js"></script>  
+
+  </head>
 <body>
     <div id="chartdiv"></div>
     <script type="text/javascript">
@@ -90,6 +94,8 @@
             for (var i = 0; i < 15000; i++) {
               data.push({ x: Math.random() * 100, y: Math.random() * 100, color: am5.Color.fromString("#" + Math.floor(Math.random() * 16777215).toString(16)), value: Math.random() * 20 })
             }
+
+            console.log("data",data)
             
             // add graphics to line series which will contain bullets
             var canvasBullets = series.children.push(am5.Graphics.new(root, {}));

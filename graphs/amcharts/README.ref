@@ -1,3 +1,9 @@
 docs suck 
 https://www.amcharts.com/demos/
 
+first_xh.html https://www.amcharts.com/docs/v5/charts/xy-chart/
+1) import libs, set id=chartdiv in body, am5.Root.new(), am5xy.ValueAxis.new()
+2) create x, y axis, add X, Y renderer, need 1 renderer per axis. Add tooltip into renderer
+3) add series, into chart.series. Each series has data property where you set data. 
+line should only need 2 points. Do you need display.xx methods to draw the line? 
+series has as "draw" property?

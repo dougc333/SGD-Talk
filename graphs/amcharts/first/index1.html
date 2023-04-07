@@ -12,9 +12,12 @@
           max-width:100%;
         }
     </style>
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <!--script src="./script/index.js"></script>
+    <script src="./script/xy.js"></script>
+    <script src="./script/themes/Animated.js"></script-->
+    <script src="./script/index.js"></script>
+    <script src="./script/xy.js"></script>
+    <script src="./script/themes/Animated.js"></script>
 
 </head>
 <body>
@@ -88,10 +91,10 @@
             }));
             
             var data = [];
-            for (var i = 0; i < 15000; i++) {
+            for (var i = 0; i < 10; i++) {
               data.push({ x: Math.random() * 100, y: Math.random() * 100, color: am5.Color.fromString("#" + Math.floor(Math.random() * 16777215).toString(16)), value: Math.random() * 20 })
             }
-            
+            console.log("data:",data);
             // add graphics to line series which will contain bullets
             var canvasBullets = series.children.push(am5.Graphics.new(root, {}));
             
@@ -106,6 +109,7 @@
                   if (point) {
                     display.beginPath();
                     display.beginFill(dataContext.color);
+                    console.log("point.x=",point.x+" point.y=",point.y);
                     display.drawCircle(point.x, point.y, dataContext.value / 2);        
                     display.endFill();
                   }
@@ -122,7 +126,9 @@
             }
             
             series.data.setAll(data);
-            
+            //have to wait until chart series is loaded. 
+            var dataFromChart = chart.get("userData")
+            console.log("dataFromChart:",dataFromChart);
             });
         </script>
 </body>

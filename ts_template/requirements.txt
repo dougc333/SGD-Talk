@@ -1,4 +1,0 @@
-tsc
-typescript
-yargs
-
