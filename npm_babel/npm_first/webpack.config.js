@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  devtool: 'hidden-source-map',
+  devtool: 'source-map',
   mode: 'development',
   entry: './src/index.js',
   module: {

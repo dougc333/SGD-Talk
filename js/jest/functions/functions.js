@@ -1,8 +1,8 @@
 const functions = {
   add: (num1, num2)=> num1+num2,
-  isNumm: ()=> null,
-  isUndefined: ()=> undefined,
-  isNaN: ()=> NaN
+  returnNull: ()=> null,
+  returnUndefined: ()=> undefined,
+  returnNaN: ()=> NaN
 }
 
 module.exports =  functions
