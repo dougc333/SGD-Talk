@@ -20,25 +20,13 @@
 <div id="chartdiv"></div>
 <script>
   am5.ready(function() {
-    var root = am5.Root.new("chartdiv");
+    const root = am5.Root.new("chartdiv");
     root.setThemes([
       am5themes_Animated.new(root)
     ]);
-    var chart = root.container.children.push(am5xy.XYChart.new(root, {
-      panX: true,
-      panY: true,
-      wheelX: "panX",
-      wheelY: "zoomX",
-      pinchZoomX:true
-    })); //end chart
-
-    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
-        behavior: "none"
-      }));
-    cursor.lineY.set("visible", false);
+    const chart = root.container.children.push(am5xy.XYChart.new(root, {})); 
    
-    
-    var data = [{  
+    const data = [{  
       x1: 1000, 
       y1: 588,
       value: 3, 
@@ -52,37 +40,27 @@
       value: 3,
       }];
     //create axes 
-    var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+    const xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
       renderer: am5xy.AxisRendererX.new(root, {}),
     })) //end xAxis
       
-    var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    const yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
       renderer: am5xy.AxisRendererY.new(root, {})
     })) //end yAxis
 
     //create series to match data to graph
-    var series = chart.series.push(am5xy.LineSeries.new(root, {
+    const series = chart.series.push(am5xy.LineSeries.new(root, {
       name: "Series",
       xAxis: xAxis,
       yAxis: yAxis,
       valueYField: "x1",
       valueXField: "y1",
-      tooltip: am5.Tooltip.new(root, {
-       labelText: "{valueY}"
-      })
       })) //end series
-      
-      chart.set("scrollbarX", am5.Scrollbar.new(root, {
-        orientation: "horizontal"
-      }));
       
       // Set data
       series.data.setAll(data);  
       
   })
- 
-
-  
 </script>
 </body>
 </html>
