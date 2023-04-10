@@ -31,8 +31,15 @@ sparse=[1,2,,,,7,8,9]
 
 
 //forerach impure, because it affect outside state
-//reduce pure can replace foreach
+//reduce pure can replace foreach.  reduce keeps track of global state internally, the init constant in example, 
+//This makes it a pure fn without dependencies on outside state. 
 
-
+const arr1 = [1,2,3,4,5]
+const init=0
+const reducer=(state,value)=>{
+    return state+value
+}
+const total_reducer = arr.reduce(reducer,init)
+print(total_reducer)
 //arr.map(x=>sum(x))
 //console.log(total)
