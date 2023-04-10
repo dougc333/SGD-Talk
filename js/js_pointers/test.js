@@ -1,1 +1,0 @@
-//https://stackoverflow.com/questions/53720798/how-to-save-pointer-in-javascript-and-retrieve-further
