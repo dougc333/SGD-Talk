@@ -1,0 +1,3 @@
+use module.exports which wont work in a browser because of CORS
+open in LiveServer 
+
