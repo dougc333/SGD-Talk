@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <script src="./script/index.js"></script>
+    <script src="./script/xy.js"></script>
 </head>
 <body>
     <div id="chartdiv"></div>
     <script>
 
 am5.ready(function(){
-const root = Root.new("chartdiv");
+const root = am5.Root.new("chartdiv");
 //root.setThemes([
 //  am5themes_Animated.new(root)
 //]);
-const chart = root.container.children.push(XYChart.new(root, {})); 
+const chart = root.container.children.push(am5xy.XYChart.new(root, {})); 
 
 const data = [{  
   x1: 1000, 
@@ -32,16 +33,16 @@ const data = [{
   value: 3,
   }];
 //create axes 
-const xAxis = chart.xAxes.push(ValueAxis.new(root, {
-  renderer: AxisRendererX.new(root, {}),
+const xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+  renderer: am5xy.AxisRendererX.new(root, {}),
 })) //end xAxis
   
-const yAxis = chart.yAxes.push(ValueAxis.new(root, {
-  renderer: AxisRendererY.new(root, {})
+const yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  renderer:am5xy.AxisRendererY.new(root, {})
 })) //end yAxis
 
 //create series to match data to graph
-const series = chart.series.push(LineSeries.new(root, {
+const series = chart.series.push(am5xy.LineSeries.new(root, {
   name: "Series",
   xAxis: xAxis,
   yAxis: yAxis,
@@ -51,7 +52,7 @@ const series = chart.series.push(LineSeries.new(root, {
   
   // Set data
   series.data.setAll(data);   
-})d
+})
     </script>
 </body>
 </html>

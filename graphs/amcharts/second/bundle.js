@@ -34640,13 +34640,15 @@ var __webpack_exports__ = {};
   \******************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _amcharts_amcharts5_internal_core_Root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @amcharts/amcharts5/.internal/core/Root */ "./node_modules/@amcharts/amcharts5/.internal/core/Root.js");
-/* harmony import */ var _amcharts_amcharts5_internal_core_render_Scrollbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @amcharts/amcharts5/.internal/core/render/Scrollbar */ "./node_modules/@amcharts/amcharts5/.internal/core/render/Scrollbar.js");
+/* harmony import */ var _amcharts_amcharts5_internal_core_render_Scrollbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @amcharts/amcharts5/.internal/core/render/Scrollbar */ "./node_modules/@amcharts/amcharts5/.internal/core/render/Scrollbar.js");
+/* harmony import */ var _amcharts_amcharts5_internal_core_render_Tooltip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @amcharts/amcharts5/.internal/core/render/Tooltip */ "./node_modules/@amcharts/amcharts5/.internal/core/render/Tooltip.js");
 /* harmony import */ var _amcharts_amcharts5_xy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @amcharts/amcharts5/xy */ "./node_modules/@amcharts/amcharts5/.internal/charts/xy/XYChart.js");
 /* harmony import */ var _amcharts_amcharts5_xy__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @amcharts/amcharts5/xy */ "./node_modules/@amcharts/amcharts5/.internal/charts/xy/XYCursor.js");
 /* harmony import */ var _amcharts_amcharts5_xy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @amcharts/amcharts5/xy */ "./node_modules/@amcharts/amcharts5/.internal/charts/xy/axes/ValueAxis.js");
 /* harmony import */ var _amcharts_amcharts5_xy__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @amcharts/amcharts5/xy */ "./node_modules/@amcharts/amcharts5/.internal/charts/xy/axes/AxisRendererX.js");
 /* harmony import */ var _amcharts_amcharts5_xy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @amcharts/amcharts5/xy */ "./node_modules/@amcharts/amcharts5/.internal/charts/xy/axes/AxisRendererY.js");
 /* harmony import */ var _amcharts_amcharts5_xy__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @amcharts/amcharts5/xy */ "./node_modules/@amcharts/amcharts5/.internal/charts/xy/series/LineSeries.js");
+
 
 
 //import { Series } from "@amcharts/amcharts5/.internal/core/render/Series";
@@ -34699,12 +34701,12 @@ var series = chart.series.push(_amcharts_amcharts5_xy__WEBPACK_IMPORTED_MODULE_6
   yAxis: yAxis,
   valueYField: "x1",
   valueXField: "y1",
-  tooltip: Tooltip.new(root, {
+  tooltip: _amcharts_amcharts5_internal_core_render_Tooltip__WEBPACK_IMPORTED_MODULE_7__.Tooltip["new"](root, {
     labelText: "{valueY}"
   })
 })) //end series
 
-chart.set("scrollbarX", _amcharts_amcharts5_internal_core_render_Scrollbar__WEBPACK_IMPORTED_MODULE_7__.Scrollbar["new"](root, {
+chart.set("scrollbarX", _amcharts_amcharts5_internal_core_render_Scrollbar__WEBPACK_IMPORTED_MODULE_8__.Scrollbar["new"](root, {
   orientation: "horizontal"
 }));
 

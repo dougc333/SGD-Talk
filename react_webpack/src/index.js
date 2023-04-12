@@ -45,4 +45,4 @@ const series = chart.series.push(LineSeries.new(root, {
   
   // Set data
   series.data.setAll(data);   
-})
+})d

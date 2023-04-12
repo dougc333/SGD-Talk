@@ -1,5 +1,6 @@
 import { Root } from "@amcharts/amcharts5/.internal/core/Root";
 import { Scrollbar } from "@amcharts/amcharts5/.internal/core/render/Scrollbar";
+import { Tooltip} from "@amcharts/amcharts5/.internal/core/render/Tooltip";
 //import { Series } from "@amcharts/amcharts5/.internal/core/render/Series";
 import { XYChart } from "@amcharts/amcharts5/xy";
 import {XYCursor} from "@amcharts/amcharts5/xy"
