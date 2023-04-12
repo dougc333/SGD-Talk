@@ -1,0 +1,7 @@
+always install with a version number
+npm i bootstrap@5.2.3 because if you dont specify then will install latest and
+when you come back in a year the install will be the latest version again which will be different
+
+not worth the time to go back and debug package.json versions. 
+
+

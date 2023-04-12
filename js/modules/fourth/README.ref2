@@ -1,0 +1,40 @@
+ES Modules
+
+import {foo} from './utils'
+is called a named import and to use it we can call foo()
+
+ESModules dont work in brower standalone mode because of CORS. It will
+work in VSCode if opened in Live Server or if cd one directory up and use
+http-server fourth
+
+index.html called by default in folder fourth provided the bundle.js file is correct 
+
+The benefit is tree shaking with ESModules
+
+
+
+We can also import the entire module like htis: 
+
+import * as utils from './utils'
+and to use this we have to use utils.foo()
+
+
+ESModules support default exports. We export one thing, a function or component from a file. 
+use export default xxx. 
+
+export default frog and when we import use dont used a named import. 
+
+import frog from './frog'
+
+You can have a default export and named exports
+
+export function foo(){...}
+export function hi(){...}
+
+export default function frog(){...}
+
+and to import this, import frog, {foo,hi} from './utils'
+
+
+
+
