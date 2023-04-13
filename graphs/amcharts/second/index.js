@@ -8,6 +8,7 @@ import {AxisRendererX , AxisRendererY, ValueAxis, LineSeries} from "@amcharts/am
 
 
 let root = Root.new("chartdiv");
+debugger
 let chart = root.container.children.push(
   XYChart.new(root, {
     panX: true,
