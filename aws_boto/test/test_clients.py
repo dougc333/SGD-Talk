@@ -27,7 +27,8 @@ clients=[client_us_west1, client_us_west2, client_us_east1, client_us_east2]
 #BillingService
 
 ec2_client = boto3.client("ec2")
-print(dir(ec2_client))
+#print(dir(ec2_client))
+print(ec2_client.desc)
 print("--------------------------------")
 sqs_client = boto3.client("sqs")
 print(dir(sqs_client))
