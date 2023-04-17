@@ -1,0 +1,7 @@
+1) build .
+2) verify image exists in cache
+3) run, connect and verify file system and text file is there
+
+MKDIR is not recomemded, if WORKDIR does not exist Docker will create a default WORKDIR
+making MKDIR redundant. 
+

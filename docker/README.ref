@@ -1,5 +1,0 @@
-1) server on local machine
-2) server in docker container with bash shell in docker container
-3) server in docker container in aws/gcp/azuer
-4) multiple servers on event bus
-

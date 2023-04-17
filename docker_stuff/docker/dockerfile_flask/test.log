@@ -1,0 +1,59 @@
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+127.0.0.1 - - [30/Nov/2022 11:33:06] "GET /testform HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2022 11:33:08] "GET /testform?stuff=ddddd HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2022 11:33:11] "GET /testform?stuff= HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+127.0.0.1 - - [30/Nov/2022 11:35:28] "GET /testform HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2022 11:35:30] "GET /testform?stuff=asdfasdfasd HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2022 11:35:37] "GET /testform?stuff=asdfasfdsf HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+ * Detected change in '/Users/dc/test_stuff/docker/1_dockerfile/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+ * Detected change in '/Users/dc/test_stuff/docker/1_dockerfile/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+127.0.0.1 - - [30/Nov/2022 11:37:13] "GET /testform HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2022 11:37:16] "GET /testform?stuff=cccccccc HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 953-069-886
+127.0.0.1 - - [30/Nov/2022 11:38:21] "GET /testform HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2022 11:38:24] "GET /testform?stuff=dddddd HTTP/1.1" 200 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Nov/2022 11:39:12] "GET /testform HTTP/1.1" 200 -
+127.0.0.1 - - [30/Nov/2022 11:39:16] "GET /testform?stuff=ee3eeeeeee HTTP/1.1" 200 -

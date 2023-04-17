@@ -1,0 +1,15 @@
+{
+  "name": "1_dockerfile",
+  "version": "1.0.0",
+  "description": "for building a docker image works in FF, chrome denied 0) app.py python server at localhost:5000/ 1) install app.py in docker image and test locally 2) deploy to AWS 3) add ci 4) add testing make sure we get hi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^19.3.0"
+  }
+}

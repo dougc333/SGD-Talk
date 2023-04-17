@@ -1,0 +1,40 @@
+assigment1 
+modify: dont use alpine. node == bullseye
+
+Test in stages, first specify node and bullseye version
+build and login to image, verify node works
+
+compile the node app, record the version of nvm node being used, verify this is NODE LTS version 
+pick bullseye LTS version to match node LTS version if there are docs
+LTS v16.19.1 lts/gallium from nvm output
+
+
+try : lts-bullseye
+
+can pick the layers to match
+https://hub.docker.com/layers/library/node/lts-bullseye/images/sha256-d9946ebbeb3ca08ccaa24a8220d7da1f9e9fd749d489913faeed89e02f70a202?context=explore
+
+from layers we can see user node is created 
+
+./bin/www then browser to localhost:3000
+
+
+1) specify the specific node and bullseye versions. Dont use latest because without version numbers this isnt reproducable
+
+
+2) specify user, verify the copy is completed using the user and not root
+3) verify node_modules are installed as user node not as root
+4) start container and verify ports set correctly at both Dockerfile and docker command 
+
+docker container run 37 -p 3000:3000
+
+37 is container id
+
+
+ 
+
+
+
+
+
+
