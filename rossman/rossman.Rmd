@@ -11,8 +11,18 @@ knitr::include_graphics("/Users/dc/test_stuff/rossman/rossman.png")
 "https://www.kaggle.com/competitions/rossmann-store-sales/overview"
 train<-read.csv(file="/Users/dc/rossman_data/train.csv")
 store<-read.csv(file="/Users/dc/rossman_data/store.csv")
-head(train)
+dim(store)
+dim(train)
+```
+```{r}
+head(store)
+```
 
+
+```{r}
+head(train)
+#how many stores? 
+unique(train["Store"])
 ```
 
 
