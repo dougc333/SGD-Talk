@@ -22,15 +22,18 @@ function draw_point(x,y){
   console.log("x_left_lower: " + x_left_lower + ", y_left_lower: " + y_left_lower)
 
   x_translate = x
-  y_translate = y_left_lower + y
-  console.log("x_translate: " + x_translate + ", y_translate:"+ y_translate)
+  console.log("x_translate: " + x_translate )
   console.log("canvas offset_height: " + canvas_element.offsetHeight+" canvas offset_width:"+canvas_element.offsetWidth)
-  console.log("canvas height: " + canvas_element.height+" canvas width:"+canvas_element.width)
   //have to set canvas height to offset_height? 
   canvas_element.height = canvas_element.offsetHeight
   canvas_element.width = canvas_element.offsetWidth
-  
-  ctx.fillRect(x_translate, 140, 10, 10); // fill in the pixel at (10,10)
+  console.log("canvas height: " + canvas_element.height+" canvas width:"+canvas_element.width)
+  const border_width = 1
+  const y_translate = canvas_element.height - border_width -  canvas_element.getBoundingClientRect().y
+  console.log("y translate:",y_translate)  
+
+  //1 pixel for border
+  ctx.fillRect(x_translate, y_translate, 10, 10); // fill in the pixel at (10,10)
   
 }
 
