@@ -24,11 +24,9 @@ function formatData(mcs,pcs){
     return local_data
 }
 
-console.log(data)
 
 function plotData(canvas, data){
     const ctx = canvas.getContext("2d")
-    //console.log("canvas.clientHeight", canvas.clientHeight, "canvas.clientWidth", canvas, "canvas height", canvas.height, "canvas width", canvas.width)
     canvas.height = canvas.clientHeight
     canvas.width = canvas.clientWidth
     console.log(canvas.height)
