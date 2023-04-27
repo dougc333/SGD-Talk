@@ -1,0 +1,5 @@
+built on linux then scp js and map files over
+DygraphCanvasRenderer._drawSeries the axes are drawn and before data is plotted
+_updatePoints, update x,y with canvas coordinates
+
+trace through dygraph-tickers.js is imported into utils. utils is imported into dygraph-canvas. 
