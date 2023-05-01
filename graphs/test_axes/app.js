@@ -52,8 +52,8 @@ const drawAxes = (canvas_element)=>{
     //context.restore()
 }
 
-const drawLabels(){
-
+function drawLabels(){
+    
 }
 
 drawAxes(canvas_element)
