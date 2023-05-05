@@ -1,2 +1,23 @@
-how to add axis to d3 
+Observable code vs. D3 code. Observable uses DOM to represent the webpage. DOM.svg or DOM.canvas represent svg/canvas html elements. 
+Is it worth converting between the 2 APIs? 
+
+svg html element with id or without id. 
+without id, <g transform="d3 command"> </g>
+
+translate(20,50) is start point of axis. Assume origin lower left corner. 
+scale = min/max tick values
+
+d3.scaleLinear().domain().range() --required
+d3.scaleLinear() -- linear or log, or other options
+d3.domain()  -- range of the axis ticks
+d3.range()  -- length of axis in px? or in scaled units of svg element width. 
+
+scale had domain/range
+domain = input extent = 
+range = output extent = length of axis in px? 
+
+
+1) axis generator fn parameters: d3.axisBottom, d3.axisLeft, d3.axisRight, d3.axisTop. 
+2) 
+
 
