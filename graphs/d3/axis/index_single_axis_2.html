@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../d3.js"></script>
+    <style>
+        #svg_container{
+            width:8000px;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="svg_container">
+    <svg id="svg" height="100%" width="100%">
+        <g id="x" transform = "translate(50,50)"></g>
+        <g id="y" transform = "translate(50,50)"></g>
+    </svg>
+</div>
+    <script>
+        const svg=document.getElementById("svg")
+        console.log(svg.height, svg.width) //undefined need to set the y to be height for start of y axis
+        console.log(document.getElementById("svg_container").height, document.getElementById("svg_container").width)
+        function xAxis() {
+          let xScale = d3.scaleLinear().domain([0,8000]).range([0,1000])
+          let xAxis = d3.axisTop(xScale)
+          d3.select("#x").call(xAxis)
+        }   
+        function yAxis() {
+            let yScale = d3.scaleLinear().domain([8000,0]).range([0,1000])
+            let yAxis = d3.axisLeft(yScale)
+            d3.select("#y").call(yAxis)
+        }
+        xAxis()
+        yAxis()
+    </script>
+</body>
+</html>
