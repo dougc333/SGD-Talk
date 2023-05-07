@@ -2,17 +2,26 @@ const arr=[1,2,3,4]
 
 
 const print=(x)=>{
-    console.log(x)
+  console.log(x)
 }
-//var total = 0 dont need this. Ironic
-//bc total is var wo declaration. crappy language
 const sum=(x)=>{
   total=+x
 }
-//arr.map(x=>print(x))
+console.log("running arr.map(x=>print(x))")
+arr.map(x=>print(x))
+console.log("end running arr.map(x=>print(x))")
+console.log(
+  "in the browser this is different than node, you get an [undefined,undefined,undefined,undefined]"
+)
+console.log("this is not acceptable, use a filter which returns an empty array or functional iterator which returns nothing")
 
-//arr.map(x=>console.log(x))
+
+
+
+
+
 //for each executes callback once for eact array element
+console.log("running arr.forEach(x=>print(x))")
 arr.forEach(x=>sum(x))
 console.log("total",total)
 
