@@ -16,26 +16,26 @@
 <body>
     <div id="svg_container">
     <svg id="svg" height="100%" width="100%">
-        <g id="x" transform = "translate(50,50)"></g>
-        <g id="y" transform = "translate(50,50)"></g>
+        <g id="x"></g>
+        <g id="y"></g>
     </svg>
 </div>
     <script>
-        const svg=document.getElementById("svg")
-        console.log(svg.height, svg.width) //undefined need to set the y to be height for start of y axis
-        console.log(document.getElementById("svg_container").height, document.getElementById("svg_container").width)
-        function xAxis() {
-          let xScale = d3.scaleLinear().domain([0,8000]).range([0,1000])
-          let xAxis = d3.axisTop(xScale)
-          d3.select("#x").call(xAxis)
-        }   
-        function yAxis() {
-            let yScale = d3.scaleLinear().domain([8000,0]).range([0,1000])
-            let yAxis = d3.axisLeft(yScale)
-            d3.select("#y").call(yAxis)
-        }
-        xAxis()
-        yAxis()
+        const svg=d3.select("svg")
+        const margin={"top":50,"left":50,"bottom":50,"right":50}
+        const xScale = d3.scaleLinear().domain([1000,0]).range([800,0])
+        const xAxisGenerator = d3.axisBottom(xScale)
+        //xAxisGenerator.tickSize(-900)
+        const xAxis = d3.select("#x").call(xAxisGenerator)
+        const height =800
+        xAxis.attr("transform",`translate(${50},${height - 20})`);
+
+        const yScale = d3.scaleLinear().domain([1000,0]).range([0,800])
+        const yAxisGenerator = d3.axisLeft(yScale)
+        //yAxisGenerator.tickSize(-800)
+        const yAxis = d3.select("#y").call(yAxisGenerator)
+        yAxis.attr("transform",`translate(${50},${0-20})`);
+
     </script>
 </body>
 </html>
