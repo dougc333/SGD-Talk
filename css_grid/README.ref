@@ -1,0 +1,17 @@
+KP: 
+
+
+3 column layout with auto vs specifying each column 33%
+layout1: https://www.youtube.com/watch?v=_lEkD8IGkwo
+
+row layout then media query for column. for responsive layout. 
+
+
+view_transitions.html: https://codepen.io/chriscoyier/project/editor/DyKgxe
+view-transitions doesnt work in firefox. chrome, edge, etc....
+
+
+responsive mosaic: is this applicable to our graphs? 
+https://www.30secondsofcode.org/css/s/image-mosaic/
+
+vertical image gallery: https://www.30secondsofcode.org/css/s/vertical-gallery/

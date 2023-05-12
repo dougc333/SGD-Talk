@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    font-family: var(--ff-body);
+    font-weight: var(--fw-body);
+    font-size: 1.25rem;
+  }
+  
+
+  a {
+    color: inherit;
+  }
+  
+  a:hover,
+  a:focus {
+    color: var(--clr-accent);
+  }
+  
+  :focus {
+    outline: 5px solid var(--clr-accent);
+    outline-offset: 3px;
+  }
+  
+
+
+      .title {
+       text-align: center;
+       text-transform: uppercase;
+       padding: 1em 0 2em;
+       margin: 0;
+       background: var(--clr-gradient);
+       position: relative;
+       z-index: 1000;
+    }
+    .title {
+      font-size: calc(1rem + 3vw);
+      font-family: var(--ff-title);
+      font-weight: var(--fw-title);
+      color: white;
+      text-shadow: 3px 5px 10px rgba(0,0,0, .2);
+      clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
+    }
+    .title span {
+      font-weight: var(--fw-number);
+      color: black;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      font-size: 5em;
+      top: -30%;
+      z-index: -1;
+      opacity: .25
+    }
+  :root {  
+    --clr-primary: #ee6352;
+    --clr-secondary: #d16e8d;
+    --clr-accent: #F7F7FF;
+    --clr-gradient: linear-gradient(-90deg, var(--clr-primary), var(--clr-secondary));
+    --ff-title: bungee, sans-serif;
+    --ff-body: canada-type-gibson,sans-serif;
+    --fw-body: 300;
+    --fw-bold: 800;
+    --fw-title: 400;
+    --fw-number: 800;
+  }
+
+  .columns {
+    margin: 5rem auto;
+    width: min(90%, 75rem);
+    display: grid;
+    grid-auto-flow: row;
+    gap: 2em;
+  }
+  
+  @media (min-width: 55em) {
+    .columns {
+      grid-auto-flow: column;
+      
+      /* didn't mention this during the video
+         but it ensures equal columns  */
+      /*     grid-auto-columns: 1fr; */
+     }
+  }
+
+</style>
+</head>
+<body>
+    <h1 class="title">CSS Layout <span>a b c</span></h1>
+    <div class="columns">
+    <div>
+        <h2>Lorem, ipsum dolor.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi.</p>
+    </div>
+    <div>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim impedit placeat consequatur libero voluptates facilis eos temporibus praesentium molestiae asperiores!</p>
+    </div>
+    <div>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptate rem nisi.</p>
+    </div>
+  </div>
+</body>
+</html>
