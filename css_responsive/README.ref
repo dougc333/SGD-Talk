@@ -24,3 +24,6 @@ the neutral color to be less dark we craete a --clr-neutral-800.
 5) work on background color in the sections
 6) 
 
+use emmet to wrap in div id=container with command-P>emmet wrap abbreviation > .container> 
+test using responsive design mode in firefox/chrome. 
+in small screen sizes get padding, in large screen sizes dont get padding. 

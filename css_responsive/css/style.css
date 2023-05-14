@@ -1,6 +1,7 @@
 :root{
     --clr-primary-300: #F3EED9;
     --clr-primary-400: #824936;
+    --clr-neutral-100: #fff;
     --clr-neutral-900: #222C2A;
     --ff-primary: sans-serif;
     --ff-accent:serif;
@@ -28,14 +29,29 @@ header{
     background-color: aqua;
 }
 
+header,
+section{
+    padding:3rem 0;
+}
+
+.container{
+    margin-inline: auto;
+    width:min(90%,70.5rem)
+}
+
+
 h1,h2,h3{
     font-family: var(--ff-accent);
     font-weight: 900;
     line-height: 1;
 }
 
+.text-center{
+    text-align: center;
+}
+
 .bg-light{ 
-    background-color: orange;
+    background-color: var(--clr-primary-300);
 }
 
 .bg-primary{ background-color: var(--clr-primary-400);}
