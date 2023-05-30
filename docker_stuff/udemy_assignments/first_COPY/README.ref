@@ -1,0 +1,25 @@
+
+FROM: specifies base image
+
+
+
+option to use ADD or COPY
+COPY will create dir if it doesnt exist
+ADD can get destinaltion url files
+
+
+WORKDIR: create directory and cd into it. Like make
+EXPOSE vs PUBLISH; expose makes port on container unblocked, publish
+maps a port on container to host IP NIC. need both to make port visible to browser. 
+publish is the -p flag on docker container means publish! not port. 
+
+
+
+
+1) build .
+2) verify image exists in cache
+3) run, connect and verify file system and text file is there
+
+MKDIR is not recomemded, if WORKDIR does not exist Docker will create a default WORKDIR
+making MKDIR redundant. 
+

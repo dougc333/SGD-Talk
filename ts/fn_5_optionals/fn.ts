@@ -86,6 +86,8 @@ function checkUser(user:User):string{
 //equivalent to above function
 function checkUserEasy(user:User):string{
   return user?.info?.email ?? ""
-
 }
+
+//use dot operator.
+
 

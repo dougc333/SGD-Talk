@@ -1,4 +1,0 @@
-create volume in nginx container
-
-verify it is not deleted when nginx deleted
-
