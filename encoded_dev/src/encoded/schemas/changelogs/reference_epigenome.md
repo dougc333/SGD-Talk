@@ -1,0 +1,50 @@
+## Changelog for reference_epigenome.json
+
+### Schema version 18
+
+* Upgraded *internal_tags* as follows:
+    * *ENCYCLOPEDIAv3* is now *ENCYCLOPEDIAv0.3*
+    * *ENCYCLOPEDIAv4* is now *ENCYCLOPEDIAv1*
+    * *ENCYCLOPEDIAv5* is now *ENCYCLOPEDIAv2*
+    * *ENCYCLOPEDIAv6* is now *ENCYCLOPEDIAv3*
+
+### Minor changes since schema version 17
+
+* Added *LRGASP* and *ENCYCLOPEDIAv6* to the *internal_tags* enums list
+* Added *doi* property
+* Added *analyses* property
+* Added *assay_slims* calculated property
+* Added *RushAD* and *YaleImmuneCells* to the *internal_tags* enum
+* Added *biosample_summary* calculated property
+* Added *Deeply Profiled* to the *internal_tags* enum
+* *related_datasets* now includes FunctionalCharacterizationExperiment.json and TransgenicEnhancerExperiment.json
+* Removed *control_type* calculated property
+* Added *Degron* to *internal_tags* enums list.
+
+### Schema version 17
+
+* Update IHEC dbxref regex to remove version number
+
+### Minor changes since schema version 16
+* Added *MouseDevSeries* enum to *internal_tags*
+* Removed *month_released* calculated property.
+
+### Schema version 16
+
+* *internal_tags* removes *cre_inputv10* and *cre_inputv11*, and adds *ENCYCLOPEDIAv5*, *ccre_inputv1*, and *ccre_inputv2*.
+
+### Schema version 15
+
+* Added *supersedes* property.
+
+### Schema version 14
+
+* Replace *started* enum in *status* with *in progress*.
+
+### Schema version 13
+
+* Remove *proposed* from *status* enum (*dataset* mixin).
+
+### Schema version 12
+
+* *alternate_accessions* now must match accession format, "ENCSR..." or "TSTSR..."

@@ -1,0 +1,18 @@
+.breadcrumb {
+    margin: 0;
+    padding: 5px 0;
+    background-color: transparent;
+
+    > li {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #808080;
+
+        + li::before {
+            content: "/\A0"; // Slash character, only after adjacent li
+            padding: 0 5px;
+            color: #ccc;
+        }
+    }
+}

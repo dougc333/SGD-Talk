@@ -1,0 +1,177 @@
+/*
+ * Everything within the report table area.
+ */
+.report {
+    @at-root #{&}__table {
+        overflow-x: auto;
+
+        table {
+            border-right: 1px solid #a0a0a0;
+            border-bottom: 1px solid #a0a0a0;
+            border-left: 1px solid #a0a0a0;
+        }
+
+        thead {
+            background-color: #e0e0e0;
+
+            th {
+                padding: 0;
+                border-left: 1px solid #a0a0a0;
+                text-align: left;
+
+                a {
+                    padding: 10px 5px;
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                .icon {
+                    margin-left: 5px;
+                }
+
+                &:first-child {
+                    border-left: none;
+                }
+            }
+        }
+
+        td {
+            padding: 5px;
+            border-top: 1px solid #ddd;
+            vertical-align: top;
+        }
+    }
+}
+
+// CSS class for the contents of the column-selector modal.
+.column-selector {
+    // Container for all the selector checkboxes.
+    @media screen and (min-width: $screen-sm-min) {
+        @at-root #{&}__selectors {
+            display: flex;
+            flex-wrap: wrap;
+
+            &.column-selector__selectors--extra {
+                display: block;
+                margin-top: 10px;
+                padding-top: 10px;
+                border-top: 1px solid #e0e0e0;
+
+                .column-selector__selector-item {
+                    flex: none;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // Each selector checkbox/label combo.
+    @at-root #{&}__selector-item {
+        @media screen and (min-width: $screen-sm-min) {
+            flex: 0 1 50%;
+            width: 50%;
+        }
+
+        @media screen and (min-width: $screen-md-min) {
+            flex: 0 1 33.33%;
+            width: 33.33%;
+        }
+    }
+
+    @at-root #{&}__controls {
+        .modal-footer-controls {
+            flex: 0 1 50%;
+            width: 50%;
+            text-align: right;
+        }
+    }
+
+    @at-root #{&}__controls {
+        display: flex;
+        padding: 5px;
+        border-bottom: 1px solid #a0a0a0;
+
+        button {
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+
+    @at-root #{&}__utility-buttons {
+        flex: 1 1 auto;
+    }
+
+    @at-root #{&}__sort-selector {
+        flex: 0 1 auto;
+
+        > .form-control--select {
+            width: auto; // So the select only takes up as much room as it needs
+            margin-left: auto; // To right justify within a flex box
+            height: 100%;
+        }
+    }
+}
+
+.report-header-cell {
+    display: flex;
+    padding: 5px;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    white-space: nowrap;
+
+    &.report-header-cell--sortable {
+        &:hover {
+            background-color: #e0e0e0;
+        }
+    }
+}
+
+// Options for the number of items to display per report page.
+.page-limit-selector {
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $screen-lg-min) {
+        margin-bottom: 0;
+    }
+
+    &__label {
+        margin-bottom: 2px;
+    }
+
+    &__options {
+        display: flex;
+    }
+
+    &__option {
+        display: flex;
+        height: 26px;
+        align-items: center;
+        padding: 0 10px;
+        border-top: 1px solid #c0c0c0;
+        border-bottom: 1px solid #c0c0c0;
+        border-left: 1px solid #c0c0c0;
+        font-weight: bold;
+        color: #000;
+
+        &:last-child {
+            border-right: 1px solid #c0c0c0;
+        }
+
+        &:hover {
+            background-color: #e0e0e0;
+            text-decoration: none;
+        }
+
+        &.page-limit-selector__option--selected {
+            color: #fff;
+            background-color: $brand-info;
+            pointer-events: none;
+        }
+    }
+}
+
+.report-max-warning {
+    margin: 10px 0 0;
+}

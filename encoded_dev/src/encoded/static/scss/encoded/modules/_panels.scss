@@ -1,0 +1,843 @@
+$panel-heading-inset: 10px; // Number of pixels padding inside panel heading
+$panel-body-inset:    10px; // Number of pixels padding inside panel body
+
+/* Panels */
+.panel {
+    background-color: #fff;
+    border: 1px solid #a0a0a0;
+    border-radius: $border-radius-base;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    overflow: visible;
+
+    @media print {
+        border: none;
+    }
+
+    &.panel-default {
+        padding: 0;
+
+        & > .panel-heading {
+            background-color: #d8d8d8;
+
+            h1, h2, h3, h4, h5, h6 {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.antibody-statuses {
+    .panel {
+        border: 0;
+    }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.Page, .Search, .Matrix, .ChipSeqMatrix, .Summary, .EntexMatrix, .EncoreMatrix, .SESCCStemCellMatrix, .ReferenceEpigenomeMatrix, .MouseDevelopmentMatrix {
+    .panel {
+        border: 0;
+    }
+}
+
+.view-item {
+    /* stylelint-disable-next-line selector-class-pattern */
+    &.type-Experiment {
+        .panel {
+            border: 1px solid #a0a0a0;
+            border-radius: $border-radius-base;
+        }
+    }
+}
+
+.panel-heading {
+    position: relative;
+    padding: $panel-heading-inset;
+}
+
+.panel-body {
+    padding: $panel-body-inset;
+}
+
+.panel-body-with-header {
+    padding-top: 0;
+}
+
+.item-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-full {
+    @extend .panel;
+
+    padding: 0;
+}
+
+.panel-insert {
+    padding: 15px 20px;
+}
+
+.panel-blue {
+    background-color: #4284d8;
+    border: 1px solid #3276ca;
+    border-radius: $border-radius-base;
+    margin: 10px 0 20px;
+    padding: 15px 30px;
+    overflow: hidden;
+}
+
+.panel-gray {
+    margin: 10px 0 20px;
+    padding: 15px 30px;
+    overflow: hidden;
+}
+
+.panel h3, .panel h4 { color: #0a253d; }
+
+.view-detail {
+    overflow: hidden;
+
+    h3 {
+        line-height: 24.5px;
+    }
+
+    // Any JSON object output.
+    pre {
+        margin: 20px;
+        white-space: pre-wrap;
+    }
+}
+
+/* add external-link icon to all offsite links (in .panels); modified from _FontAwesome.scss */
+.panel a[href^="http"]::after, td a[href^="http"]::after {
+    content: " \f08e";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+
+    /* sprites.less reset */
+    display: inline;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+
+// remove external-link icon if there is no text in link <a></a>
+a[href^="http"]:empty::after {
+    content: none;
+}
+
+/* do not use external link icon in these cases... */
+
+/* downloads */
+a[href^="http://encodedcc.sdsc.edu/warehouse/"]::after {
+    content: none !important;
+}
+
+.panel__split {
+    display: block;
+    padding: 0;
+
+    @media screen and (min-width: $screen-md-min) {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    @at-root #{&}-element {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        @media screen and (min-width: $screen-md-min) {
+            flex: 0 1 50%;
+            border-left: 1px solid #c0c0c0;
+
+            &:first-child {
+                border-left: 0;
+            }
+        }
+    }
+
+    @at-root #{&}-heading {
+        position: relative;
+        margin-left: -$panel-body-inset;
+        margin-right: -$panel-body-inset;
+        padding: 10px;
+        background-color: #d8d8d8;
+
+        h4 {
+            margin: 0;
+        }
+    }
+}
+
+// <PanelBody> class for below split panel area.
+.panel__below-split {
+    border-top: 1px solid #c0c0c0;
+
+    h4 {
+        margin: 0 0 10px;
+    }
+}
+
+// Antibody Status Panels
+.type-antibody-status {
+    .status-status-row {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top: 1px solid #e0e0e0;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    .status-organism-row {
+        margin: 5px 0;
+    }
+
+    .status-organism {
+        padding: 0;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .status-terms {
+        padding: 0;
+        color: #808080;
+    }
+
+    .status-status {
+        position: relative;
+        padding: 0;
+        margin-bottom: 10px;
+        text-align: left;
+        font-weight: bold;
+
+        @media screen and (min-width: $screen-sm-min) {
+            padding: 0 25px 0 0;
+            margin-bottom: 0;
+            text-align: right;
+        }
+    }
+
+    .icon {
+        position: relative;
+        top: 3px;
+        font-size: 1.4rem;
+        margin-right: 5px;
+
+        @media screen and (min-width: $screen-sm-min) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+// Styles for the panel that has documents or characterizations as subpanels
+.panel-docs-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.panel-doc {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    margin: 0;
+    padding: 0 5px;
+}
+
+.panel-body-doc {
+    padding: 10px;
+}
+
+// Panel containing columns of document sub-panels.
+.doc-panel {
+    @at-root #{&}__outer {
+        padding: 3px;
+    }
+
+    @at-root #{&}__inner {
+        padding: 0;
+
+        @media screen and (min-width: $screen-sm-min) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .document {
+            @media screen and (min-width: $screen-sm-min) {
+                flex: 0 1 50%;
+            }
+
+            @media screen and (min-width: $screen-md-min) {
+                flex: 0 1 33.33%;
+            }
+
+            @media screen and (min-width: $screen-xl-min) {
+                flex: 0 1 25%;
+            }
+        }
+    }
+}
+
+.panel-attachment {
+    padding: 0 5px;
+}
+
+.attachment-panel-outer {
+    padding: 3px 6px;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.type-QualityMetric.view-detail {
+    margin: 0;
+}
+
+// Holds documents, but as a panel within a panel
+.panel-body-doc-interior {
+    @extend .panel-body-doc;
+
+    padding-left: 0;
+    margin-right: -10px;
+}
+
+// Styles for the File Gallery component that displays the file tables and graphs
+.file-gallery-heading {
+    position: relative;
+}
+
+.file-gallery-controls {
+    justify-content: flex-end;
+    border-bottom: 1px solid #c0c0c0;
+
+    select {
+        border: 2px solid #4f689e !important;
+        color: #4f689e !important;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+}
+
+.file-gallery-facets {
+    position: relative;
+    -webkit-transition: flex-basis 0.1s ease-in-out;
+    -moz-transition: flex-basis 0.1s ease-in-out;
+    -o-transition: flex-basis 0.1s ease-in-out;
+    transition: flex-basis 0.1s ease-in-out;
+
+    .show-hide-facets {
+        position: absolute;
+        padding: 5px 7px;
+        top: 10px;
+        cursor: pointer;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        -webkit-transition: right 0.1s ease-in-out;
+        -moz-transition: right 0.1s ease-in-out;
+        -o-transition: right 0.1s ease-in-out;
+        transition: right 0.1s ease-in-out;
+        background: white;
+        z-index: 10;
+
+        /* stylelint-disable-next-line media-feature-name-disallowed-list */
+        @media screen and (max-width: $screen-md-min) {
+            display: none;
+        }
+    }
+
+    &.collapsed {
+        flex: 0 1 30px;
+
+        /* stylelint-disable-next-line media-feature-name-disallowed-list */
+        @media screen and (max-width: $screen-md-min) {
+            flex: 0 1 100%;
+        }
+
+        padding: 0;
+
+        .show-hide-facets {
+            right: -26px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background: white;
+            border-top: 2px solid #d2d2d2;
+            border-bottom: 2px solid #d2d2d2;
+            border-right: 2px solid #d2d2d2;
+            border-left: 0;
+        }
+
+        .facet {
+            display: none;
+        }
+
+        h4, .clear-file-facets, .facet {
+            display: none;
+        }
+    }
+
+    &.expanded {
+        flex: 0 1 20%;
+        padding: 20px;
+        padding-top: 40px;
+
+        /* stylelint-disable-next-line media-feature-name-disallowed-list */
+        @media screen and (max-width: $screen-md-min) {
+            flex: 0 1 100%;
+            padding-top: 20px;
+        }
+
+        .show-hide-facets {
+            right: -2px;
+            border-top: 2px solid #d2d2d2;
+            border-bottom: 2px solid #d2d2d2;
+            border-left: 2px solid #d2d2d2;
+            border-right: 2px solid white;
+        }
+    }
+
+    border-right: 2px solid #d2d2d2;
+
+    .facet-term {
+        margin-bottom: 2px;
+        cursor: pointer;
+        z-index: 0;
+
+        .facet-term__bar {
+            z-index: -1;
+        }
+
+        &.selected {
+            .facet-term__bar {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+.file-gallery-container {
+    display: flex;
+
+    /* stylelint-disable-next-line media-feature-name-disallowed-list */
+    @media screen and (max-width: $screen-md-min) {
+        flex-wrap: wrap;
+    }
+
+    .disabled-checkbox {
+        color: #6d6d6d;
+    }
+
+    .clear-file-facets {
+        background: white;
+        border: 0;
+        padding: 0;
+        color: #e50400;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .facet {
+        padding-bottom: 10px;
+    }
+
+    .file-gallery-tab-bar {
+        flex: 0 1 80%;
+        overflow: hidden;
+
+        /* stylelint-disable-next-line media-feature-name-disallowed-list */
+        @media screen and (max-width: $screen-md-min) {
+            flex: 0 1 100%;
+        }
+
+        &.expanded {
+            flex: 0 1 calc(100% - 30px);
+
+            /* stylelint-disable-next-line media-feature-name-disallowed-list */
+            @media screen and (max-width: $screen-md-min) {
+                flex: 0 1 100%;
+            }
+        }
+    }
+}
+
+.file-gallery-visualize {
+    margin-top: 5px;
+
+    @media screen and (min-width: $screen-sm-min) {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        margin-top: 0;
+    }
+}
+
+.file-gallery-instructions {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+$file-gallery-controls-height: 34px; // Height of controls inside file-gallery-controls
+
+.file-gallery-controls {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+    /* stylelint-disable-next-line media-feature-name-disallowed-list */
+    @media screen and (max-width: $screen-sm-min) {
+        display: block;
+
+        select {
+            margin-bottom: 3px;
+        }
+    }
+
+    @at-root #{&}__assembly-selector {
+        flex: 0 1 auto;
+        margin-right: 5px;
+
+        select {
+            height: $file-gallery-controls-height;
+        }
+    }
+
+    @at-root #{&}__visualization-selector {
+        display: flex;
+        margin-bottom: 2px;
+
+        select {
+            display: block;
+            height: $file-gallery-controls-height;
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            height: $file-gallery-controls-height;
+            vertical-align: top;
+        }
+    }
+
+    @at-root #{&}__download {
+        height: $file-gallery-controls-height;
+        vertical-align: top;
+
+        @media screen and (min-width: $screen-sm-min) {
+            margin-left: 5px;
+        }
+    }
+
+    @at-root #{&}__divider {
+        display: none;
+
+        @media screen and (min-width: $screen-sm-min) {
+            display: inline;
+            margin-left: 5px;
+            font-weight: 500;
+        }
+    }
+}
+
+.file-gallery-control {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    margin-right: 5px;
+
+    @media screen and (min-width: $screen-sm-min) {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+
+    select {
+        height: 30px;
+        padding-right: 30px;
+        font-size: 0.9rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    &.file-gallery-control-select::after {
+        content: '\f0dc';
+        font-family: FontAwesome;
+        padding: 8px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        z-index: 1;
+        width: 10px;
+        line-height: 50%;
+        font-size: 0.86rem;
+        color: #428bca;
+        pointer-events: none;
+    }
+}
+
+.file-gallery-tab-bar {
+    .tab-nav {
+        display: flex;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+    }
+
+    .file-gallery__inclusion-selector {
+        flex: 0 1 auto;
+        align-self: center;
+        margin-right: 10px;
+    }
+}
+
+.file-table-visualizer {
+    text-align: center;
+}
+
+// File gallery title bars that collapse
+.collapsing-title-icon {
+    position: relative;
+    top: 0;
+}
+
+.table-counts {
+    padding: 2px 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #606060;
+    background-color: #fff;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+.file-gallery-graph-header {
+    padding: 10px;
+    background-color: #d8e0e8 !important;
+
+    h4 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.file-gallery-graph-footer {
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 40%;
+
+    &.hiding {
+        background-image: url('data:image/svg+xml;utf8,<svg data-name="Hiding Dots" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760.67 139.33"><defs><style>.cls-1{fill:#808080;}</style></defs><title>Indicates hiddent content</title><circle class="cls-1" cx="380.33" cy="69.67" r="64.11"/><circle class="cls-1" cx="692.4" cy="69.67" r="64.11"/><circle class="cls-1" cx="68.27" cy="69.67" r="64.11"/></svg>');
+    }
+}
+
+.file-download-section {
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid #c0c0c0;
+}
+
+// Collapsing title bar
+.collapsing-title {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+
+    h4 {
+        display: flex;
+        align-items: center;
+        margin: 0 10px 0 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    h5 {
+        margin: 0;
+    }
+
+    &:focus, &:active {
+        text-decoration: none;
+        outline: 0;
+        box-shadow: 0 0 3px #00f inset;
+    }
+
+    &__file-download-container {
+        display: inline-block;
+    }
+
+    &__file-download {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        color: #428bca;
+        font-size: 1.3rem;
+
+        &--no-download-shade {
+            opacity: 0.3;
+        }
+    }
+
+    // Audit trigger button inside collapsing title
+    .audit-indicators {
+        margin-right: 10px;
+    }
+
+    // Status badge in collapsing title
+    @at-root #{&}__status {
+        margin-right: 10px;
+    }
+
+    // Audit details drop-down panel displayed just below collapsing title
+    @at-root #{&}__audit-details {
+        background-color: #b5bbc2;
+
+        .audit-detail {
+            margin: 0 0 0 40px;
+            border-right: none;
+            border-radius: 0;
+        }
+    }
+}
+
+// Control for collapsing panel title bars
+.collapsing-title-control {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    pointer-events: all;
+
+    a, button {
+        cursor: pointer;
+    }
+
+    .bg {
+        fill: white;
+        stroke-width: 6px;
+        stroke: #000;
+    }
+
+    .content-line {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 60px;
+    }
+}
+
+.collapsing-title-trigger {
+    display: flex;
+    flex: 0 0 40px;
+    min-height: 40px;
+    width: 40px;
+    padding: 0;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+    border-right: 1px solid #fff;
+    border-bottom: none;
+    border-left: none;
+    background-color: transparent;
+
+    &:hover {
+        background-color: darken(#d8e0e8, 10%);
+        text-decoration: none;
+    }
+}
+
+.collapsing-title-file-count {
+    font-size: 0.9rem;
+    color: #606060;
+}
+
+.title-main-content {
+    .title-main-content__identifier {
+        margin-right: 10px;
+
+        .title-main-content__analysis-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+
+            &.title-main-content__analysis-title--file-info {
+                font-size: 1.1rem;
+            }
+        }
+
+        .title-main-content__file-info {
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+    }
+}
+
+.subpanel {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #eee;
+
+    &:first-child {
+        padding-top: 0;
+        border-top: none;
+    }
+}
+
+.two-column-long-text {
+    column-count: 1;
+    line-height: 1.7;
+
+    @media screen and (min-width: $screen-md-min) {
+        column-count: 2;
+        column-gap: 50px;
+    }
+
+    @at-root #{&}--gap {
+        margin-bottom: 20px;
+    }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.BETA {
+    background-color: #b24342;
+    padding: 2px 7px;
+    color: white;
+    font-weight: 500;
+    margin-left: 7px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.table-paged {
+    @at-root #{&}__count {
+        @extend .table-counts;
+
+        border-top: 1px solid #a0a0a0;
+    }
+}
+
+.series-wrapper {
+    .panel-body {
+        padding: 0;
+    }
+
+    .panel {
+        border: 0;
+    }
+}

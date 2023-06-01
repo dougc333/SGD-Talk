@@ -1,0 +1,527 @@
+//
+// Navbars
+// --------------------------------------------------
+
+// Navbar variables copied from Bootstrap 3
+$navbar-height:              40px;
+$navbar-margin-bottom:       20px;
+$navbar-trigger-width:       24px;
+$navbar-trigger-icon-width:  20px;
+$navbar-trigger-icon-height: 20px;
+$navbar-bg-color:            #0a253d;
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+
+.navbar__wrapper {
+    @media screen and (min-width: $screen-md-min) {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+/**
+ * Main navigation area.
+ */
+.navbar {
+    width: 100%;
+    background-color: $navbar-bg-color;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.19);
+
+    // Contains the entire navigation system.
+    @at-root #{&}__container {
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (min-width: $screen-sm-min) {
+            width: $screen-sm-min;
+        }
+
+        @media screen and (min-width: $screen-md-min) {
+            display: flex;
+            align-items: center;
+            width: $screen-md-min;
+        }
+
+        @media screen and (min-width: $screen-lg-min) {
+            width: $screen-lg-min;
+        }
+
+        @media screen and (min-width: $screen-xl-min) {
+            width: $screen-xl-min;
+        }
+    }
+
+    // Contains the brand and mobile trigger.
+    @at-root #{&}__header {
+        display: flex;
+        flex: 0 1 auto;
+        height: $navbar-height;
+        justify-content: space-between;
+    }
+
+    // Holds the site logo and home-page link.
+    @at-root #{&}__brand {
+        flex: 1 1 auto;
+        padding: 0;
+        margin-left: 10px;
+        align-self: center;
+    }
+
+    // Mobile trigger
+    @at-root #{&}__trigger {
+        flex: 0 0 $navbar-trigger-width;
+        padding: 0;
+        margin-right: 16px;
+        border: none;
+        background-color: transparent;
+        fill: #fff;
+
+        svg {
+            width: $navbar-trigger-icon-width;
+            height: $navbar-trigger-icon-height;
+        }
+
+        @media screen and (min-width: $screen-md-min) {
+            display: none;
+        }
+    }
+
+    // Navbar content area, hidden under hamburger on mobile.
+    @at-root #{&}__content {
+        @media screen and (min-width: $screen-md-min) {
+            display: flex;
+            align-items: center;
+            flex: 1 1 auto;
+            height: $navbar-height;
+            width: auto;
+            justify-content: space-between;
+        }
+
+        &.collapsed {
+            display: none;
+
+            @media screen and (min-width: $screen-md-min) {
+                display: flex;
+            }
+        }
+    }
+
+    // Prevent last dropvdown from getting cut off on mid-size browser screens by
+    // shifting menu to right.
+    &__container {
+        .navbar__nav:last-child {
+            .dropdown {
+                .dropdown__menu {
+                    right: 2px;
+                }
+            }
+        }
+    }
+}
+
+@mixin nav-title {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 13px 15px 11px;
+    font-size: 1rem;
+    text-align: left;
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    line-height: 1;
+}
+
+/**
+ * One nav area within a navbar.
+ */
+.navbar__nav {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+
+    @media screen and (min-width: $screen-md-min) {
+        display: flex;
+        flex: 0 1 auto;
+        align-items: center;
+    }
+
+    & > li {
+        & > a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    .dropdown {
+        position: relative;
+        height: 100%;
+
+        .dropdown__toggle {
+            @include nav-title;
+
+            &:hover {
+                background-color: #2f4961;
+            }
+
+            &.dropdown__toggle--open {
+                background-color: #2f4961;
+            }
+        }
+
+        .dropdown__menu {
+            display: none;
+        }
+
+        &.open {
+            .dropdown__menu {
+                display: block;
+            }
+        }
+    }
+
+    #user-actions-footer {
+        .dropdown__toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+        }
+    }
+}
+
+// Search box in main navigation
+.navbar__search {
+    display: flex;
+    margin: 3px 10px;
+    padding: 0;
+    border-radius: 14px;
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+    -ms-transition: width 0.3s ease-out;
+    -moz-transition: width 0.3s ease-out;
+    -webkit-transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out;
+
+    > input {
+        flex: 1 1 auto;
+        margin: 0;
+        padding: 5px 10px;
+        width: 180px;
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+
+        &:focus {
+            width: 230px;
+            transition: width 0.1s ease-out;
+            background: transparent;
+        }
+    }
+
+    .search-button {
+        flex: 0 1 auto;
+        border: none;
+        background: transparent;
+    }
+}
+
+.dropdown__menu {
+    padding: 0;
+    background-color: transparent;
+    list-style: none;
+
+    @media screen and (min-width: $screen-md-min) {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    }
+
+    & > li {
+        position: relative;
+
+        & > a, & > button, & > span {
+            display: block;
+            padding: 5px 15px 5px 25px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            background-color: transparent;
+            border: none;
+            text-decoration: none;
+        }
+    }
+
+    .sub-menu {
+        padding-left: 40px;
+    }
+
+    .icon-container {
+        position: relative;
+        display: inline-block;
+        pointer-events: all;
+    }
+
+    .tooltip-container__trigger {
+        cursor: pointer;
+        pointer-events: all;
+    }
+
+    .icon-question-circle {
+        color: #b3b3b3;
+        pointer-events: all;
+        cursor: pointer;
+        padding: 2px 2px 1px;
+        margin-left: 4px;
+        font-size: 1.1rem;
+    }
+
+    a {
+        color: #696969;
+        font-weight: 400;
+        font-size: 1em;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        /* stylelint-disable-next-line media-feature-name-disallowed-list */
+        @media screen and (max-width: $screen-md-min) {
+            color: #fff;
+        }
+    }
+
+    .disabled-menu-item {
+        display: flex;
+        pointer-events: none;
+        font-weight: 400;
+        position: relative;
+        padding: 0 30px 0 20px;
+        letter-spacing: 1px;
+        font-size: 1rem;
+
+        @media screen and (min-width: $screen-md-min) {
+            font-size: 1rem;
+            color: #696969;
+            font-weight: 400;
+        }
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+        position: absolute;
+        top: 100%;
+        padding: 10px 0;
+        z-index: 100;
+        border: 1px solid #e0e0e0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+
+        & > li {
+            & > a, & > button, & > span, & > div {
+                display: block;
+                width: 100%;
+                margin: 0;
+                padding: 0 30px 0 20px;
+                color: #000;
+                background-color: #fff;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                border-left: none;
+                border-right: none;
+                text-align: left;
+                font-weight: 400;
+                white-space: nowrap;
+                max-width: 400px;
+                position: relative;
+
+                &:not(.disabled-menu-item) {
+                    &:hover,&:active {
+                        border-top: 1px solid darken($navbar-inverse-link-active-bg, 20%);
+                        border-bottom: 1px solid darken($navbar-inverse-link-active-bg, 20%);
+                        background-color: $navbar-inverse-link-active-bg;
+                        color: #fff;
+                    }
+                }
+
+                // Dropdown menu separator item
+                &.dropdown-sep {
+                    pointer-events: none;
+                    margin: 5px 0 0;
+                    border-top: 1px solid #c0c0c0;
+                    border-bottom: 1px solid #fff;
+                }
+            }
+        }
+
+        .navbar-right & {
+            right: -1px;
+        }
+    }
+}
+
+.disabled-menu-item {
+    /* stylelint-disable-next-line media-feature-name-disallowed-list */
+    @media screen and (max-width: $screen-md-min) {
+        font-size: 1rem;
+    }
+}
+
+.hoverable {
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    padding: 0 30px 0 20px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    @media screen and (min-width: $screen-md-min) {
+        &:hover,&:active {
+            a {
+                color: #fff;
+            }
+
+            border-top: 1px solid darken($navbar-inverse-link-active-bg, 20%);
+            border-bottom: 1px solid darken($navbar-inverse-link-active-bg, 20%);
+            background-color: $navbar-inverse-link-active-bg;
+        }
+    }
+
+    /* stylelint-disable-next-line media-feature-name-disallowed-list */
+    @media screen and (max-width: $screen-md-min) {
+        &.sub-menu {
+            font-size: 1rem;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+}
+
+// Wrapper for <GlobalSections> and <CartStatus>
+.navbar__global-cart {
+    @media screen and (min-width: $screen-sm-min) {
+        display: flex;
+    }
+}
+
+// Visual appearance of the brand visual that links to the home page.
+.home-brand {
+    margin: 0;
+    padding: 0 5px;
+    font-size: 1.4rem;
+    font-weight: 200;
+    font-family: $brand-font;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: $navbar-bg-color;
+    transition: background-color 200ms;
+
+    &:hover {
+        background-color: lighten($navbar-bg-color, 20%);
+    }
+}
+
+.test-warning {
+    position: relative;
+    color: #fff;
+    background-color: $brand-danger;
+    text-align: left;
+    padding: 10px;
+
+    @media screen and (min-width: $screen-md-min) {
+        width: 100%;
+        height: 30px;
+        padding: 0;
+        z-index: 1;
+
+        .container {
+            padding: 0;
+        }
+    }
+
+    @at-root #{&}__content {
+        display: flex;
+        height: 100%;
+        font-size: 1rem;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (min-width: $screen-md-min) {
+            justify-content: center;
+        }
+    }
+
+    @at-root #{&}__text {
+        flex: 1 1 auto;
+
+        @media screen and (min-width: $screen-md-min) {
+            flex: 0 1 auto;
+        }
+    }
+
+    @at-root #{&}__close {
+        display: block;
+        flex: 0 0 14px;
+        position: relative;
+        width: 14px;
+        height: 14px;
+        margin-left: 5px;
+        margin-right: 10px;
+        font-size: 1.2rem;
+        color: #fff;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+
+        @media screen and (min-width: $screen-md-min) {
+            flex: 0 1 auto;
+        }
+
+        > .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+// Items specific to each navigation item.
+.navbar__item {
+    // Search box in main navigation.
+    &--search {
+        padding-bottom: 10px;
+
+        @media screen and (min-width: $screen-md-min) {
+            padding-bottom: 0;
+        }
+    }
+}
+
+a[data-trigger="login"] {
+    .svg-icon-user {
+        width: 16px;
+    }
+}
+
+.navbar-twitter {
+    display: flex;
+    align-items: center;
+
+    .svg-icon-twitter {
+        width: 16px;
+        fill: #1d9cf0;
+    }
+}

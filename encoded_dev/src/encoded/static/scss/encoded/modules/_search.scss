@@ -1,0 +1,555 @@
+$form-element-height: 26px;
+$form-bg: #f3f3f3;
+
+// Contains all search result elements.
+.search-results {
+    @at-root #{&}__facets {
+        @media screen and (min-width: $screen-md-min) {
+            flex: 0 0 25%;
+        }
+    }
+
+    display: block;
+    margin-top: 5px;
+
+    h4 {
+        margin: 0 0 10px;
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+        display: flex;
+    }
+
+    .box.facets {
+        @media screen and (min-width: $screen-md-min) {
+            margin-right: 10px;
+        }
+    }
+
+    @at-root #{&}__result-list {
+        margin-top: 20px;
+
+        @media screen and (min-width: $screen-md-min) {
+            margin-top: 0;
+            flex: 0 0 75%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @at-root #{&}__report-list {
+        @media screen and (min-width: $screen-md-min) {
+            flex: 0 1 75%;
+            overflow: hidden;
+        }
+    }
+}
+
+// Styles for each search result item.
+.result-item {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+
+    @at-root #{&}__link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    @at-root #{&}__data {
+        flex: 1 1 auto;
+        position: relative;
+    }
+
+    @at-root #{&}__property-title {
+        font-weight: 700;
+    }
+
+    @at-root #{&}__meta {
+        flex: 0 1 auto;
+        text-align: right;
+
+        @at-root #{&}-title {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #606060;
+            padding-bottom: 3px;
+        }
+
+        @at-root #{&}-id {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #909090;
+            padding-bottom: 3px;
+        }
+
+        .audit-indicators {
+            margin-top: 5px;
+        }
+    }
+
+    @at-root #{&}__picker {
+        flex: 0 1 auto;
+        margin-left: 5px;
+    }
+
+    // Cart control in search results
+    @at-root #{&}__cart-control {
+        margin-left: 5px;
+        flex: 0 0 35px;
+
+        .cart__toggle {
+            margin-left: auto;
+        }
+    }
+
+    @at-root #{&}__data-row {
+        margin-left: 25px;
+        line-height: 1.4;
+        word-break: break-all;
+
+        ul {
+            text-decoration: none;
+            list-style-type: none;
+            padding: 0;
+            margin-left: 25px;
+
+            li {
+                display: inline;
+                list-style-type: none;
+                border: none;
+                margin-right: 5px;
+
+                a {
+                    display: inline;
+                }
+            }
+        }
+
+        img {
+            max-width: 128px;
+            height: auto;
+            margin: auto;
+            display: block;
+        }
+    }
+
+    @at-root #{&}__highlight-row {
+        font-size: 1rem;
+        font-weight: 400;
+        padding-bottom: 5px;
+        color: #6c6c6c;
+    }
+
+    @at-root #{&}__target-external-resources {
+        margin: 0 0 0 25px;
+
+        p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        > ul {
+            margin: 0 0 0 25px;
+            padding: 0;
+            list-style: none;
+            line-height: 1.3;
+
+            > li {
+                display: inline-block;
+                margin: 0 10px 0 0;
+                padding: 0;
+            }
+        }
+
+        > em {
+            margin: 0 0 0 25px;
+        }
+    }
+
+    @at-root #{&}__controls {
+        margin-bottom: 2px;
+    }
+}
+
+.search-list {
+    position: relative;
+    z-index: 0;
+}
+
+.btn.btn-disclose {
+    position: relative;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: $form-bg;
+    box-shadow: none;
+    line-height: 20px;
+    border: 1px solid #ccc;
+
+    &.active {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: transparent;
+    }
+
+    z-index: 1;
+}
+
+.icon-disclose {
+    position: relative;
+    display: inline-block;
+    top: 1px;
+    font-size: 18px;
+    width: 10px;
+    line-height: 20px;
+}
+
+.adv-search-form {
+    margin: 5px 0;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    @at-root #{&}__input {
+        display: flex;
+        position: relative;
+
+        input[type="text"] {
+            flex: 1 1 auto;
+            margin-right: 5px;
+            line-height: 1.5;
+        }
+
+        select {
+            flex: 0 1 auto;
+        }
+    }
+
+    @at-root #{&}__notification {
+        margin: 0;
+        font-weight: 600;
+        color: #808080;
+        margin-top: 10px;
+    }
+
+    @at-root #{&}__submit {
+        text-align: right;
+    }
+}
+
+.input-group-region-input {
+    position: relative;
+}
+
+.adv-search-autocomplete {
+    position: absolute;
+    z-index: 10;
+    top: 18px;
+    left: 0;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: scroll;
+    color: #fff;
+    background-color: $nav-color-bg;
+    border: 1px solid #ccc;
+    list-style: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+    li {
+        margin: 0;
+        padding: 5px 15px;
+        font-size: 13px;
+        cursor: pointer;
+
+        &:hover {
+            color: #404040;
+            background-color: #e0e0e0;
+        }
+    }
+}
+
+.input-group-select-addon {
+    padding: 0;
+
+    select {
+        height: 100%;
+    }
+}
+
+.results-table-control {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: space-between;
+
+    @at-root #{&}__main {
+        display: flex;
+        flex: 0 1 auto;
+        flex-wrap: wrap;
+
+        .btn {
+            flex: 0 1 auto;
+            margin-right: 5px;
+
+            .icon {
+                margin-right: 5px;
+            }
+        }
+
+        .btn-attached {
+            display: flex;
+            flex: 0 1 auto;
+            margin-right: 5px;
+
+            svg {
+                display: block;
+                margin-right: 5px;
+            }
+
+            .btn {
+                flex: 0 1 auto;
+                border-radius: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-right: none;
+            }
+
+            .btn:first-child {
+                border-top-left-radius: $border-radius-base;
+                border-bottom-left-radius: $border-radius-base;
+            }
+
+            .btn:last-of-type {
+                border-top-right-radius: $border-radius-base;
+                border-bottom-right-radius: $border-radius-base;
+                border-right: 1px solid #c0c0c0;
+            }
+        }
+    }
+
+    // /report/ pagination controls
+    @at-root #{&}__pager {
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $screen-lg-min) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+    }
+
+    &--centered {
+        justify-content: center;
+    }
+
+    .dropdown-menu {
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        & > li > a {
+            padding: 2px 20px 2px 20px;
+            font-size: 0.95rem;
+        }
+    }
+
+    @at-root #{&}__json {
+        display: none;
+
+        @media screen and (min-width: $screen-sm-min) {
+            display: block;
+            flex: 0 1 auto;
+        }
+    }
+}
+
+.results-table-button {
+    display: inline-block;
+}
+
+// View control report button
+.view-type-report {
+    > button {
+        @extend .btn-info;
+        @extend .btn-sm;
+    }
+
+    .dropdown-button__content {
+        width: auto;
+        white-space: nowrap;
+
+        a {
+            font-family: $button-font;
+            font-weight: 700;
+            font-size: 0.9rem;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.view-type-report-dropdown {
+    display: flex;
+    align-items: center;
+
+    .svg-icon.svg-icon-chevron-down {
+        width: 10px;
+        margin: 0 0 0 5px;
+        fill: #fff;
+    }
+}
+
+.page-listing-date {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+// Genome rowser assembly chooser menu
+.browser-assembly-chooser {
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    @media screen and (min-width: $screen-sm-min) {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    @at-root #{&}__title {
+        display: none;
+
+        @media screen and (min-width: $screen-sm-min) {
+            display: block;
+            padding-right: 5px;
+            flex: 0 1 auto;
+            font-weight: bold;
+        }
+    }
+
+    @at-root #{&}__menu {
+        display: block;
+
+        @media screen and (min-width: $screen-sm-min) {
+            display: block;
+            flex: 0 1 auto;
+        }
+    }
+}
+
+.result-table {
+    position: relative;
+    z-index: 10;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+
+    @media screen and (min-width: $screen-md-min) {
+        flex: 1 1 auto;
+    }
+
+    > li {
+        border-bottom: 1px solid #e8e8e8;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &::before {
+        content: none;
+        display: block;
+    }
+
+    .pull-right {
+        position: relative;
+        z-index: 2;
+    }
+
+    &.result-table-tabbed {
+        border-top: 0;
+    }
+
+    // Object stats for each search result table entry.
+    @at-root #{&}__status {
+        text-align: right;
+
+        .status {
+            display: inline-block;
+        }
+    }
+}
+
+/**
+ * Object-specific search-result styles.
+ */
+.result-experiment-series-search {
+    margin-bottom: 2px;
+}
+
+.single-cell-page {
+    .clear-filters-control {
+        display: none;
+    }
+
+    .organ__facet, .systems__facet {
+        display: none;
+    }
+
+    .tab-content-homosapiens, .tab-content-musmusculus {
+        .organism__facet {
+            display: none;
+        }
+    }
+}
+
+.region-search {
+    @at-root #{&}__gbrowser {
+        display: block;
+    }
+}
+
+// Buttons to clear searchTerm query parameters.
+.clear-search-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    .clear-search-term__control {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0 5px;
+        border-radius: 3px;
+        font-size: 0.9rem;
+        background-color: scale-color(#4183c4, $lightness: 70%);
+        color: #000;
+
+        .svg-icon {
+            width: 7px;
+            fill: #000;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.search-page-limit-selector {
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $screen-lg-min) {
+        margin-bottom: 20px;
+    }
+}
