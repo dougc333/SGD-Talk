@@ -1,8 +1,0 @@
-
-
-cc_starer is the alembic sqlalchemy migration. 
-it should create the tables in the db based on src/models.py
-
-then it should be used for db backup and restore when there is data in the tables
-
-

@@ -1,0 +1,12 @@
+README.txt
+setup.py
+pypi/__init__.py
+pypi/tests.py
+pypi/views.py
+pypi.egg-info/PKG-INFO
+pypi.egg-info/SOURCES.txt
+pypi.egg-info/dependency_links.txt
+pypi.egg-info/entry_points.txt
+pypi.egg-info/not-zip-safe
+pypi.egg-info/requires.txt
+pypi.egg-info/top_level.txt
