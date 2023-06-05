@@ -1,11 +1,11 @@
 {
-    "java.project.sourcePaths": [
-        "test_java",
-        "test_antlr_book1/src/antlr_ex",
-        "test_antlr_book1/src/foo"
-    ],
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/Users/dc/opt/lib/antlr-4.11.1-complete.jar"
-    ]
+  "java.project.sourcePaths": [
+    "test_java",
+    "test_antlr_book1/src/antlr_ex",
+    "test_antlr_book1/src/foo"
+  ],
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "/Users/dc/opt/lib/antlr-4.11.1-complete.jar"
+  ]
 }

@@ -34,10 +34,12 @@ function App() {
   function foo(){
     setData(x=>[...x,1])
   }
-  //componentDidMount equivalent. get data when component is mounted
+  //componentDidMount equivalent. get data when component is mountedls
   useEffect(()=>{
     getData()
   },[])
+  
+
   
   return (
     <div className="App">
