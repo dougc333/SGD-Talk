@@ -1,0 +1,27 @@
+Closures and nested functions. Cant have a closure without a nested function. 
+
+
+Definition: A CLOSURE is a function having access to the scope of the parent
+function after teh parent function has returned. 
+
+CLOSURE==member function of class. 
+
+
+
+python: changing local value of coins need to use nonlocal. Not changing value
+of person so dont need nonlocal
+
+A closure is created when the parent function returns with a play_game function
+which is a function but is not executed. We can see both tommy and jenny have
+their own state. This pattern is similar to creating class instances. 
+When the parent function returns with play_game then this is a closure. The
+play_game child function has access to a private copy of the coin variable in
+the parent_fn. 
+
+The tricy part is to recognize a closure from the parent fn when the function
+parameters become parent variables. coin and parent are parent variables even
+though they are on the stack. Those are implicitly created in parent_fn scope. 
+
+js: lexical closure vs. function closure. People use the word closure without
+specifying what they are referring to. 
+
