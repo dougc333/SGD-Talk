@@ -1,21 +1,16 @@
 import './App.css';
 import UseStateComponent from './UseStateComponent';
-import UseStateArray from './UseStateArray';
+import UseStateObject from './UseStateObject';
 
-const styles = {
-  'display': 'inline-block',
-  'marginLeft': '.5rem'
-}
+
+
 
 
 function App() {
   return (
-    <div className="App">
-      
-      SomeVal: <span style={styles}> 
-      <UseStateComponent /></span>
-      <></>
-      <UseStateArray></UseStateArray>
+    <div className="App"> 
+      <UseStateComponent />,
+      <UseStateObject></UseStateObject>
     </div>
   );
 }

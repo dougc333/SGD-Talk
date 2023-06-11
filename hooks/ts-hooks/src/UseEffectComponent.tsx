@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 
 const UseEffectComponent = () => {
-  const []
+  
 
 }
 
