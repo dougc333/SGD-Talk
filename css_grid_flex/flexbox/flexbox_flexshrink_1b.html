@@ -6,29 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 <style>
-  
-  ul{
+
+  .navlist{
+    font-size: 600;
     display: flex;
+   /*  flex-wrap: wrap; */
     list-style: none;
     border: 3px dashed lightgray;
-    width: 100%;
-    margin-left: auto ;
-    margin-right: auto ;
+   /*  padding: 0px;
+    margin: 0px; */
+    gap:1rem;
   }
 
-  li{
+  .navlist li{
     border: 3px dotted lightgreen;
+   /*  padding: 10px;
+    margin: 10px; */
+    flex-shrink: 1;
+    flex-grow: 0;
   }
 </style>
 </head>
 <body>
   <div >
-  <ul>
+  <ul class="navlist">
     <li><a href="#"></a>First</li>
     <li><a href="#"></a>Second</li>
     <li><a href="#"></a>Third</li>
     <li><a href="#"></a>Fourth</li>
     <li><a href="#"></a>Fifth</li>
+    <li><a href="#"></a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto sint doloremque ipsa?</li>
   </ul>
   </div>
 </body>
