@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .item {
+  width: min-content;
+  background-color: #8ca0ff;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+.max_content_item{
+  width:max-content;
+  background-color: #8ca0ff;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+
+.max_content_wrap{
+  width:max-content;
+  background-color: #8ca0ff;
+  padding: 5px;
+  margin-bottom: 1em;
+  max-width:200px;
+}
+
+.fit_content{
+  width:fit-content;
+  background-color: #8ca0ff;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+  </style>
+</head>
+<body>
+  <div class="item">Item</div>
+  <div class="item">See how the min-content text box is as large as teh longest word? asdfasdfasfasdfasdfasdfasdfasdfasdfasdfasasdfasfdasdfasdfasdfasdfasdfasdfasdfasdfsdf </div>
+  <div class="max_content_item">This is max content. It fits all teh text onto the width overflowing if width not big enough. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nulla blanditiis enim dolorum adipisci illo repellendus explicabo accusamus laboriosam, in, deleniti libero eos veniam doloremque tempora iste, neque assumenda molestias quidem magni possimus inventore! Nihil autem dolore, cupiditate aspernatur atque temporibus dicta porro adipisci deleniti. Voluptatibus, minima rem. Incidunt eaque enim aperiam inventore, suscipit perferendis quisquam, porro voluptates est minima nemo maxime quae facilis eveniet dolor labore dolore assumenda recusandae reiciendis optio! Et eum recusandae voluptatem natus, ipsam dolor labore eaque beatae nisi impedit est vitae quaerat, repellendus unde ut voluptas nesciunt. Odio earum quas sit officiis voluptatibus ratione mollitia?</div>
+  <div class="max_content_wrap">If you want word wrap set max-width then will wrap when hits max width</div>
+  <div class="fit_content">If you want word wrap use fit-content then you dont need the messy max-width property</div>
+</body>
+</html>

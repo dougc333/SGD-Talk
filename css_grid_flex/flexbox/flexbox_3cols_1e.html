@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2{
+      font-family: Arial, monospace;
+    }
+    h3{
+      font-family: Arial, monospace;
+    }
+    .cards{
+      border: 3px solid black;
+    }
+    .columns{
+      display:flex;
+      gap:2rem;
+      border: 3px dotted lightgray;
+      gap:1.5rem;
+    }
+
+    .columns{
+      flex-shrink:0;
+      border: 3px dotted lime;
+    }
+    .card{
+      background-color: aquamarine;
+      border:3px dotted lightsalmon;
+    }
+  </style>
+</head>
+<body>
+  <h1>Flexbox vs Grid</h1>
+  
+  <section class="cards">
+    <h2>Some Cards </h2>
+    <div class="columns">
+      <article class="card">
+        <h3>Fun Stuff</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, libero.</p>
+      </article>
+      <article class="card">
+        <h3>Fun Stuff</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea modi nam facere!</p>
+      </article>
+      <article class="card">
+        <h3>A longer title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quod aspernatur laboriosam nam perspiciatis? Dolores ullam non quidem repellendus accusantium modi architecto impedit maxime esse inventore! Voluptatem tempore non excepturi.</p>
+      </article>
+    </div>
+  </section>
+</body>
+</html>

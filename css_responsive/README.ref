@@ -1,3 +1,9 @@
+This isnt the classic responsive layout. Need 3 columns which go to 1 column vs 1 column staying as 1 col. 
+
+
+
+
+
 emmet:!tab gets html5 template
 emmet div*2>p>lorem25 to create 2 divs for columns 
 emmet: link:css
@@ -27,3 +33,7 @@ the neutral color to be less dark we craete a --clr-neutral-800.
 use emmet to wrap in div id=container with command-P>emmet wrap abbreviation > .container> 
 test using responsive design mode in firefox/chrome. 
 in small screen sizes get padding, in large screen sizes dont get padding. 
+
+
+
+
