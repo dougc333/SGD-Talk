@@ -14,15 +14,19 @@
     .cards{
       border: 3px solid black;
     }
-    .columns{
+    .columns {
       display:flex;
       gap:2rem;
       border: 3px dotted lightgray;
       gap:1.5rem;
     }
-
-    .columns{
-      flex-shrink:0;
+    /* these are the 3 cols shrink controls overflow*/
+    /* flex:1!! shorthand for 3 settings*/
+    .columns > *{
+      /* flex:1; */
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
       border: 3px dotted lime;
     }
     .card{
@@ -32,7 +36,7 @@
   </style>
 </head>
 <body>
-  <h1>Flexbox vs Grid</h1>
+  <h1>Flexbox Equal Columns</h1>
   
   <section class="cards">
     <h2>Some Cards </h2>
