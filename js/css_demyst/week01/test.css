@@ -14,20 +14,16 @@ div {
 .nav {
   background: lightblue;
 }
-
 .nav__list {
   margin: 0;
   padding: 0;
 }
-
 .nav__item {
   margin-left: 0;
 }
-
 .nav__link {
   color: red;
 }
-
 .nav-toggle {
   padding: 0;
 }
@@ -36,16 +32,14 @@ div {
 body {
   color: red;
 }
-
-@media only screen and (min-width: 400px) and (max-width: 600px) {
+@media only screen and (min-width: 500px) {
   body {
     color: green;
   }
 }
 
-@media only screen and (min-width: 100px) and (max-width: 300px) {
+@media only screen and (min-width: 600px) {
   body {
-    color: blue;
+    background: blue;
   }
-}
-/*# sourceMappingURL=test.css.map */
+}/*# sourceMappingURL=test.css.map */
