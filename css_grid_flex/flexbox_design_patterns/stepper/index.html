@@ -5,31 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .container{
-      margin:auto;
-      border:1px solid black;
-      width:400px; 
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
+    
+
+    
     .stepper{
+      padding-top: 40px;
+      padding-left:50px;
+      padding-bottom:40px;
       border: 1px solid black;
+      display:flex;
+      text-align: center;
+      align-items: center;
     }
     .minus{
-      margin: 40 10 0 0;
-      padding: 40 0 0 0;
       background-color: lightgreen;
       border:1px solid gray;
       height:40px;
-      width:100px
+      width:100px;
+      border-right:2px solid gray;
     }
     .display{
-      display:inline-block;
-      border:1px solid gray;
+      display:flex-inline;
+      border-top:1px solid gray;
+      border-bottom:1px solid gray;
       height:40px;
       width:100px
     }
     .plus{
       background-color: lightblue;
-      display:inline-block;
+      display:flex-inline;;
       border:1px solid gray;
       height:40px;
       width:100px
@@ -37,12 +46,10 @@
   </style>
 </head>
 <body>
-  <div class="container">
-      <div class="stepper">
+    <div class="stepper">
       <button class="minus" onClick="decr">-</button>
-      <div class="display">{num}</div>
+      <div class="display">6</div>
       <button class="plus" onClick="incr">+</button>
     </div>
-  </div>
 </body>
 </html>
