@@ -4,31 +4,10 @@ This isnt the classic responsive layout. Need 3 columns which go to 1 column vs 
 
 
 
-emmet:!tab gets html5 template
-emmet div*2>p>lorem25 to create 2 divs for columns 
-emmet: link:css
-emmet:section*2>.split is same as section*2>div.split dont have to have the div. .split implies div. 
-
 
 
 https://www.youtube.com/watch?v=bn-DQCifeQQ
 
-
-css template
-1) set border box to box sizing
-2) remove default margins
-
-3) set css-properties at :root. 
---clr-primary-300: #F3EED9
---clr-primary-400: #824936
---clr-neutral-900: #222C2A
-
-the naming convention follows a "font-weight" convention where we assign numbers to the colors so if we need to adjsut
-the neutral color to be less dark we craete a --clr-neutral-800. 
-
-4) work on text first, not the layout, the fonts and weights for the headers
-5) work on background color in the sections
-6) 
 
 use emmet to wrap in div id=container with command-P>emmet wrap abbreviation > .container> 
 test using responsive design mode in firefox/chrome. 

@@ -1,7 +1,11 @@
 KP: 
+The layout row contains several important design flow goals: 
+1) iterating the text styling with absolute positioning, 
+2) grid layout 
+3) didnt do the margin:0 and padding:0 in css reset. Only did the box-sizing. 
+4) 
 
-
-3 column layout with auto vs specifying each column 33%
+layout_row.html: 3 column layout with auto vs specifying each column 33%
 layout1: https://www.youtube.com/watch?v=_lEkD8IGkwo
 
 row layout then media query for column. for responsive layout. 
