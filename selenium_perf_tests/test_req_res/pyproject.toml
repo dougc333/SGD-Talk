@@ -1,0 +1,22 @@
+
+[build-system]
+requires = ["setuptools >=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "test_req_res"
+verson = "0.0.1"
+authors=[
+ {name="self", email="test@example.com"},
+]
+description = "test aws endpoints"
+readme="README.md"
+requires-python = ">3.8"
+classifiers=[
+  "test"
+]
+
+[project-urls]
+schedule = ""
+source="https://github.com/dougc333/test_stuff"
+
