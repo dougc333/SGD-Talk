@@ -1,0 +1,14 @@
+{
+  "TableName":"Customers",
+  "Item":{
+    "customerId":{
+      "S":"$context.requestId",
+    },
+    "date":{
+    "S":"$input.path('$.date')"
+    },
+    "name":{
+      "S":"$input.path('$.name')"
+    }
+  }
+}

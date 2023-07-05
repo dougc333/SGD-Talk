@@ -1,6 +1,6 @@
 
 
-from typing import Callable
+from typing import Callable, Union
 
 
 def filter_odd_numbers(numbers: list[int]) -> list[int]:
@@ -30,7 +30,7 @@ def count_chars(words: str) -> list[int]:
 
 def process_data(
     data: list[int],
-    filter_func:list[int] ->list[int] = None,
+    filter_func: Callable[..., Union[list[int], int]] = None,
     process_func=None,
 ):
     """Applies filter_func and process_func on a data sequence."""

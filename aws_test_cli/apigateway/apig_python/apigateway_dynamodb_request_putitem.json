@@ -1,0 +1,14 @@
+{
+  "TableName":"Customers",
+  "Item":{
+    "customerId":{
+      "S":"1"
+    },
+    "date":{
+    "S":"Feb-01-2024"
+    },
+    "name":{
+      "S":"bob"
+    }
+  }
+}
