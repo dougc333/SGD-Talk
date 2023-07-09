@@ -40,3 +40,4 @@ class Application:
 
 app = Application()
 app.register_vehicle("Tesla Model 3")
+
