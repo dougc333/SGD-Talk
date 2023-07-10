@@ -1,0 +1,6 @@
+{
+  "Artist": {"S": "Fallout Boy"},
+  "SongTitle": {"S": "song1"},
+  "AlbumTitle": {"S": "album1a"},
+  "version":{"S":"a"}
+}
