@@ -9,8 +9,8 @@ def main() -> None:
     checking_account = CheckingAccount("CA001", Decimal("500"))
     stripePaymentService = StripePaymentService()
     bank_service = BankService(
-        checking_account=checking_account, savings_account=savings_account)
-
+        checking_account=checking_account, savings_account=savings_account, stripePaymentService=stripePaymentService)
+    # this should be payment service at client side.
     bank_service.deposit(Decimal("200"), savings_account)
     bank_service.deposit(Decimal("300"), checking_account)
 

@@ -20,8 +20,9 @@ class BankService:
     checking_account: CheckingAccount
     savings_account: SavingsAccount
 
-    def __init__(self, s: StripePaymentService, checking_account: CheckingAccount, savings_account: SavingsAccount):
-        self.payment_service = s
+    def __init__(self, stripePaymentService: StripePaymentService, checking_account: CheckingAccount, savings_account: SavingsAccount):
+        self.payment_service = stripePaymentService
+        self.payment_service.set_api_key("sk_test_1234567890")
         self.checking_account = checking_account
         self.savings_account = savings_account
 
@@ -31,15 +32,17 @@ class BankService:
         if isinstance(account, SavingsAccount):
             print(
                 f"Depositing {amount} into Savings Account {account.account_number}.")
-
+            self.savings_account.balance += amount
         else:
             print(
                 f"Depositing {amount} into Checking Account {account.account_number}."
             )
+            self.checking_account.balance += amount
 
-        self.payment_service.set_api_key("sk_test_1234567890")
+        # self.payment_service.set_api_key("sk_test_1234567890")
         self.payment_service.process_payment(amount)
-        # this isnt part of the interface. Balance is part of checking accuont and saavings account
+        # Balance is part of checking accuont and saavings account
+        # th checking and savings account balance has to be incremented
         # self.account.balance += amount
 
     def withdraw(
@@ -49,11 +52,20 @@ class BankService:
             print(
                 f"Withdrawing {amount} from Savings Account {account.account_number}."
             )
+            if amount >= self.savings_account.balance:
+               # self.payment_service.set_api_key("sk_test_1234567890")
+                self.payment_service.process_payout(amount)
+                self.savings_account.balance -= amount
+            else:
+                print("insufficient balance")
         else:
             print(
                 f"Withdrawing {amount} from Checking Account {account.account_number}."
             )
-        payment_service = StripePaymentService()
-        payment_service.set_api_key("sk_test_1234567890")
-        payment_service.process_payout(amount)
-        account.balance -= amount
+            if amount >= self.checking_account.balance:
+               # self.payment_service.set_api_key("sk_test_1234567890")
+                self.payment_service.process_payout(amount)
+                self.checking_account.balance = - amount
+
+            else:
+                print("insufficient balance")
