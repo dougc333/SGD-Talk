@@ -1,7 +1,7 @@
-const cdk = require('@aws-cdk/core')
-const myLambda = require('../lib/my_lambda');
+const { Stack, Duration } = require('aws-cdk-lib');
+// const sqs = require('aws-cdk-lib/aws-sqs');
 
-class LambdajsStack extends cdk.Stack {
+class LambdajsStack extends Stack {
   /**
    *
    * @param {Construct} scope
@@ -10,8 +10,13 @@ class LambdajsStack extends cdk.Stack {
    */
   constructor(scope, id, props) {
     super(scope, id, props);
-    new myLambda.MyLambda(this,"MyLambda")
 
+    // The code that defines your stack goes here
+
+    // example resource
+    // const queue = new sqs.Queue(this, 'LambdajsQueue', {
+    //   visibilityTimeout: Duration.seconds(300)
+    // });
   }
 }
 
