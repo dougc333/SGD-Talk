@@ -1,0 +1,8 @@
+1) create table 
+2) verify in AWS window or CLI can putitem/get item, list-tables
+3) verify roles.
+
+4) add lambda fn. 
+
+review examples
+

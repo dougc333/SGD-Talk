@@ -13,7 +13,7 @@ class MyLambda extends Construct{
         BUCKET:bucket.bucketName
       }
     })
-    bucket.grantReadWrite(handler)
+    bucket.grantReadWrite(handler) //document permissions and roles
   }
 
 }
