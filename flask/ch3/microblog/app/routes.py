@@ -25,7 +25,7 @@ posts = [
 @app.route('/')
 def index():
     print("calling index")
-    return render_template('index.html',posts=posts, loggedin_user=loggedin_user)
+    return render_template('index.html',title = "Index Page")
 
 @app.route('/login')
 def login():
