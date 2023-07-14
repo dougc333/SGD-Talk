@@ -32,3 +32,6 @@ def login():
     form = LoginForm()
     return render_template('login.html',title='Sign In', form=form, loggedin_user=loggedin_user)
 
+@app.route('loops')
+def l():
+    return render_template("index2.html",title="Display all posts", posts=posts, loggedin_user=loggedin_user)
