@@ -1,0 +1,14 @@
+this is the min you need to run 
+flask db init
+flask db migrate
+flask db upgrade
+
+then check test.db file and verify 
+cd instance
+sqlite3 test.db
+.tables
+.schema user
+insert into user(id,username,email, age) values(1, "bob", "bob@example.com", 10);
+select * from user;
+1|bob|bob@example.com|10
+
