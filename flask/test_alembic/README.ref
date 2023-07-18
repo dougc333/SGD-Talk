@@ -1,0 +1,6 @@
+change <form action="{{ url_for('add_user') }}" method="post">
+tp <form action="{{ url_for('add_user') }}" method="get">
+
+else doesnt work. 
+https://code.likeagirl.io/database-migrations-in-python-with-flask-with-alembic-442d11eb14d3
+
