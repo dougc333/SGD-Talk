@@ -14,5 +14,11 @@ class User(db.Model):
     email=db.Column(db.String(255))
     age = db.Column(db.Integer)
 
-
+@app.route("/")
+def show():
+    users = User.query.all()
+    print("users:",users)
+    for u in users:
+        print("username:",u.username)
+    return render_template('index.html', users=users)
 
