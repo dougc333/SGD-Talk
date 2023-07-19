@@ -13,8 +13,8 @@ class User(db.Model):
     username = db.Column(db.String(255))
     email=db.Column(db.String(255))
 
-class Posts(db.Model):
-    
+#class Posts(db.Model):
+
 
 @app.route("/")
 def show():
@@ -40,9 +40,6 @@ def addUsers():
   users = User.query.all()
   return render_template('index.html', users=users)
 
-#@app.route("/addPosts")
-#def addPosts():
-#    user1Posts = []
     
     
 
