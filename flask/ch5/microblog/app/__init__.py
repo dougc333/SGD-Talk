@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 login = LoginManager(app)
-
+login.login_view = 'login'
 #tricky flask migrate needs the models import even though it isnt used in the code
 #it wont create the tables without the import models. not well documented. 
 from app import routes,models
