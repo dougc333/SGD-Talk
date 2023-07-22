@@ -6,9 +6,7 @@ from flask import render_template, redirect, url_for, flash, request
 from werkzeug.urls import url_parse
 
 
-
-
-user={'username': 'bob'}
+#user={'username': 'bob'}
 posts=[
   {
     "author":{'username': 'author1'},
@@ -27,17 +25,24 @@ posts=[
   }
 ]
 
+
+
 @app.route('/')
 @app.route('/index')
 @login_required
 def index():
+    """
+    default index page
+    """
     return render_template('index.html', title="Home", posts=posts)
+
 
 @app.route('/login',methods=['GET','POST'])
 def login():
   '''
     login
   '''
+  print("Login")
   if current_user.is_authenticated:
     return redirect(url_for('index'))
   form = LoginForm()
@@ -48,16 +53,15 @@ def login():
         flash('Invalid username or passsword')
         return redirect(url_for('login'))
       login_user(user,remember=form.remember_me.data)
-      return redirect(url_for('index'))
+      next_page = request.args.get('next')
+      if not next_page or url_parse(next_page).netloc !='':
+          next_page = url_for('index')
+      return redirect(next_page)
   return render_template('login.html',title="Login Form", form=form)
 
-""" next_page = request.args.get('next')
-          if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('index')
-          return redirect(url_for('next_page')) """
-		
 
-app.route('/logout')
+
+@app.route('/logout')
 def logout():
     """
     logout. Verify what happends to current_user
@@ -80,3 +84,9 @@ def register():
 		flash("Registration successful")
 		return redirect(url_for('login'))
 	return render_template('register.html', title="Registration", form=form)
+
+@app.route('/user/<username>', methods=['GET'])
+def user_login(username):
+  """user login"""
+  user = User.query.filter_by(username=username).first_or_404()
+  return render_template('user.html', user=user, posts=posts)

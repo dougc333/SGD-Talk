@@ -27,7 +27,7 @@ class User(UserMixin,db.Model):
     '''
     verify password hash
     '''
-    return self.check_password_hash(self.password_hash, password)
+    return check_password_hash(self.password_hash, password)
 
   def __repr__(self):
     return f"<User username:{self.username} email: {self.email}>"
