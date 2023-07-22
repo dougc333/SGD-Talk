@@ -1,4 +1,3 @@
-'''microblog docstring '''
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -15,7 +14,6 @@ login.login_view = 'login'
 
 db = SQLAlchemy(app)
 migrate = Migrate(app,db)
-
 
 from app import  routes, models
 
