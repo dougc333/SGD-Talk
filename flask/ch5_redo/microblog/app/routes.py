@@ -35,29 +35,28 @@ def index():
 
 @app.route('/login',methods=['GET','POST'])
 def login():
-  '''
-    login
-  '''
-  if current_user.is_authenticated:
-    return redirect(url_for('index'))
-  form = LoginForm()
-  print("form: " + str(form.__dict__))
-  if form.validate_on_submit():
-      user = User.query.filter_by(username=form.username.data).first() 
-      if user is None or not user.check_password(form.password.data):
-        flash('Invalid username or passsword')
-        return redirect(url_for('login'))
-      login_user(user,remember=form.remember_me.data)
-      return redirect(url_for('index'))
-  return render_template('login.html',title="Login Form", form=form)
+	"""
+	login docstring
+	"""
+	if current_user.is_authenticated:
+		return redirect(url_for('index'))
+	form = LoginForm()
+	print("form: " + str(form.__dict__))
+	if form.validate_on_submit():
+		user = User.query.filter_by(username=form.username.data).first() 
+		if user is None or not user.check_password(form.password.data):
+			flash('Invalid username or passsword')
+			return redirect(url_for('login'))
+		login_user(user,remember=form.remember_me.data)
+		next_page = request.args.get('next')
+		if not next_page or url_parse(next_page).netloc != '':
+			next_page = url_for('index')
+		return redirect(url_for('index'))
+	return render_template('login.html',title="Login Form", form=form)
 
-""" next_page = request.args.get('next')
-          if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('index')
-          return redirect(url_for('next_page')) """
 		
 
-app.route('/logout')
+@app.route('/logout')
 def logout():
     """
     logout. Verify what happends to current_user
