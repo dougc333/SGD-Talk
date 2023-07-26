@@ -89,6 +89,7 @@ def register():
 @login_required
 def user(username):
   """user login"""
+  
   print("User login username:", username)
   posts=[
       {'author:':user, 'body':'Test Post1'},
