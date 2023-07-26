@@ -105,16 +105,24 @@ def register():
 @login_required
 def user(username):
   """user login"""
+<<<<<<< HEAD
+=======
+
+>>>>>>> e00e4cb80 (fix user ordering)
   print("User login username:", username)
+  user = User.query.filter_by(username=username).first_or_404()
   posts=[
       {'author:':user, 'body':'Test Post1'},
       {'author:':user, 'body':'Test Post2'}
   ]
+<<<<<<< HEAD
   user = User.query.filter_by(username=username).first_or_404()
   posts = [
   {'author': user, 'body': 'Test post #1'},
   {'author': user, 'body': 'Test post #2'}
   ]
+=======
+>>>>>>> e00e4cb80 (fix user ordering)
   return render_template('user.html', user=user, posts=posts)
 
 
