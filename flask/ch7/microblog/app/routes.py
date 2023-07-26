@@ -105,24 +105,16 @@ def register():
 @login_required
 def user(username):
   """user login"""
-<<<<<<< HEAD
-=======
-
->>>>>>> e00e4cb80 (fix user ordering)
-  print("User login username:", username)
   user = User.query.filter_by(username=username).first_or_404()
   posts=[
       {'author:':user, 'body':'Test Post1'},
       {'author:':user, 'body':'Test Post2'}
   ]
-<<<<<<< HEAD
   user = User.query.filter_by(username=username).first_or_404()
   posts = [
   {'author': user, 'body': 'Test post #1'},
   {'author': user, 'body': 'Test post #2'}
   ]
-=======
->>>>>>> e00e4cb80 (fix user ordering)
   return render_template('user.html', user=user, posts=posts)
 
 
@@ -131,16 +123,13 @@ def user(username):
 def edit_profile():
     '''edit profile'''
     form = EditProfileForm()
-    print("creted edirprofile form")
     if form.validate_on_submit():
-        print("edit profile validate on submit")
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
         db.session.commit()
         flash("changes saved")
         return redirect(url_for('edit_profile'))
     elif request.method=='GET':
-       
         form.username.data = current_user.username  
         form.about_me.data = current_user.about_me
     return render_template('edit_profile.html',title="Edit Profile",form=form)
