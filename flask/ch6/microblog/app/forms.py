@@ -19,7 +19,7 @@ class RegistrationForm(FlaskForm):
   Register user
   """
   username = StringField('Username', validators=[DataRequired()])
-  email = PasswordField('email', validators=[DataRequired(),Email()])
+  email = StringField('email', validators=[DataRequired(),Email()])
   password = PasswordField('Password', validators=[DataRequired()])
   password2 = PasswordField('Password2', validators=[DataRequired(), EqualTo('password')])
   remember_me = BooleanField("Remember Me")
