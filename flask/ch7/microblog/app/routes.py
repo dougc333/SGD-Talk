@@ -89,11 +89,11 @@ def register():
 @login_required
 def user(username):
   """user login"""
-  
+
   print("User login username:", username)
+  user = User.query.filter_by(username=username).first_or_404()
   posts=[
       {'author:':user, 'body':'Test Post1'},
       {'author:':user, 'body':'Test Post2'}
   ]
-  user = User.query.filter_by(username=username).first_or_404()
   return render_template('user.html', user=user, posts=posts)
