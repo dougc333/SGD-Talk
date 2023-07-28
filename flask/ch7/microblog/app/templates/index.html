@@ -4,7 +4,7 @@
 
 {%block content %}
   <h2> Hello:{{current_user.username}}</h2>
-  <h4>Here are your posts: </h4>
+  <h4>Here are your posts:{{posts}} </h4>
   <ul>
     {%for p in posts %}
     <li><p>{{p.author.username}} has title: {{p.title}}</p>
