@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="8"
+    resolveFromConfigFile="true"
+    autoloader="tests/psalm-autoloader.php"
+>
+    <projectFiles>
+        <directory name="." />
+        <ignoreFiles>
+            <directory name="vendor" />
+            <directory name="node_modules" />
+            <directory name="tests" />
+            <file name="psalm/REDCapPsalmPlugin.php" /> <!-- This can be removed once PHP 7.4 becomes REDCap's min version, and we can use the latest psalm version by default. -->
+        </ignoreFiles>
+    </projectFiles>
+    <stubs>
+        <file name="psalm/stubs/mysqli_result.phpstub" />
+        <file name="psalm/stubs/functions.phpstub" />
+        <file name="psalm/stubs/Framework.phpstub" />
+        <file name="psalm/stubs/AbstractExternalModule.phpstub" />
+    </stubs>
+    <globals>
+        <!-- From REDCap Core -->
+        <var name="SUPER_USER" type="string" />
+        <var name="ACCESS_CONTROL_CENTER" type="bool" />
+        <var name="UI_ID" type="integer" />
+        <var name="PAGE" type="string" />
+        <var name="auth_meth_global" type="string" />
+        <var name="lang" type="array" />
+        <var name="app_title" type="string" />
+        <var name="external_modules_project_custom_text" type="string" />
+        <var name="user_firstname" type="string" />
+        <var name="user_lastname" type="string" />
+        <var name="project_contact_email" type="string" />
+        <var name="user_email" type="string" />
+        <var name="send_emails_admin_tasks" type="string" />
+
+        <!-- From the EM Framework (not really globals, but this works for variables in scope during require calls as well) -->
+        <var name="project_id" type="string" />
+        <var name="prefix" type="string" />
+        <var name="version" type="string" />
+        <var name="config" type="array" />
+        <var name="module" type="ExternalModules\Framework" />
+        <var name="arguments" type="array" />
+
+        <!-- Globals shared with module scanning -->
+        <var name="rc_connection" type="mysqli" />
+    </globals>
+    <issueHandlers>
+        <InvalidGlobal errorLevel="suppress" />
+        <RedundantCondition errorLevel="suppress" />
+        <MissingFile errorLevel="suppress" />
+    </issueHandlers>
+</psalm>

@@ -1,0 +1,48 @@
+{
+  "name": "datamart",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build-standard": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name datamart_vue",
+    "build-component": "vue-cli-service build --target wc --name datamart-component --inline-vue",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "animejs": "^3.2.0",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
+    "moment": "^2.24.0",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@vue/cli-plugin-babel": "~5.0.0-beta.1",
+    "@vue/cli-plugin-eslint": "~5.0.0-beta.1",
+    "@vue/cli-service": "~5.0.0-beta.1",
+    "eslint": "^8.0.0",
+    "eslint-plugin-vue": "^7.6.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

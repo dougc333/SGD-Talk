@@ -1,0 +1,8 @@
+/.idea
+/vendor
+*.code-workspace
+/node_modules
+/.phpunit.result.cache
+/cov.xml
+/.vscode/launch.json
+/tests/test-module/psalm.xml

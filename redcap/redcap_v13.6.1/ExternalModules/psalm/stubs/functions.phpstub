@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @psalm-taint-sink sql $sql
+ * @return \mysqli_result
+ */
+function db_query($sql) {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_array() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_assoc() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_object() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_row() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_result() {}
