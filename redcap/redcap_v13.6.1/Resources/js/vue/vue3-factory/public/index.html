@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+      <div data-target="footer">
+        <p>footer for the componen.</p>
+      </div>
+      <div data-target="header">
+        <p>A paragraph for the component.</p>
+      </div>
+      <div data-target="$footer">
+        <p>A footer for the root.</p>
+      </div>
+
+      <div data-target="$header">
+        <p>A paragraph for the root header.</p>
+      </div>
+      <div>
+        <span id="asassa">
+
+          this goes in the default of the component
+        </span>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('#asassa').addEventListener('click', () => {
+        alert('clicked')
+      })
+    })
+  </script>
+</html>
