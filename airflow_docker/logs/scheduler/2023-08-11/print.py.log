@@ -2698,3 +2698,39 @@
 [2023-08-11T15:54:58.412+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:54:58.412+0000] {dag.py:2726} INFO - Sync 1 DAGs
 [2023-08-11T15:54:58.430+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:54:58.430+0000] {dag.py:3490} INFO - Setting next_dagrun for print to 2023-08-11T00:00:00+00:00, run_after=2023-08-12T00:00:00+00:00
 [2023-08-11T15:54:58.444+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/print.py took 0.081 seconds
+[2023-08-11T15:55:29.134+0000] {processor.py:157} INFO - Started process (PID=13548) to work on /opt/airflow/dags/print.py
+[2023-08-11T15:55:29.136+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/print.py for tasks to queue
+[2023-08-11T15:55:29.138+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:29.138+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/print.py
+[2023-08-11T15:55:29.150+0000] {logging_mixin.py:149} INFO - hi this is print_stuff
+[2023-08-11T15:55:29.152+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:29.151+0000] {print.py:20} INFO - This is an info message
+[2023-08-11T15:55:29.153+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:29.153+0000] {print.py:21} WARNING - This is a warning message
+[2023-08-11T15:55:29.154+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:29.154+0000] {print.py:22} ERROR - This is an error message
+[2023-08-11T15:55:29.156+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:29.156+0000] {print.py:23} CRITICAL - This is a critical message
+[2023-08-11T15:55:29.157+0000] {processor.py:836} INFO - DAG(s) dict_keys(['print']) retrieved from /opt/airflow/dags/print.py
+[2023-08-11T15:55:29.177+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:29.177+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-08-11T15:55:29.196+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:29.195+0000] {dag.py:3490} INFO - Setting next_dagrun for print to 2023-08-11T00:00:00+00:00, run_after=2023-08-12T00:00:00+00:00
+[2023-08-11T15:55:29.209+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/print.py took 0.080 seconds
+[2023-08-11T15:55:59.598+0000] {processor.py:157} INFO - Started process (PID=13608) to work on /opt/airflow/dags/print.py
+[2023-08-11T15:55:59.600+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/print.py for tasks to queue
+[2023-08-11T15:55:59.603+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:59.603+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/print.py
+[2023-08-11T15:55:59.615+0000] {logging_mixin.py:149} INFO - hi this is print_stuff
+[2023-08-11T15:55:59.616+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:59.616+0000] {print.py:20} INFO - This is an info message
+[2023-08-11T15:55:59.617+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:59.617+0000] {print.py:21} WARNING - This is a warning message
+[2023-08-11T15:55:59.619+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:59.619+0000] {print.py:22} ERROR - This is an error message
+[2023-08-11T15:55:59.620+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:59.620+0000] {print.py:23} CRITICAL - This is a critical message
+[2023-08-11T15:55:59.623+0000] {processor.py:836} INFO - DAG(s) dict_keys(['print']) retrieved from /opt/airflow/dags/print.py
+[2023-08-11T15:55:59.644+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:59.644+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-08-11T15:55:59.666+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:55:59.666+0000] {dag.py:3490} INFO - Setting next_dagrun for print to 2023-08-11T00:00:00+00:00, run_after=2023-08-12T00:00:00+00:00
+[2023-08-11T15:55:59.680+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/print.py took 0.086 seconds
+[2023-08-11T15:56:29.960+0000] {processor.py:157} INFO - Started process (PID=13668) to work on /opt/airflow/dags/print.py
+[2023-08-11T15:56:29.962+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/print.py for tasks to queue
+[2023-08-11T15:56:29.964+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:56:29.963+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/print.py
+[2023-08-11T15:56:29.977+0000] {logging_mixin.py:149} INFO - hi this is print_stuff
+[2023-08-11T15:56:29.979+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:56:29.979+0000] {print.py:20} INFO - This is an info message
+[2023-08-11T15:56:29.985+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:56:29.984+0000] {print.py:21} WARNING - This is a warning message
+[2023-08-11T15:56:29.986+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:56:29.986+0000] {print.py:22} ERROR - This is an error message
+[2023-08-11T15:56:29.987+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:56:29.987+0000] {print.py:23} CRITICAL - This is a critical message
+[2023-08-11T15:56:29.989+0000] {processor.py:836} INFO - DAG(s) dict_keys(['print']) retrieved from /opt/airflow/dags/print.py
+[2023-08-11T15:56:30.011+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:56:30.011+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-08-11T15:56:30.030+0000] {logging_mixin.py:149} INFO - [2023-08-11T15:56:30.030+0000] {dag.py:3490} INFO - Setting next_dagrun for print to 2023-08-11T00:00:00+00:00, run_after=2023-08-12T00:00:00+00:00
+[2023-08-11T15:56:30.044+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/print.py took 0.088 seconds
