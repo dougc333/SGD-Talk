@@ -7,5 +7,9 @@
   "java.project.referencedLibraries": [
     "lib/**/*.jar",
     "/Users/dc/opt/lib/antlr-4.11.1-complete.jar"
-  ]
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "emmet.triggerExpansionOnTab": true,
 }
