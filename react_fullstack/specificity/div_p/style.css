@@ -1,0 +1,44 @@
+body{
+  font-family: 'PT Sans', sans-serif;
+  color:green;
+  font-size: 1.75rem;
+  flex-direction:column;
+  align-items: center;
+  margin:100px;
+  height:100%;
+  border:2px solid black;
+}
+
+h1{
+  text-shadow: 5px 5px 15px rgba(0,0,0,.25);
+  font-family: 'Chewy', cursive;
+  font-size: 7.5rem;
+  margin: 0 0.25em;
+}
+/*always last rule which applies, this is cascade because the 2 body selectors 
+* have the same specificity */
+ /* body{
+  color:aqua;
+}  */
+
+/* style tag, style in element and external style sheet are cascade. Last applied property 
+* wins. Can chnange this by reversing the order of style and when the external style sheets
+*are loaded */
+
+div p {
+  color:orange;
+}
+
+/* this wont work because div p has higher specificity. this negates the p rule which is
+* probably not what someone wanted. */
+p{
+  color:blueviolet;
+}
+
+/* the problem with using ids for style is you cant overidde it with class or element selecctors */
+/* avoid using id for style because the specificity is too high. YOu can override with inline style */
+/* important overrides evertyhing, class, id, inline style */
+
+
+
+ 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {TextField, FormControl, Button}  from '@mui/material'
+import {TextField, Button}  from '@mui/material'
 
 
 const LoginForm = ()=>{
@@ -10,7 +10,7 @@ const LoginForm = ()=>{
   
   const handleSubmit = (event)=>{
     event.preventDefault()
- 
+
     setEmailError(false)
     setPasswordError(false)
     if (email == '') {
@@ -29,23 +29,25 @@ const LoginForm = ()=>{
     <form autoComplete='off' onSubmit={handleSubmit}>
       <h2>Login</h2>
       <TextField
+        // display='block'
         label="Email"
         onChange={e=>setEmail(e.target.value)}
         required
         variant="outlined"
         color="secondary"
         type="email"
-        sx={{mb: 3}}
+        inputProps={{ maxLength: 30 }}
         value={email}
         error={emailError}
       />
       <TextField 
+        // display='block'
         label="Password"
         variant="outlined"
         color="secondary"
         type="password"
+        inputProps={{ maxLength: 30 }}
         error={passwordError}
-        sx={{mb: 3}}
       />
       <div>
       <Button 
