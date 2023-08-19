@@ -1,0 +1,4 @@
+emmet:!tab gets html5 template
+emmet div*2>p>lorem25 to create 2 divs for columns 
+emmet: link:css
+emmet:section*2>.split is same as section*2>div.split dont have to have the div. .split implies div. 
