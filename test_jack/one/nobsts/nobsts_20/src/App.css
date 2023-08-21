@@ -1,0 +1,7 @@
+body{
+  font-size:large;  
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border:2px solid #ccc;
+}
