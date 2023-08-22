@@ -1,0 +1,58 @@
+.app{
+  border:4px solid green;
+  padding:1em;
+  background-color: white;
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+
+.class1{
+
+  border:1px solid black;
+  background-color: beige;
+}
+
+.gridexample{
+  border:4px solid green;
+  padding: 1em;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400rem,100%), 1fr));
+}
+.class2{
+  border:1px solid black;
+}
+
+.flexgrid{
+  border:4px solid green;
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+.class3{
+  border:1px solid black;
+}
+
+.flexgrid > *{
+  flex:1;
+}
+
+.reel{
+  border:3px solid yellow;
+  display:grid;
+  gap:1rem;
+  grid-auto-flow: column;
+  grid-auto-columns:50%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+  padding:10px;
+}
+
+reel > * {
+  scroll-snap-align:start;
+}
+
+.class4{
+  border:1px solid black;
+}
