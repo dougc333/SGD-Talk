@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js" integrity="sha256-cLWs9L+cjZg8CjGHMpJqUgKKouPlmoMP/0wIdPtaPGs=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js" integrity="sha256-M5lc1yUhpXlm2VZjGk4aoFwqR9H1OJ0p5MR5xpipulk=" crossorigin="anonymous"></script>
+  <title>HELLO WORLD</title>
+</head>
+<body>
+  <div id="content"></div>
+  <script>
+    var HelloWorld = React.createClass({
+        render: function() {
+            return React.createElement("h1", null, "Hello world!!");
+        }
+    });
+    ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById("content"));
+  </script>
+</body>
+</html>
