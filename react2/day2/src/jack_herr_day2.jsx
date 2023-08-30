@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HerrDay2 from './HerrDay2';
 import InputStuff from './InputStuff';
+import HerrTable from './Table';
 
 const REACT_VERSION = React.version
 
@@ -9,9 +9,7 @@ const REACT_VERSION = React.version
 
 ReactDOM.render(
   <React.StrictMode>
-  <HerrDay2/>,
-  <InputStuff/>,
-  <InputStuffWithNoHooks />
+  <HerrTable></HerrTable> 
   </React.StrictMode>,
   document.getElementById('day2')
 )

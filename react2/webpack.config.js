@@ -1,6 +1,7 @@
 module.exports = {
   entry: {
     day2: './day2/src/jack_herr_day2.jsx',
+    day2Extra:'./day2/src/jack_herr_day2Extra.jsx',
     day3: './day3/jack_herr_day3.jsx',
     app: './testcomponents/App.jsx',
   },

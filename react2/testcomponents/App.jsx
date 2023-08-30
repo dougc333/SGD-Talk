@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestComp from './TestComp'
+import TestComp from './BootstrapComp'
 
 const REACT_VERSION = React.version
 

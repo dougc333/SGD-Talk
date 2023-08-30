@@ -4,7 +4,7 @@ import data from './pokemon.json'
 function HerrDay3(){
   return(
     <div>
-      {console.log(data.slice(0,2))}
+      {console.log(data.slice(0,20))}
     </div>
   )
 }
