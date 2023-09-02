@@ -7,7 +7,7 @@ import {MessageContainer} from './components/MessageContainer'
 function App() {
   return (
     <>
-    <MessageContainer messages={messages}></MessageContainer>
+    <MessageContainer  messages={messages}></MessageContainer>
     </>
   )
 }

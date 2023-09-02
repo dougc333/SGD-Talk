@@ -9,7 +9,7 @@ type Props = {
 
 //pass in prop for data which is message object. 
 export const Messages = ({message}:Props)=>{
-  {console.log(message.content)}
+  // {console.log(message.content)}
   return(
     <>
     <MessageStyles onContextMenu={(e)=>{
