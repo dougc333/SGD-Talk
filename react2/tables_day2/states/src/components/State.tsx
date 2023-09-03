@@ -1,3 +1,4 @@
+//already included in vite config
 import React from 'react'
 
 type Props= {

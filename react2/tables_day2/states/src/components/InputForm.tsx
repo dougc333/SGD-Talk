@@ -23,7 +23,8 @@ export const InputForm = (data:Props)=>{
     // {console.log("value prefix:",value)}
     // {console.log("data:",data)}
     setFoo(data.data.filter(startsWith(value)))
-    console.log("foo",{foo})
+    {console.log(foo)}
+    console.log("We should document why we need ...form")
     setForm({
       ...form,
       [field]: value
