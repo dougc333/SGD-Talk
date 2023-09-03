@@ -33,9 +33,10 @@ export const UseEffectTripleEquals = ()=>{
     }`}
     <button onClick={addName}>Add Name</button>
     <button onClick={setSelected}>Set Selected True</button>
-    <p>Add name to input box verify with Button click on SetName, 
-      click on Set selected button to set false to true and observer Useeffect running. 
-      Then click on selected true which doesnt change the state but it triggers a rerende. 
+    <p>Add name to input box verify with Button click on SetName, the name in the display
+      should be changed to the name in the input box when the SetName button is clicked.  
+      Then click on SetSelected button to set false to true and observer Useeffect running. 
+      Then click on selected true which doesnt change the state but it triggers a rerender. Will see the console.log in useEffect incrementing.  
       What is wrong? Because object state is not changed, JS cant do a triple equal comparison
       object===object if the key:value are same resolves as false. 
     </p>
