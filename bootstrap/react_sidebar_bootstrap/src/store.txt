@@ -1,0 +1,74 @@
+      <div id="sidebar-wrapper">
+        <ul className="sidebar-nav">
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </div>
+      <div id="page-content-wrapper">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-12">
+              <a href="#" className="btn btn-success" id="menu-toggle">Toggle Menu</a>
+              <h1>Sidebar Layout</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe velit ipsam optio adipisci repudiandae quis perspiciatis ipsum cupiditate iusto tenetur consectetur natus nesciunt iste culpa sunt rerum commodi, tempore assumenda laboriosam facere minima, aliquid dicta? Laudantium minus, aspernatur accusantium quod excepturi consequatur nisi quia quas perferendis illo dignissimos culpa quo ducimus tenetur sit! Facilis possimus pariatur libero officia recusandae facere laboriosam at numquam autem esse. Qui tempore voluptatum autem, quas nesciunt eaque alias iure quaerat suscipit ipsa modi dicta ullam fugiat. Optio quas eos delectus necessitatibus officiis molestias perspiciatis neque consequuntur? Explicabo laboriosam ad fugiat fugit facere minus! Repudiandae.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  
+} */
+
+#sidebar-wrapper{
+  z-index:1;
+  position:absolute;
+  width:0;
+  height:100%;
+  overflow-y:hidden;
+  border: 2px solid red;
+  background: #2c3e50;
+  opacity: 0.9;
+}
+
+
+#page-content-wrapper{
+  width: 100%;
+  position:absolute;
+  padding: 15px;
+  border: 5px solid green;
+
+}
+
+#wrapper.menuDisplayed #sidebar-wrapper{
+  width:250px;  
+
+}
+
+#wrapper.menuDisplayed #page-content-wrapper{
+  padding-left:250px;
+}
+
+.sidebar-nav{
+  padding:0;
+}
+
+.sidebar-nav li{
+  text-indent:20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display:block;
+  text-decoration: none;
+  color: #ddd;
+}
+
+.sidebar-nav li a:hover {
+  background: #16a085;
+}
