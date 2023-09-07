@@ -1,0 +1,19 @@
+
+
+.parent{
+  display:flex;
+  justify-content: center;
+  border:2px solid black;
+}
+
+.custom{
+  border:1px solid orange;
+  width:200px;
+}
+
+.parent > div{
+  border:1px solid green;
+  height:30px; 
+  width:30px;
+}
+

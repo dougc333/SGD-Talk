@@ -55,7 +55,7 @@ function App() {
       <Row>
     <Col>
     <Card border="primary" className="card h-100 mb-3">
-      <Card.Body>
+    <Card.Body className="d-flex flex-column">
       <Card.Header as="h5">First Example</Card.Header>
       <FirstExample />
       </Card.Body>
@@ -63,15 +63,15 @@ function App() {
     </Col>
     <Col>
     <Card border="primary" className=" card h-100 mb-3">
-    <Card.Body>
+    <Card.Body className="d-flex flex-column">
     <Card.Header as="h5">Second Example</Card.Header>
     <SecondExample></SecondExample>
-    </Card.Body>
+    </Card.Body >
     </Card>
     </Col>
     <Col>
     <Card border="primary" className=" card h-100 mb-3">
-    <Card.Body>
+    <Card.Body className="d-flex flex-column">
     <Card.Header as="h5">Third Example useEffect With [number]</Card.Header>
     <ThirdExample></ThirdExample>
     </Card.Body>
@@ -79,7 +79,7 @@ function App() {
     </Col>
     <Col>
     <Card border="primary" className=" card h-100 mb-3">
-    <Card.Body>
+    <Card.Body className="d-flex flex-column">
     <Card.Header as="h5">Fourth Example useEffect w/[]</Card.Header>
     <FourthExample></FourthExample>
     </Card.Body>

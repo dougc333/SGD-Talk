@@ -1,0 +1,9 @@
+/*responsive images scale with the parent element. using className='img-fluid'. 
+bootstrap 5 docs say the img-fluid class applies width:100% and height: auto to make responsvie images Test if this applies to react-bootstrap
+*/
+
+
+.simpson-img{
+  border:2px solid red !important;
+}
+
