@@ -12,15 +12,8 @@ const getData= async ()=>{
     JSON.parse(body).map(x=>(console.log(JSON.stringify(x["R0000100"]))))
     //(eval).map(x=>(console.log(JSON.stringify(x["R0000100"]))))
     //eval works to convert string to JSON object. 
-
 }
 
 getDataFile()
 getData() 
 
-
-/* const c = [{"one": 1, "two": 2},
-{"three":3,"four":4},
-{"five":5,"six":6}]    
-c.map(x=>console.log(x))
- */
