@@ -16,9 +16,9 @@ export const SimpleJSON = ()=>{
       console.log("x:",x)
       console.log(typeof(x))
       
-      // Object.entries(x).forEach(([key,value])=>{
-      //   console.log(`yo!!! ${key}:${value}`)
-      // })
+      Object.entries(x).forEach(([key,value])=>{
+         console.log(`yo!!! ${key}:${value}`)
+       })
        
       return <div>{JSON.stringify(x)}</div>
     })

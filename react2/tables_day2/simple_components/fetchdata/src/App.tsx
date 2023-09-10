@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './App.css'
-import axios  from 'axios'
+import {Link} from 'react-router-dom'
 
 const NLSYRow = (nlsyrow:{})=> {
   console.log(Object.keys(nlsyrow))
@@ -8,30 +8,12 @@ const NLSYRow = (nlsyrow:{})=> {
 }
 
 function App() {
-  const [inProgress, setInProgress] = useState(false)
-  const [error, setError] = useState(null)
   const [nlsy, setNLSY] = useState([])
   
-
-  const getData_old = async ()=>{
-    //never do this from youtube video
-    try{
-      setInProgress(false)
-      console.log("in progress")
-      const response = await axios.get('http://localhost:5173/NLSY2.json')
-      const data = response.data
-      // console.log("nlsy:", data)
-      if (data) setNLSY(data)
-    }catch(e:any){
-      setError(e)
-    }
-  }
-
-
   useEffect( ()=>{
     async function fetchStuff(){
       console.log("component mounted")
-      const resp = await fetch('http://localhost:5173/NLSY2.json')
+      const resp = await fetch('http://localhost:3000/NLSY2.json')
       const stuff = await resp.json();
       if (stuff) setNLSY(stuff)
       //console.log("useEffect data:", stuff)
@@ -39,7 +21,7 @@ function App() {
     fetchStuff()
   },[])
 
-  if (inProgress) return <div>In Progress</div>
+  let accuulator:any=[]
   
   return (
     <>
@@ -54,10 +36,12 @@ function App() {
       if (idx>10 && idx<20){
         console.log("typeof:",typeof(Object.keys(rows)))
         console.log("Object.keys",Object.keys(rows))
+        accuulator.push(<div>typeof(Object.keys(rows))</div>)
+        
         //return Object.keys(rows)
         Object.keys(rows).map(x=>{
           console.log("x:",x)
-          return {x:x}
+          return {...accuulator}
         })
       }
     }) 
