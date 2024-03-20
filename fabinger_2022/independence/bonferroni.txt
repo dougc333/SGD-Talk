@@ -1,5 +1,0 @@
-http://www.nephjc.com/news/bonferroni
-https://www.stat.berkeley.edu/~mgoldman/Section0402.pdf
-the one where we compared cignigicance wo using bonferroni on rapleaf data is wrong
-https://www.statology.org/bonferroni-correction/
-https://www.statology.org/bonferroni-correction/

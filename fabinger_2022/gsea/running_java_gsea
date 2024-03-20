@@ -1,6 +1,0 @@
-download the GSEA program unzip and should see GSEA_4.2.3 directory
-cd into 
-./gsea.sh 
-will run and display UI
-
-
