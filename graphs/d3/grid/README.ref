@@ -1,9 +1,0 @@
-line.html test how margin works and how to make cross at origin using negative x, y coordinates 
-now replace the line.html with scaleLInear which adds the labels. 
-
-line.html vs. line2.html. If you dont set the height and width to include margins as in line.html you 
-have to remove 2x the margins later when setting drawing area. line2.html more confusing than line.html 
-because of 2 factor. 
-
-
-grid.html = https://gist.github.com/wadefagen/ce5d308d8080130de10f21254273e30c

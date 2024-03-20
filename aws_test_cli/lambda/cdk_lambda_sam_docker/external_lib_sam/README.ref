@@ -1,7 +1,0 @@
-problem: if want to use external libs in lambda fn, cant add them to
-requirements.txt. Lambda is in subdir and wont see requirements.txt
-
-add aws-cdk.aws-lambda-python-alpha to requirements.txt
-
-using aws-cdk.aws-lambda-python takes too long. Thousands of packages. 
-Downloads ALL the versions!

@@ -1,2 +1,0 @@
-Go to the spec before web blogs:
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing

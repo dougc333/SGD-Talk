@@ -1,3 +1,0 @@
-global variables encapsulate in var APP. This leaves only APP as the global vs. all our variables and fns. 
-
-

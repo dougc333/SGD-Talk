@@ -1,3 +1,0 @@
-test array 
-methods
-

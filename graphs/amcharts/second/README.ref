@@ -1,7 +1,0 @@
-test the am5 modules!!!
-
-multiple times wasted debug time on missing css for chartdiv
-default settings are too small to display graph
-
-the am5 and amxy are global variables like jQuery. Dont use them for modules. Teh docs are incorrect
-

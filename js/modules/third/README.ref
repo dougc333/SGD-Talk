@@ -1,4 +1,0 @@
-convert domwrapper ans userWrapper to iife
-we never call them so dont need them to be named
-
-we still have APP exposed to the global namespace will eventually collide

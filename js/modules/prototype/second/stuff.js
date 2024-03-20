@@ -1,2 +1,0 @@
-stuff=["dog", "cat", "bear"]
-

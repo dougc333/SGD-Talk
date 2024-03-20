@@ -1,8 +1,0 @@
-run lambda in container so you can replicate teh runtime locally. 
-Now there are 2 containers, a docker container running in a container/VM on aws. 
-Sigh.
-
-
-1) cd first
-   cdk synth
-	 
