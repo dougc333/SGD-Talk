@@ -1,7 +1,0 @@
-simple react config 
-
-with sourcemaps
-no treeshaking setup, create-react-app has tree shaking should see less bundle size w/CRA?
-
-
-
