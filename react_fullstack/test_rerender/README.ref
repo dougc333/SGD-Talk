@@ -1,7 +1,0 @@
-verify when a rerender occurs. with components you could tell with the mount and unmount
-
-with hooks it isnt as clear
-
-
-verify react dev tools
-can see when there is a new return value from the component

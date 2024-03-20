@@ -1,1 +1,0 @@
-UPDATE `redcap_crons` SET `cron_frequency` = '1800' WHERE `cron_name` = 'ExternalModuleValidation';

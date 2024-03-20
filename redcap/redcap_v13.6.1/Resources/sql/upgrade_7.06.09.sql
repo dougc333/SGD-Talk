@@ -1,1 +1,0 @@
-ALTER TABLE `redcap_user_roles` CHANGE `external_module_config` `external_module_config` TEXT NULL DEFAULT NULL;

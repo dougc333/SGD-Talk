@@ -1,1 +1,0 @@
-@echo On Windows, please run tests from Windows Subsystem for Linux.  They're not all compatible with the windows command prompt.

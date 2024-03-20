@@ -1,1 +1,0 @@
-cls && composer update --no-dev && cd Libraries && composer update --no-dev && cd ../UnitTests && composer update && cd ../ && echo "SUCCESS: All PHP dependencies have been updated!"

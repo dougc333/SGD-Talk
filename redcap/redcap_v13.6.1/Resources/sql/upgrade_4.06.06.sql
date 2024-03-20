@@ -1,1 +1,0 @@
-ALTER TABLE `redcap_user_information` ADD `user_inst_id` VARCHAR(255) NULL DEFAULT NULL AFTER `user_lastname`;

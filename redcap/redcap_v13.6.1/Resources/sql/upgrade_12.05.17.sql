@@ -1,1 +1,0 @@
-update redcap_crons set cron_frequency = 28800 where cron_name = 'ReminderUserAccessDashboard';

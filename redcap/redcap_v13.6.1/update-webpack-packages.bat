@@ -1,1 +1,0 @@
-cls && cd Resources/webpack && yarn && yarn upgrade && yarn && yarn run build && cd ../../ && cls && echo "SUCCESS: All webpack dependencies have been updated!"
