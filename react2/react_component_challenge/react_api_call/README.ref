@@ -1,9 +1,0 @@
-api server call at App level or higher. Use props to pass the data down to the
-component. 
-
-put xxx.json under ~/public and fetch from localhost:xxxx/public/xxx.json
-unclear what Jack Herrington means by multipart payload
-
-async await fetch
-react query 
-

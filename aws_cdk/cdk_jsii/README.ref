@@ -1,2 +1,0 @@
-jsii is the js intermediate format used for translating the runtime into different runtimes. Assume this is tested but need
-to dig into the test cases. how to handle async translation is not clear. 

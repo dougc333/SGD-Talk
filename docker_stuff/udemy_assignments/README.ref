@@ -1,7 +1,0 @@
-difference between MKDIR and WORKDIR
-1)
-2)
-3) assignment 2. postgres docker file create volume, start db, create table. Save as volume. 
-then upgrade postgres file and verify volume works in new version. 
-
-
